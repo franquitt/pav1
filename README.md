@@ -85,5 +85,4 @@ daría solución a este trabajo:
 
 
 ## Diagrama de la DB
-![diagramadb]
-[diagramadb]: https://raw.githubusercontent.com/franquitt/pav1/master/diagrama.png
+![diagrama db](https://raw.githubusercontent.com/franquitt/pav1/master/diagrama.png)
