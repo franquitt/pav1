@@ -1,11 +1,11 @@
 
-#Universidad Tecnológica Nacional
-##Facultad Regional Córdoba
-###Ingeniería en Sistemas de Información
+# Universidad Tecnológica Nacional
+## Facultad Regional Córdoba
+### Ingeniería en Sistemas de Información
 
 
 
-##Programación de Aplicaciones Visuales 1: Proyecto Integrador
+## Programación de Aplicaciones Visuales 1: Proyecto Integrador
 
 
 Profesores:
@@ -21,7 +21,7 @@ Integrantes:
 * VENTURI, Agustin [71943]
 
 
-##Caso estudiado
+## Caso estudiado
 Una Ferretería de la provincia de Córdoba desea solucionar 
 diversos problemas relacionados con el control del stock, 
 administración del personal, gestión de sus productos y sus 
