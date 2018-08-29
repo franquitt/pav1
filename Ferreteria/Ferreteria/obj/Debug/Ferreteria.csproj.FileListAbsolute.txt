@@ -1,0 +1,10 @@
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.exe.config
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.exe
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.pdb
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csprojAssemblyReference.cache
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Form1.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Properties.Resources.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.GenerateResource.cache
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.CoreCompileInputs.cache
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.exe
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.pdb
