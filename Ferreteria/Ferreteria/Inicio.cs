@@ -15,21 +15,15 @@ namespace Ferreteria
         public frmInicio()
         {
             InitializeComponent();
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
         }
-
-        public bool validarUsuario(string legajo, string pass)
+        private void frmInicio_Load(object sender, EventArgs e)
         {
-            pass = Helper.sha256(pass);
-            BDHelper helper = new BDHelper();
-            DataTable tabla = helper.ConsultaSQL("SELECT * FROM USUARIOS WHERE legajo =  \'"
-                            + legajo + "\' AND password = \'"
-                            + pass + "\'");
-
-
-            if (tabla.Rows.Count > 0)
-                return true;
-            else
-                return false;
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
         }
+
+        
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace Ferreteria
@@ -18,6 +19,20 @@ namespace Ferreteria
                 hash.Append(theByte.ToString("x2"));
             }
             return hash.ToString();
+        }
+        public static bool validarUsuario(string legajo, string pass)
+        {
+            pass = Helper.sha256(pass);
+            BDHelper helper = new BDHelper();
+            DataTable tabla = helper.ConsultaSQL("SELECT * FROM USUARIOS WHERE legajo =  \'"
+                            + legajo + "\' AND password = \'"
+                            + pass + "\'");
+
+
+            if (tabla.Rows.Count > 0)
+                return true;
+            else
+                return false;
         }
     }
 }

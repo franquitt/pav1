@@ -30,12 +30,16 @@ namespace Ferreteria
                 MessageBox.Show("Se debe ingresar una contraseña.");
                 return;
             }
-
-            frmInicio principal = new frmInicio();
-            if (principal.validarUsuario(txtUser.Text, txtPass.Text))
+            double Num;
+            if (!double.TryParse(txtUser.Text, out Num))
             {
-                MessageBox.Show("Usted a ingresado al sistema.");
-                //this.Close();
+                MessageBox.Show("Se debe ingresar un usuario valido.");
+                return;
+            }
+            
+            if (Helper.validarUsuario(txtUser.Text, txtPass.Text))
+            {
+                this.Hide();                
             }
             else
             {
