@@ -8,3 +8,14 @@ E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferrete
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.CoreCompileInputs.cache
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.exe
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.pdb
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.exe.config
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.exe
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.pdb
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csprojAssemblyReference.cache
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmInicio.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmLogin.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Properties.Resources.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.GenerateResource.cache
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.CoreCompileInputs.cache
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.exe
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.pdb

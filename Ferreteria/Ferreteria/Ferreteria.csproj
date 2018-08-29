@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>

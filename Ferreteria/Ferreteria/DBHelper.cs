@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 public class BDHelper
 {
     private static BDHelper instance; //Unica instancia de la clase
-    private string string_conexion = "Data Source=LAPTOP-US2QF1H8\\SQLEXPRESS;Initial Catalog=BugsClase04;User ID=sa;Password=sole$1404";
+    private string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
     public static BDHelper getDBHelper()
     {

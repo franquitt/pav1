@@ -32,10 +32,10 @@ namespace Ferreteria
             }
 
             frmInicio principal = new frmInicio();
-            if (principal.validar(txtUser.Text, txtPass.Text))
+            if (principal.validarUsuario(txtUser.Text, txtPass.Text))
             {
                 MessageBox.Show("Usted a ingresado al sistema.");
-                this.Close();
+                //this.Close();
             }
             else
             {

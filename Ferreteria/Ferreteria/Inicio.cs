@@ -17,11 +17,12 @@ namespace Ferreteria
             InitializeComponent();
         }
 
-        public bool validar(string user, string pass)
+        public bool validarUsuario(string legajo, string pass)
         {
+            pass = Helper.sha256(pass);
             BDHelper helper = new BDHelper();
-            DataTable tabla = helper.ConsultaSQL("SELECT * FROM USERS WHERE usuario =  \'"
-                            + user + "\' AND password = \'"
+            DataTable tabla = helper.ConsultaSQL("SELECT * FROM USUARIOS WHERE legajo =  \'"
+                            + legajo + "\' AND password = \'"
                             + pass + "\'");
 
 
