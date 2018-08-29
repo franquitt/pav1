@@ -19,7 +19,30 @@ namespace Ferreteria
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (txtUser.Text == "")
+            {
+                MessageBox.Show("Se debe ingresar un usuario.");
+                return;
+            }
 
+            if ((txtPass.Text == ""))
+            {
+                MessageBox.Show("Se debe ingresar una contraseña.");
+                return;
+            }
+
+            frmInicio principal = new frmInicio();
+            if (principal.validar(txtUser.Text, txtPass.Text))
+            {
+                MessageBox.Show("Usted a ingresado al sistema.");
+                this.Close();
+            }
+            else
+            {
+                txtUser.Text = "";
+                txtPass.Text = "";
+                MessageBox.Show("Debe ingresar usuario y/o contraseña válidos");
+            }
         }
     }
 }
