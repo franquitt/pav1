@@ -36,7 +36,7 @@ namespace Ferreteria
 
         private void vendedoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Empleado().Show();
+            new frmEmpleado().Show();
         }
     }
 }

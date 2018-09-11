@@ -1,6 +1,6 @@
 ﻿namespace Ferreteria
 {
-    partial class t
+    partial class frmNuevoUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,8 @@
             this.txtFechaNac = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
+            this.cmbTipoUser = new System.Windows.Forms.ComboBox();
+            this.lblTipoUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtLegajo
@@ -81,7 +83,6 @@
             this.lblNuevoUsuarioLegajo.Size = new System.Drawing.Size(39, 13);
             this.lblNuevoUsuarioLegajo.TabIndex = 6;
             this.lblNuevoUsuarioLegajo.Text = "Legajo";
-            this.lblNuevoUsuarioLegajo.Click += new System.EventHandler(this.lblNuevoUsuarioLegajo_Click);
             // 
             // lblNuevoUsuarioPass
             // 
@@ -146,18 +147,37 @@
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(16, 184);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(16, 231);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(229, 40);
             this.btnAgregarUsuario.TabIndex = 14;
             this.btnAgregarUsuario.Text = "Crear";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             // 
-            // t
+            // cmbTipoUser
+            // 
+            this.cmbTipoUser.FormattingEnabled = true;
+            this.cmbTipoUser.Location = new System.Drawing.Point(125, 173);
+            this.cmbTipoUser.Name = "cmbTipoUser";
+            this.cmbTipoUser.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoUser.TabIndex = 15;
+            // 
+            // lblTipoUser
+            // 
+            this.lblTipoUser.AutoSize = true;
+            this.lblTipoUser.Location = new System.Drawing.Point(16, 180);
+            this.lblTipoUser.Name = "lblTipoUser";
+            this.lblTipoUser.Size = new System.Drawing.Size(82, 13);
+            this.lblTipoUser.TabIndex = 16;
+            this.lblTipoUser.Text = "Tipo de Usuario";
+            // 
+            // NuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(257, 236);
+            this.ClientSize = new System.Drawing.Size(257, 293);
+            this.Controls.Add(this.lblTipoUser);
+            this.Controls.Add(this.cmbTipoUser);
             this.Controls.Add(this.btnAgregarUsuario);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtFechaNac);
@@ -171,8 +191,9 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtLegajo);
-            this.Name = "t";
+            this.Name = "NuevoUsuario";
             this.Text = "Nuevo Usuario";
+            this.Load += new System.EventHandler(this.NuevoUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +214,7 @@
         private System.Windows.Forms.MaskedTextBox txtFechaNac;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnAgregarUsuario;
+        private System.Windows.Forms.ComboBox cmbTipoUser;
+        private System.Windows.Forms.Label lblTipoUser;
     }
 }

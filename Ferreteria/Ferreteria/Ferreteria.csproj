@@ -45,45 +45,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NuevoUsuario.cs">
+    <Compile Include="Forms\frmNuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoUsuario.Designer.cs">
-      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    <Compile Include="Forms\frmNuevoUsuario.Designer.cs">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empleado.cs">
+    <Compile Include="Forms\frmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empleado.Designer.cs">
-      <DependentUpon>Empleado.cs</DependentUpon>
+    <Compile Include="Forms\frmEmpleado.Designer.cs">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
-    <Compile Include="DBHelper.cs" />
-    <Compile Include="Inicio.cs">
+    <Compile Include="BDHelper.cs" />
+    <Compile Include="Forms\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <Compile Include="Forms\frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\TipoEmpleado.cs" />
+    <Compile Include="Models\Empleado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="NuevoUsuario.resx">
-      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmNuevoUsuario.resx">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empleado.resx">
-      <DependentUpon>Empleado.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmEmpleado.resx">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

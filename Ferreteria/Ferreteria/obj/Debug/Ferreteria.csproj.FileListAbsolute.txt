@@ -22,5 +22,5 @@ E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferrete
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Usuarios.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmInicio.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmLogin.resources
-E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.t.resources
-E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Empleado.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmNuevoUsuario.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmEmpleado.resources

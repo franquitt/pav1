@@ -1,6 +1,6 @@
 ﻿namespace Ferreteria
 {
-    partial class Empleado
+    partial class frmEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@
             this.btnAddUser.TabIndex = 1;
             this.btnAddUser.Text = "Agregar";
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // gridVendedores
             // 

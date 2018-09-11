@@ -23,7 +23,7 @@ namespace Ferreteria
         public static bool validarUsuario(string legajo, string pass)
         {
             pass = Helper.sha256(pass);
-            DataTable tabla = BDHelper.ConsultaSQL("SELECT * FROM USUARIOS WHERE legajo =  \'"
+            DataTable tabla = BDHelper.ConsultaSQL("SELECT * FROM USUARIO WHERE legajo =  \'"
                             + legajo + "\' AND password = \'"
                             + pass + "\'");
 
