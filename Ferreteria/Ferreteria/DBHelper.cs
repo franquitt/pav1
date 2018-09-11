@@ -1,31 +1,38 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-public class BDHelper
+public static class BDHelper
 {
-    private static BDHelper instance; //Unica instancia de la clase
-    private string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+    private static string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+    private static SqlConnection conexion;
+    private static SqlCommand cmd;
 
-    public static BDHelper getDBHelper()
+    private static void Conectar()
     {
-        if (instance != null)
-            instance = new BDHelper();
-        return instance;
+        conexion = new SqlConnection();
+        conexion.ConnectionString = string_conexion;
+        conexion.Open();
+        cmd = new SqlCommand();
+        cmd.Connection = conexion;
+        cmd.CommandType = CommandType.Text;
+    }
+    private static void Desconectar()
+    {
+        if ((conexion.State == ConnectionState.Open))
+        {
+            conexion.Close();
+        }
+
+        // Dispose() libera los recursos asociados a la conexón
+        conexion.Dispose();
     }
 
-    public DataTable ConsultaSQL(string strSql)
+    public static DataTable ConsultaSQL(string strSql)
     {
-        //  Se utiliza para sentencias SQL del tipo Select
-        //  La función recibe por valor una sentencia sql como string, devuelve un objeto de tipo DataTable
-        SqlConnection conexion = new SqlConnection();
-        SqlCommand cmd = new SqlCommand();
+        Conectar();
         DataTable tabla = new DataTable();
         try
         {
-            conexion.ConnectionString = string_conexion;
-            conexion.Open();
-            cmd.Connection = conexion;
-            cmd.CommandType = CommandType.Text;
             cmd.CommandText = strSql;
             //  El datatable se carga con el resultado de ejecutar la sentencia en el motor de base de datos
 
@@ -39,14 +46,28 @@ public class BDHelper
         }
         finally
         {
-            if ((conexion.State == ConnectionState.Open))
-            {
-                conexion.Close();
-            }
-
-            // Dispose() libera los recursos asociados a la conexón
-            conexion.Dispose();
+            Desconectar();
         }
+    }
+    public static void ExcecuteSQL(string strSql)
+    {
+        Conectar();
+        DataTable tabla = new DataTable();
+        try
+        {
+            cmd.CommandText = strSql;
+            //  El datatable se carga con el resultado de ejecutar la sentencia en el motor de base de datos
 
+            cmd.ExecuteNonQuery();
+
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            Desconectar();
+        }
     }
 }

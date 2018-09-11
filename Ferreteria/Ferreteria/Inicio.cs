@@ -24,6 +24,19 @@ namespace Ferreteria
             login.ShowDialog();
         }
 
-        
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tipoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vendedoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Empleado().Show();
+        }
     }
 }

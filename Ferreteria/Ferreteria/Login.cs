@@ -48,5 +48,15 @@ namespace Ferreteria
                 MessageBox.Show("Debe ingresar usuario y/o contraseña válidos");
             }
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
