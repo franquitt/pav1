@@ -8,7 +8,7 @@ namespace Ferreteria.Models
 {
     class TipoEmpleado
     {
-        int codigoTipo = 0;
+        public int codigoTipo = 0;
         string nombre="";
         public TipoEmpleado(int id, string nombre)
         {

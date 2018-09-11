@@ -64,6 +64,7 @@
             this.btnEditUser.TabIndex = 3;
             this.btnEditUser.Text = "Editar";
             this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // btnDelUser
             // 
@@ -75,7 +76,7 @@
             this.btnDelUser.UseVisualStyleBackColor = true;
             this.btnDelUser.Click += new System.EventHandler(this.btnDelUser_Click);
             // 
-            // Empleado
+            // frmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +85,7 @@
             this.Controls.Add(this.btnEditUser);
             this.Controls.Add(this.gridVendedores);
             this.Controls.Add(this.btnAddUser);
-            this.Name = "Empleado";
+            this.Name = "frmEmpleado";
             this.Text = "Empleados";
             this.Load += new System.EventHandler(this.Vendedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridVendedores)).EndInit();

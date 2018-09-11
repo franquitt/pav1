@@ -21,7 +21,7 @@ namespace Ferreteria
 
         }
 
-        private void Vendedores_Load(object sender, EventArgs e)
+        public void Vendedores_Load(object sender, EventArgs e)
         {
             gridVendedores.DataSource = Empleado.GetAllEmployes();
         }
@@ -48,7 +48,24 @@ namespace Ferreteria
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            new frmNuevoUsuario().Show();
+            frmNuevoUsuario form = new frmNuevoUsuario(true);
+            form.setForm(this);
+            form.Show();
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmNuevoUsuario form = new frmNuevoUsuario(false);
+                form.setForm(this);
+                form.legajo = (int)gridVendedores.SelectedRows[0].Cells[0].Value;
+                form.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Se produjo un error, asegurese de seleccionar toda la fila.", "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }

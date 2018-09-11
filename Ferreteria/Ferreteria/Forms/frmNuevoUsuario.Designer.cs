@@ -132,7 +132,7 @@
             // txtFechaNac
             // 
             this.txtFechaNac.Location = new System.Drawing.Point(125, 120);
-            this.txtFechaNac.Mask = "00/00/0000";
+            this.txtFechaNac.Mask = "0000-00-00";
             this.txtFechaNac.Name = "txtFechaNac";
             this.txtFechaNac.Size = new System.Drawing.Size(120, 20);
             this.txtFechaNac.TabIndex = 12;
@@ -151,8 +151,9 @@
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(229, 40);
             this.btnAgregarUsuario.TabIndex = 14;
-            this.btnAgregarUsuario.Text = "Crear";
+            this.btnAgregarUsuario.Text = "Guardar";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
             // cmbTipoUser
             // 
@@ -171,7 +172,7 @@
             this.lblTipoUser.TabIndex = 16;
             this.lblTipoUser.Text = "Tipo de Usuario";
             // 
-            // NuevoUsuario
+            // frmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,7 +192,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtLegajo);
-            this.Name = "NuevoUsuario";
+            this.Name = "frmNuevoUsuario";
             this.Text = "Nuevo Usuario";
             this.Load += new System.EventHandler(this.NuevoUsuario_Load);
             this.ResumeLayout(false);
