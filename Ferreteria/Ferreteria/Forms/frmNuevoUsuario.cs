@@ -37,7 +37,7 @@ namespace Ferreteria
                 txtLegajo.Text = empleado.legajo.ToString();
                 txtNombre.Text = empleado.nombre;
                 txtApellido.Text = empleado.apellido;
-                txtFechaNac.Text = "";
+                txtFechaNac.Text = empleado.fechaNacimiento.ToString("yyyy-MM-dd");
                 txtTelefono.Text = empleado.telefono;
             }
             

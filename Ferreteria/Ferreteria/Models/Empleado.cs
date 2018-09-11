@@ -42,7 +42,8 @@ namespace Ferreteria.Models
             this.fechaNacimiento = fechaNacimiento;
             this.nombre = nombre;
             this.apellido = apellido;
-            this.password = Helper.sha256(password);
+            if(!password.Equals(""))
+                this.password = Helper.sha256(password);
             this.tipo = tipo;
             this.ultimoLogin = ultimoLogin;
             this.activo = activo;
@@ -60,7 +61,11 @@ namespace Ferreteria.Models
                 if (legajo == 0)
                     BDHelper.ExcecuteSQL("INSERT INTO USUARIO(fechaIngreso, telefono, fechaNacimiento, nombre, apellido, password, tipo, ultimoLogin, activo) VALUES('" + fechaIngreso.ToString("yyyy-MM-dd") + "', '" + telefono + "', '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', '" + nombre + "', '" + apellido + "', '" + password + "', " + tipo.codigoTipo + ", '" + ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', " + getActivo() + ")");
                 else
-                    BDHelper.ExcecuteSQL("UPDATE USUARIO SET fechaIngreso = '" + fechaIngreso.ToString("yyyy-MM-dd") + "', telefono = '" + telefono + "', fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', nombre = '" + nombre + "', apellido = '" + apellido + "', password = '" + password + "', tipo = " + tipo.codigoTipo + ", ultimoLogin = '" + ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', activo = " + getActivo() + " WHERE legajo = " + legajo);
+                    if(!password.Equals(""))
+                        BDHelper.ExcecuteSQL("UPDATE USUARIO SET fechaIngreso = '" + fechaIngreso.ToString("yyyy-MM-dd") + "', telefono = '" + telefono + "', fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', nombre = '" + nombre + "', apellido = '" + apellido + "', password = '" + password + "', tipo = " + tipo.codigoTipo + ", ultimoLogin = '" + ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', activo = " + getActivo() + " WHERE legajo = " + legajo);
+                    else
+                        BDHelper.ExcecuteSQL("UPDATE USUARIO SET fechaIngreso = '" + fechaIngreso.ToString("yyyy-MM-dd") + "', telefono = '" + telefono + "', fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', nombre = '" + nombre + "', apellido = '" + apellido + "', tipo = " + tipo.codigoTipo + ", ultimoLogin = '" + ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', activo = " + getActivo() + " WHERE legajo = " + legajo);
+
             }
             catch
             {
