@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmTipoDeFacturas.cs">
+    <Compile Include="Forms\frmTiposDeFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmTipoDeFacturas.Designer.cs">
-      <DependentUpon>frmTipoDeFacturas.cs</DependentUpon>
+    <Compile Include="Forms\frmTiposDeFacturas.Designer.cs">
+      <DependentUpon>frmTiposDeFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmNuevoPerfil.cs">
       <SubType>Form</SubType>
@@ -93,8 +93,8 @@
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frmTipoDeFacturas.resx">
-      <DependentUpon>frmTipoDeFacturas.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmTiposDeFacturas.resx">
+      <DependentUpon>frmTiposDeFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNuevoPerfil.resx">
       <DependentUpon>frmNuevoPerfil.cs</DependentUpon>
