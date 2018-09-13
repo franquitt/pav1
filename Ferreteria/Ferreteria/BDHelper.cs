@@ -52,7 +52,6 @@ public static class BDHelper
     public static void ExcecuteSQL(string strSql)
     {
         Conectar();
-        DataTable tabla = new DataTable();
         try
         {
             cmd.CommandText = strSql;

@@ -80,21 +80,21 @@
             // tipoDeUsuariosToolStripMenuItem
             // 
             this.tipoDeUsuariosToolStripMenuItem.Name = "tipoDeUsuariosToolStripMenuItem";
-            this.tipoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.tipoDeUsuariosToolStripMenuItem.Text = "Perfiles";
             this.tipoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuariosToolStripMenuItem_Click);
             // 
             // vendedoToolStripMenuItem
             // 
             this.vendedoToolStripMenuItem.Name = "vendedoToolStripMenuItem";
-            this.vendedoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendedoToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.vendedoToolStripMenuItem.Text = "Vendedores";
             this.vendedoToolStripMenuItem.Click += new System.EventHandler(this.vendedoToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // productosToolStripMenuItem
@@ -144,13 +144,13 @@
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.ventasToolStripMenuItem1.Text = "Ventas";
             // 
             // tipoDeFacturaToolStripMenuItem
             // 
             this.tipoDeFacturaToolStripMenuItem.Name = "tipoDeFacturaToolStripMenuItem";
-            this.tipoDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.tipoDeFacturaToolStripMenuItem.Text = "Tipo de Factura";
             // 
             // frmInicio

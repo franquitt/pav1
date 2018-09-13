@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Ferreteria.Forms;
 namespace Ferreteria
 {
     public partial class frmInicio : Form
@@ -31,7 +31,7 @@ namespace Ferreteria
 
         private void tipoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new frmPerfiles().Show();
         }
 
         private void vendedoToolStripMenuItem_Click(object sender, EventArgs e)
