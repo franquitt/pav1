@@ -25,3 +25,4 @@ E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferrete
 E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmNuevoUsuario.resources
 E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmEmpleado.resources
 E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmPerfiles.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmNuevoPerfil.resources

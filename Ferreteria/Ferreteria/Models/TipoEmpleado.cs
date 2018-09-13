@@ -9,7 +9,8 @@ namespace Ferreteria.Models
     class TipoEmpleado
     {
         public int codigoTipo = 0;
-        string nombre="";
+        public string nombre="";
+        public bool activo = true;
         public TipoEmpleado(int id, string nombre)
         {
             codigoTipo = id;
@@ -23,22 +24,44 @@ namespace Ferreteria.Models
 
         private void readAttrs()
         {
-            DataTable values = BDHelper.ConsultaSQL("SELECT nombre FROM TIPO_USUARIO WHERE codigoTipo = " + codigoTipo);
+            DataTable values = BDHelper.ConsultaSQL("SELECT nombre, activo FROM TIPO_USUARIO WHERE codigoTipo = " + codigoTipo);
             nombre = values.Rows[0]["nombre"].ToString();
+            activo = (bool)values.Rows[0]["activo"];
         }
-            public void save()
+
+        public bool save()
         {
-            if (codigoTipo != 0)//es viejo
+            try
             {
-                BDHelper.ExcecuteSQL("UPDATE TIPO_USUARIO SET nombre = '"+ nombre + "' WHERE codigoTipo = "+codigoTipo);
+                if (codigoTipo != 0)//es viejo
+                {
+                    BDHelper.ExcecuteSQL("UPDATE TIPO_USUARIO SET nombre = '" + nombre + "', activo = "+ getActivo() + " WHERE codigoTipo = " + codigoTipo);
+                }
+                else
+                {
+                    BDHelper.ExcecuteSQL("INSERT INTO TIPO_USUARIO( nombre, activo) VALUES('" + nombre + "', "+ getActivo() + ")");
+                }
             }
-            else{
-                BDHelper.ExcecuteSQL("INSERT INTO TIPO_USUARIO( nombre) VALUES('" + nombre + "')");
+            catch
+            {
+                return false;
             }
+            return true;
+        }
+        private string getActivo()
+        {
+            if (activo)
+                return "1";
+            return "0";
+        }
+        public void available(bool state)
+        {
+            activo = state;
+            BDHelper.ExcecuteSQL("UPDATE TIPO_USUARIO SET activo = " + getActivo() + " WHERE codigoTipo = " + codigoTipo);
         }
         public static DataTable GetAllUsersTypes()
         {
-            return BDHelper.ConsultaSQL("SELECT codigoTipo, nombre FROM TIPO_USUARIO ORDER BY nombre ASC");
+            return BDHelper.ConsultaSQL("SELECT codigoTipo, nombre FROM TIPO_USUARIO WHERE activo = 1 ORDER BY nombre ASC");
         }
     }
 }

@@ -63,6 +63,7 @@
             this.btnEditProfile.TabIndex = 2;
             this.btnEditProfile.Text = "Editar";
             this.btnEditProfile.UseVisualStyleBackColor = true;
+            this.btnEditProfile.Click += new System.EventHandler(this.btnEditProfile_Click);
             // 
             // btnRemoveProfile
             // 
@@ -72,6 +73,7 @@
             this.btnRemoveProfile.TabIndex = 3;
             this.btnRemoveProfile.Text = "Dar de baja";
             this.btnRemoveProfile.UseVisualStyleBackColor = true;
+            this.btnRemoveProfile.Click += new System.EventHandler(this.btnRemoveProfile_Click);
             // 
             // frmPerfiles
             // 

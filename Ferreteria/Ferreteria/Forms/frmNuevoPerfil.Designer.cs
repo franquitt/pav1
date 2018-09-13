@@ -43,6 +43,7 @@
             this.btnSaveProfile.TabIndex = 0;
             this.btnSaveProfile.Text = "Guardar";
             this.btnSaveProfile.UseVisualStyleBackColor = true;
+            this.btnSaveProfile.Click += new System.EventHandler(this.btnSaveProfile_Click);
             // 
             // label1
             // 

@@ -33,5 +33,25 @@ namespace Ferreteria
             else
                 return false;
         }
+        public static int getSelectedId(System.Windows.Forms.DataGridView grid)
+        {
+            int id = 0;
+            try
+            {
+                id = (int)grid.SelectedRows[0].Cells[0].Value;
+            }
+            catch
+            {
+                try
+                {
+                    id = (int)grid.Rows[(int)grid.SelectedCells[0].RowIndex].Cells[0].Value;
+                }
+                catch
+                {
+
+                }
+            }
+            return id;
+        }
     }
 }

@@ -28,17 +28,16 @@ namespace Ferreteria
 
         private void btnDelUser_Click(object sender, EventArgs e)
         {
+            int id = Helper.getSelectedId(gridVendedores);
             try
             {
-                int leg = (int)gridVendedores.SelectedRows[0].Cells[0].Value;
-                string nombre = gridVendedores.SelectedRows[0].Cells[1].Value.ToString();
-                string apellido = gridVendedores.SelectedRows[0].Cells[2].Value.ToString();
-                var confirmResult = MessageBox.Show("Esta seguro que desea dar de baja al usuario " + apellido + " " + nombre + " ?",
+                Empleado empleado = new Empleado(id);
+                var confirmResult = MessageBox.Show("Esta seguro que desea dar de baja al usuario " + empleado.apellido + " " + empleado.nombre + " ?",
                                          "Dar de baja!",
                                          MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    new Empleado(leg).available(false);
+                    empleado.available(false);
                     Vendedores_Load(null, null);
                 }
             }catch(Exception){
@@ -55,16 +54,17 @@ namespace Ferreteria
 
         private void btnEditUser_Click(object sender, EventArgs e)
         {
+            int id = Helper.getSelectedId(gridVendedores);
             try
             {
                 frmNuevoUsuario form = new frmNuevoUsuario(false);
                 form.setForm(this);
-                form.legajo = (int)gridVendedores.SelectedRows[0].Cells[0].Value;
+                form.legajo = id;
                 form.Show();
             }
-            catch (Exception)
+            catch
             {
-                MessageBox.Show("Se produjo un error, asegurese de seleccionar toda la fila.", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error", "Por favor intente seleccionando nuevamente el perfil a modificar", MessageBoxButtons.OK);
             }
         }
     }

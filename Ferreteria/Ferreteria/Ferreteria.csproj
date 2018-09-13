@@ -87,6 +87,9 @@
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmNuevoPerfil.resx">
+      <DependentUpon>frmNuevoPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNuevoUsuario.resx">
       <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
