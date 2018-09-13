@@ -27,7 +27,7 @@ namespace Ferreteria
         }
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
-            cmbTipoUser.DataSource = TipoEmpleado.GetAllUsersTypes();
+            cmbTipoUser.DataSource = TipoEmpleado.GetAllUserTypes();
             cmbTipoUser.DisplayMember = "nombre";
             cmbTipoUser.ValueMember = "codigoTipo";
             txtLegajo.ReadOnly = true;

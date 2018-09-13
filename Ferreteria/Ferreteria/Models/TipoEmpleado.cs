@@ -59,7 +59,7 @@ namespace Ferreteria.Models
             activo = state;
             BDHelper.ExcecuteSQL("UPDATE TIPO_USUARIO SET activo = " + getActivo() + " WHERE codigoTipo = " + codigoTipo);
         }
-        public static DataTable GetAllUsersTypes()
+        public static DataTable GetAllUserTypes()
         {
             return BDHelper.ConsultaSQL("SELECT codigoTipo, nombre FROM TIPO_USUARIO WHERE activo = 1 ORDER BY nombre ASC");
         }

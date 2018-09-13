@@ -19,7 +19,7 @@ namespace Ferreteria.Forms
 
         public void frmPerfiles_Load(object sender, EventArgs e)
         {
-            gridProfiles.DataSource = TipoEmpleado.GetAllUsersTypes();
+            gridProfiles.DataSource = TipoEmpleado.GetAllUserTypes();
         }
 
         private void btnAddProfile_Click(object sender, EventArgs e)
