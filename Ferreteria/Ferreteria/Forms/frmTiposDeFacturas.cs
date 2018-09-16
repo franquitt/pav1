@@ -27,13 +27,21 @@ namespace Ferreteria.Forms
         //Abre el formulario para agregar un nuevo tipo de factura
         private void btnAddTipoFactura_Click(object sender, EventArgs e)
         {
-
+            new frmNuevoTipoFactura(this, 0).Show();
         }
 
         //Abre el formulario para editar el tipo de factura seleccionado
         private void btnEditTipoFactura_Click(object sender, EventArgs e)
         {
-
+            int id = Helper.getSelectedId(gridTipoFacturas);
+            try
+            {
+                new frmNuevoTipoFactura(this, id).Show();
+            }
+            catch
+            {
+                MessageBox.Show("Por favor intente seleccionando nuevamente el tipo de factura a modificar", "Error", MessageBoxButtons.OK);
+            }
         }
 
         //Permite dar de baja el tipo de factura elegido

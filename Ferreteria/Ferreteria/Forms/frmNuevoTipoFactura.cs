@@ -14,7 +14,6 @@ namespace Ferreteria.Forms
     public partial class frmNuevoTipoFactura : Form
     {
         int idTipoFactura = 0;
-        TipoFactura tipoFactura = null;
         frmTipoFacturas form = null;
 
         //Al crear el formulario lo crea con el id de la factura seleccionada (si se edita) y con id 0 si es nuevo

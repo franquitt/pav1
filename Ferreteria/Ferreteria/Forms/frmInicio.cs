@@ -38,5 +38,10 @@ namespace Ferreteria
         {
             new frmEmpleado().Show();
         }
+
+        private void tipoDeFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmTipoFacturas().Show();
+        }
     }
 }
