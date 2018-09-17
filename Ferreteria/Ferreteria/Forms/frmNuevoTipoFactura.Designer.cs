@@ -39,7 +39,7 @@
             // 
             this.txtNameTipoFactura.Location = new System.Drawing.Point(73, 42);
             this.txtNameTipoFactura.Name = "txtNameTipoFactura";
-            this.txtNameTipoFactura.Size = new System.Drawing.Size(145, 20);
+            this.txtNameTipoFactura.Size = new System.Drawing.Size(206, 20);
             this.txtNameTipoFactura.TabIndex = 9;
             // 
             // txtIdTipoFactura
@@ -47,7 +47,7 @@
             this.txtIdTipoFactura.Enabled = false;
             this.txtIdTipoFactura.Location = new System.Drawing.Point(73, 6);
             this.txtIdTipoFactura.Name = "txtIdTipoFactura";
-            this.txtIdTipoFactura.Size = new System.Drawing.Size(145, 20);
+            this.txtIdTipoFactura.Size = new System.Drawing.Size(206, 20);
             this.txtIdTipoFactura.TabIndex = 8;
             // 
             // lblNombreTipoFactura
@@ -72,7 +72,7 @@
             // 
             this.btnSaveTipoFactura.Location = new System.Drawing.Point(12, 68);
             this.btnSaveTipoFactura.Name = "btnSaveTipoFactura";
-            this.btnSaveTipoFactura.Size = new System.Drawing.Size(206, 33);
+            this.btnSaveTipoFactura.Size = new System.Drawing.Size(267, 33);
             this.btnSaveTipoFactura.TabIndex = 5;
             this.btnSaveTipoFactura.Text = "Guardar";
             this.btnSaveTipoFactura.UseVisualStyleBackColor = true;
@@ -82,12 +82,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 109);
+            this.ClientSize = new System.Drawing.Size(291, 109);
             this.Controls.Add(this.txtNameTipoFactura);
             this.Controls.Add(this.txtIdTipoFactura);
             this.Controls.Add(this.lblNombreTipoFactura);
             this.Controls.Add(this.lblIdTipoFactura);
             this.Controls.Add(this.btnSaveTipoFactura);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmNuevoTipoFactura";
             this.Text = "Tipo de factura";
             this.Load += new System.EventHandler(this.frmNuevoTipoFactura_Load);

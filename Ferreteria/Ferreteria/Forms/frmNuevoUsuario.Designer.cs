@@ -50,7 +50,7 @@
             this.txtLegajo.Location = new System.Drawing.Point(125, 15);
             this.txtLegajo.Mask = "99999";
             this.txtLegajo.Name = "txtLegajo";
-            this.txtLegajo.Size = new System.Drawing.Size(120, 20);
+            this.txtLegajo.Size = new System.Drawing.Size(153, 20);
             this.txtLegajo.TabIndex = 0;
             this.txtLegajo.ValidatingType = typeof(int);
             // 
@@ -59,21 +59,21 @@
             this.txtPass.Location = new System.Drawing.Point(125, 42);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(120, 20);
+            this.txtPass.Size = new System.Drawing.Size(153, 20);
             this.txtPass.TabIndex = 1;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(125, 68);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(120, 20);
+            this.txtNombre.Size = new System.Drawing.Size(153, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(125, 94);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(120, 20);
+            this.txtApellido.Size = new System.Drawing.Size(153, 20);
             this.txtApellido.TabIndex = 5;
             // 
             // lblNuevoUsuarioLegajo
@@ -135,7 +135,7 @@
             this.txtFechaNac.Location = new System.Drawing.Point(125, 120);
             this.txtFechaNac.Mask = "0000-00-00";
             this.txtFechaNac.Name = "txtFechaNac";
-            this.txtFechaNac.Size = new System.Drawing.Size(120, 20);
+            this.txtFechaNac.Size = new System.Drawing.Size(153, 20);
             this.txtFechaNac.TabIndex = 12;
             this.txtFechaNac.ValidatingType = typeof(System.DateTime);
             // 
@@ -143,14 +143,14 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(125, 146);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(120, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(153, 20);
             this.txtTelefono.TabIndex = 13;
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(16, 231);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(16, 209);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(229, 40);
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(262, 38);
             this.btnAgregarUsuario.TabIndex = 14;
             this.btnAgregarUsuario.Text = "Guardar";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@
             this.cmbTipoUser.FormattingEnabled = true;
             this.cmbTipoUser.Location = new System.Drawing.Point(125, 173);
             this.cmbTipoUser.Name = "cmbTipoUser";
-            this.cmbTipoUser.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoUser.Size = new System.Drawing.Size(153, 21);
             this.cmbTipoUser.TabIndex = 15;
             // 
             // lblTipoUser
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(257, 293);
+            this.ClientSize = new System.Drawing.Size(290, 259);
             this.Controls.Add(this.lblTipoUser);
             this.Controls.Add(this.cmbTipoUser);
             this.Controls.Add(this.btnAgregarUsuario);
@@ -193,6 +193,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtLegajo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmNuevoUsuario";
             this.Text = "Nuevo Usuario";
             this.Load += new System.EventHandler(this.NuevoUsuario_Load);

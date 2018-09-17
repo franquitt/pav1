@@ -37,9 +37,9 @@
             // 
             // btnSaveProfile
             // 
-            this.btnSaveProfile.Location = new System.Drawing.Point(74, 72);
+            this.btnSaveProfile.Location = new System.Drawing.Point(16, 72);
             this.btnSaveProfile.Name = "btnSaveProfile";
-            this.btnSaveProfile.Size = new System.Drawing.Size(100, 43);
+            this.btnSaveProfile.Size = new System.Drawing.Size(213, 40);
             this.btnSaveProfile.TabIndex = 0;
             this.btnSaveProfile.Text = "Guardar";
             this.btnSaveProfile.UseVisualStyleBackColor = true;
@@ -68,26 +68,27 @@
             this.txtIdProfile.Enabled = false;
             this.txtIdProfile.Location = new System.Drawing.Point(74, 10);
             this.txtIdProfile.Name = "txtIdProfile";
-            this.txtIdProfile.Size = new System.Drawing.Size(100, 20);
+            this.txtIdProfile.Size = new System.Drawing.Size(155, 20);
             this.txtIdProfile.TabIndex = 3;
             // 
             // txtNameProfile
             // 
             this.txtNameProfile.Location = new System.Drawing.Point(74, 46);
             this.txtNameProfile.Name = "txtNameProfile";
-            this.txtNameProfile.Size = new System.Drawing.Size(100, 20);
+            this.txtNameProfile.Size = new System.Drawing.Size(155, 20);
             this.txtNameProfile.TabIndex = 4;
             // 
             // frmNuevoPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(185, 124);
+            this.ClientSize = new System.Drawing.Size(241, 124);
             this.Controls.Add(this.txtNameProfile);
             this.Controls.Add(this.txtIdProfile);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveProfile);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmNuevoPerfil";
             this.Text = "Editar Perfil";
             this.Load += new System.EventHandler(this.frmNuevoPerfil_Load);

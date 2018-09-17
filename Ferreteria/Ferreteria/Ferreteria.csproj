@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmClasificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmClasificacion.Designer.cs">
+      <DependentUpon>frmClasificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmClasificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmClasificaciones.Designer.cs">
+      <DependentUpon>frmClasificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmNuevoTipoFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,12 @@
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmClasificacion.resx">
+      <DependentUpon>frmClasificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmClasificaciones.resx">
+      <DependentUpon>frmClasificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNuevoTipoFactura.resx">
       <DependentUpon>frmNuevoTipoFactura.cs</DependentUpon>
     </EmbeddedResource>
