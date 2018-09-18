@@ -3,11 +3,13 @@ using System.Data;
 using System.Data.SqlClient;
 public static class BDHelper
 {
+    //Conexion Franco
     //private static string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
     private static string string_conexion = "Data Source=AGUSVENTURI;Initial Catalog=ProyPav;Integrated Security=True";
     private static SqlConnection conexion;
     private static SqlCommand cmd;
 
+    //Se conecta a la DB especificada en el string de conexion y crea el comando SQL en modo texto
     private static void Conectar()
     {
         conexion = new SqlConnection();
@@ -17,6 +19,8 @@ public static class BDHelper
         cmd.Connection = conexion;
         cmd.CommandType = CommandType.Text;
     }
+
+    //Se desconecta de la DB una vez que se termina de usar
     private static void Desconectar()
     {
         if ((conexion.State == ConnectionState.Open))
@@ -28,10 +32,12 @@ public static class BDHelper
         conexion.Dispose();
     }
 
+    //Ejecuta una consulta SQL (SELECT)
     public static DataTable ConsultaSQL(string strSql)
     {
         Conectar();
         DataTable tabla = new DataTable();
+        // Se usa un try-catch en caso que la consulta no se pueda ejecutar. Al terminar se desconecta
         try
         {
             cmd.CommandText = strSql;
@@ -50,9 +56,12 @@ public static class BDHelper
             Desconectar();
         }
     }
+
+    //Ejecuta una query (UPDATE, INSERT)
     public static void ExcecuteSQL(string strSql)
     {
         Conectar();
+        // Se usa un try-catch en caso que la query no se pueda ejecutar. Al terminar se desconecta
         try
         {
             cmd.CommandText = strSql;
