@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.txtNombreClasificacion = new System.Windows.Forms.TextBox();
-            this.txtIdClasificacion = new System.Windows.Forms.TextBox();
             this.lblNombreClasificacion = new System.Windows.Forms.Label();
-            this.lblIdClasificacion = new System.Windows.Forms.Label();
             this.btnSaveClasificacion = new System.Windows.Forms.Button();
             this.txtDescripcionClasificacion = new System.Windows.Forms.TextBox();
             this.lblDescripcionClasificacion = new System.Windows.Forms.Label();
@@ -40,36 +38,19 @@
             // 
             // txtNombreClasificacion
             // 
-            this.txtNombreClasificacion.Location = new System.Drawing.Point(59, 48);
+            this.txtNombreClasificacion.Location = new System.Drawing.Point(59, 6);
             this.txtNombreClasificacion.Name = "txtNombreClasificacion";
             this.txtNombreClasificacion.Size = new System.Drawing.Size(213, 20);
             this.txtNombreClasificacion.TabIndex = 9;
             // 
-            // txtIdClasificacion
-            // 
-            this.txtIdClasificacion.Enabled = false;
-            this.txtIdClasificacion.Location = new System.Drawing.Point(59, 12);
-            this.txtIdClasificacion.Name = "txtIdClasificacion";
-            this.txtIdClasificacion.Size = new System.Drawing.Size(213, 20);
-            this.txtIdClasificacion.TabIndex = 8;
-            // 
             // lblNombreClasificacion
             // 
             this.lblNombreClasificacion.AutoSize = true;
-            this.lblNombreClasificacion.Location = new System.Drawing.Point(9, 51);
+            this.lblNombreClasificacion.Location = new System.Drawing.Point(9, 9);
             this.lblNombreClasificacion.Name = "lblNombreClasificacion";
             this.lblNombreClasificacion.Size = new System.Drawing.Size(44, 13);
             this.lblNombreClasificacion.TabIndex = 7;
             this.lblNombreClasificacion.Text = "Nombre";
-            // 
-            // lblIdClasificacion
-            // 
-            this.lblIdClasificacion.AutoSize = true;
-            this.lblIdClasificacion.Location = new System.Drawing.Point(9, 15);
-            this.lblIdClasificacion.Name = "lblIdClasificacion";
-            this.lblIdClasificacion.Size = new System.Drawing.Size(16, 13);
-            this.lblIdClasificacion.TabIndex = 6;
-            this.lblIdClasificacion.Text = "Id";
             // 
             // btnSaveClasificacion
             // 
@@ -83,15 +64,15 @@
             // 
             // txtDescripcionClasificacion
             // 
-            this.txtDescripcionClasificacion.Location = new System.Drawing.Point(12, 100);
+            this.txtDescripcionClasificacion.Location = new System.Drawing.Point(12, 55);
             this.txtDescripcionClasificacion.Multiline = true;
             this.txtDescripcionClasificacion.Name = "txtDescripcionClasificacion";
-            this.txtDescripcionClasificacion.Size = new System.Drawing.Size(260, 116);
+            this.txtDescripcionClasificacion.Size = new System.Drawing.Size(260, 161);
             this.txtDescripcionClasificacion.TabIndex = 10;
             // 
             // lblDescripcionClasificacion
             // 
-            this.lblDescripcionClasificacion.Location = new System.Drawing.Point(12, 74);
+            this.lblDescripcionClasificacion.Location = new System.Drawing.Point(12, 29);
             this.lblDescripcionClasificacion.Name = "lblDescripcionClasificacion";
             this.lblDescripcionClasificacion.Size = new System.Drawing.Size(260, 23);
             this.lblDescripcionClasificacion.TabIndex = 11;
@@ -117,13 +98,12 @@
             this.Controls.Add(this.lblDescripcionClasificacion);
             this.Controls.Add(this.txtDescripcionClasificacion);
             this.Controls.Add(this.txtNombreClasificacion);
-            this.Controls.Add(this.txtIdClasificacion);
             this.Controls.Add(this.lblNombreClasificacion);
-            this.Controls.Add(this.lblIdClasificacion);
             this.Controls.Add(this.btnSaveClasificacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmClasificacion";
-            this.Text = "Clasificacion";
+            this.Text = "Nueva clasificacion";
+            this.Load += new System.EventHandler(this.frmClasificacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,9 +112,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNombreClasificacion;
-        private System.Windows.Forms.TextBox txtIdClasificacion;
         private System.Windows.Forms.Label lblNombreClasificacion;
-        private System.Windows.Forms.Label lblIdClasificacion;
         private System.Windows.Forms.Button btnSaveClasificacion;
         private System.Windows.Forms.TextBox txtDescripcionClasificacion;
         private System.Windows.Forms.Label lblDescripcionClasificacion;
