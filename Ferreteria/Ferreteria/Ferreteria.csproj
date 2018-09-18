@@ -107,6 +107,7 @@
     <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Clasificacion.cs" />
     <Compile Include="Models\TipoFactura.cs" />
     <Compile Include="Models\TipoEmpleado.cs" />
     <Compile Include="Models\Empleado.cs" />
