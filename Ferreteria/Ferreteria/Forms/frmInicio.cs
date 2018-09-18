@@ -43,5 +43,10 @@ namespace Ferreteria
         {
             new frmTipoFacturas().Show();
         }
+
+        private void clasificacionDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmClasificaciones().Show();
+        }
     }
 }

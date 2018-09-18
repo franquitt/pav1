@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ferreteria.Models;
 
 namespace Ferreteria.Forms
 {
@@ -19,7 +20,7 @@ namespace Ferreteria.Forms
 
         private void frmClasificaciones_Load(object sender, EventArgs e)
         {
-
+            gridClasificaciones.DataSource = Clasificacion.GetAllClasificaciones();
         }
 
         private void btnAddClasificaciones_Click(object sender, EventArgs e)

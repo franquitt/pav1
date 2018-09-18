@@ -131,6 +131,7 @@
             this.clasificacionDeProductosToolStripMenuItem.Name = "clasificacionDeProductosToolStripMenuItem";
             this.clasificacionDeProductosToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.clasificacionDeProductosToolStripMenuItem.Text = "Clasificacion de productos";
+            this.clasificacionDeProductosToolStripMenuItem.Click += new System.EventHandler(this.clasificacionDeProductosToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
@@ -144,13 +145,13 @@
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
             this.ventasToolStripMenuItem1.Text = "Ventas";
             // 
             // tipoDeFacturaToolStripMenuItem
             // 
             this.tipoDeFacturaToolStripMenuItem.Name = "tipoDeFacturaToolStripMenuItem";
-            this.tipoDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeFacturaToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.tipoDeFacturaToolStripMenuItem.Text = "Tipo de Factura";
             this.tipoDeFacturaToolStripMenuItem.Click += new System.EventHandler(this.tipoDeFacturaToolStripMenuItem_Click);
             // 
