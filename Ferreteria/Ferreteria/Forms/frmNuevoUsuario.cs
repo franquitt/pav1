@@ -42,7 +42,7 @@ namespace Ferreteria
             }
             
         }
-        private void clean()
+        private void Clean()
         {
             txtLegajo.Text = "";
             txtPass.Text = "";
@@ -65,7 +65,7 @@ namespace Ferreteria
                                         "Resultado",
                                         MessageBoxButtons.YesNo);
                     if (confirmResult == DialogResult.Yes)
-                        clean();
+                        Clean();
                     else
                     {
                         form.Vendedores_Load(null, null);
@@ -85,7 +85,7 @@ namespace Ferreteria
                 {
                     agregando = true;
                     legajo = 0;
-                    clean();
+                    Clean();
                 }
                 else
                 {

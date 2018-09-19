@@ -16,7 +16,7 @@ namespace Ferreteria
         {
             InitializeComponent();
             Helper.checkDateFormat();
-            Helper.converseDate(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+            Helper.convertDate(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"));
             frmLogin login = new frmLogin();
             login.ShowDialog();
         }

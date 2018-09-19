@@ -9,7 +9,6 @@ namespace Ferreteria
 {
     class Helper
     {
-
         //Realiza un hash del texto enviado mediante el algoritmo SHA256
         public static string sha256(string randomString)
         {
@@ -22,19 +21,23 @@ namespace Ferreteria
             }
             return hash.ToString();
         }
+
         public static bool ymd=true;
-        public static string converseDate(string fechaOriginal)
+
+        public static string convertDate(string fechaOriginal)
         {/*
           todos los inputs son en formato YYYY-MM-DD HH:MM:SS.mmm o YYYY-MM-DD
           * y se devolvera su resultado con los campos MM y DD intercambiados si ymd es true
           */
             
             Console.WriteLine(fechaOriginal);
+
             if (ymd)
             {
                 Console.WriteLine(fechaOriginal);
                 return fechaOriginal;
             }
+
             string resultado = "";
             if (fechaOriginal.Contains(":"))
             {
@@ -50,6 +53,7 @@ namespace Ferreteria
             Console.WriteLine(resultado);
             return resultado;
         }
+
         public static void checkDateFormat(){
             try
             {
@@ -63,6 +67,7 @@ namespace Ferreteria
             }
             //BDHelper.ExcecuteSQL("DELETE FROM pruebaFecha");
         }
+
         //Valida un usuario contra la DB. En caso de ser correcto el legajo y pass devuelve true
         public static bool validarUsuario(string legajo, string pass)
         {
