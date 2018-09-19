@@ -96,5 +96,20 @@ namespace Ferreteria
             }
 
         }
+
+        private void btnDelUser_Click(object sender, EventArgs e)
+        {
+
+            Empleado empleado = new Empleado(legajo);
+            var confirmResult = MessageBox.Show("Esta seguro que desea dar de baja al usuario " + empleado.apellido + " " + empleado.nombre + " ?",
+                                        "Dar de baja!",
+                                        MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                empleado.available(false);
+                form.Vendedores_Load(null, null);
+                this.Close();
+            }
+        }
     }
 }

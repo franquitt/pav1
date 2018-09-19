@@ -43,6 +43,7 @@
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.cmbTipoUser = new System.Windows.Forms.ComboBox();
             this.lblTipoUser = new System.Windows.Forms.Label();
+            this.btnDelUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtLegajo
@@ -150,7 +151,7 @@
             // 
             this.btnAgregarUsuario.Location = new System.Drawing.Point(16, 209);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(262, 38);
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(130, 38);
             this.btnAgregarUsuario.TabIndex = 14;
             this.btnAgregarUsuario.Text = "Guardar";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
@@ -173,11 +174,22 @@
             this.lblTipoUser.TabIndex = 16;
             this.lblTipoUser.Text = "Tipo de Usuario";
             // 
+            // btnDelUser
+            // 
+            this.btnDelUser.Location = new System.Drawing.Point(152, 209);
+            this.btnDelUser.Name = "btnDelUser";
+            this.btnDelUser.Size = new System.Drawing.Size(128, 37);
+            this.btnDelUser.TabIndex = 17;
+            this.btnDelUser.Text = "Eliminar";
+            this.btnDelUser.UseVisualStyleBackColor = true;
+            this.btnDelUser.Click += new System.EventHandler(this.btnDelUser_Click);
+            // 
             // frmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 259);
+            this.Controls.Add(this.btnDelUser);
             this.Controls.Add(this.lblTipoUser);
             this.Controls.Add(this.cmbTipoUser);
             this.Controls.Add(this.btnAgregarUsuario);
@@ -219,5 +231,6 @@
         private System.Windows.Forms.Button btnAgregarUsuario;
         private System.Windows.Forms.ComboBox cmbTipoUser;
         private System.Windows.Forms.Label lblTipoUser;
+        private System.Windows.Forms.Button btnDelUser;
     }
 }

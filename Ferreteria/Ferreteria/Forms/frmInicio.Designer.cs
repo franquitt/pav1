@@ -80,21 +80,21 @@
             // tipoDeUsuariosToolStripMenuItem
             // 
             this.tipoDeUsuariosToolStripMenuItem.Name = "tipoDeUsuariosToolStripMenuItem";
-            this.tipoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.tipoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.tipoDeUsuariosToolStripMenuItem.Text = "Perfiles";
             this.tipoDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.tipoDeUsuariosToolStripMenuItem_Click);
             // 
             // vendedoToolStripMenuItem
             // 
             this.vendedoToolStripMenuItem.Name = "vendedoToolStripMenuItem";
-            this.vendedoToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.vendedoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.vendedoToolStripMenuItem.Text = "Vendedores";
             this.vendedoToolStripMenuItem.Click += new System.EventHandler(this.vendedoToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // productosToolStripMenuItem
@@ -139,7 +139,7 @@
             this.ventasToolStripMenuItem1,
             this.tipoDeFacturaToolStripMenuItem});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.ventasToolStripMenuItem.Text = "Ventas";
             // 
             // ventasToolStripMenuItem1
@@ -165,6 +165,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmInicio";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.frmInicio_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

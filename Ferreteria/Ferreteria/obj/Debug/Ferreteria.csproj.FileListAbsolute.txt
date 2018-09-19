@@ -32,3 +32,21 @@ E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferrete
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmPerfiles.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClasificacion.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClasificaciones.resources
+D:\pav1-master\Ferreteria\Ferreteria\bin\Debug\Ferreteria.exe.config
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.exe
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.pdb
+D:\pav1-master\Ferreteria\Ferreteria\bin\Debug\Ferreteria.exe
+D:\pav1-master\Ferreteria\Ferreteria\bin\Debug\Ferreteria.pdb
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csprojResolveAssemblyReference.cache
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClasificacion.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClasificaciones.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmNuevoTipoFactura.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmTipoFacturas.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmNuevoPerfil.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmNuevoUsuario.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmEmpleado.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmInicio.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmLogin.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmPerfiles.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Properties.Resources.resources
+D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.GenerateResource.Cache

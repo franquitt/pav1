@@ -15,13 +15,13 @@ namespace Ferreteria
         public frmInicio()
         {
             InitializeComponent();
+            Helper.checkDateFormat();
+            Helper.converseDate(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"));
             frmLogin login = new frmLogin();
             login.ShowDialog();
         }
         private void frmInicio_Load(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
         }
 
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,6 +47,11 @@ namespace Ferreteria
         private void clasificacionDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frmClasificaciones().Show();
+        }
+
+        private void frmInicio_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,20 +52,14 @@ namespace Ferreteria
             form.Show();
         }
 
-        private void btnEditUser_Click(object sender, EventArgs e)
+        private void gridVendedores_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int id = Helper.getSelectedId(gridVendedores);
-            try
-            {
-                frmNuevoUsuario form = new frmNuevoUsuario(false);
-                form.setForm(this);
-                form.legajo = id;
-                form.Show();
-            }
-            catch
-            {
-                MessageBox.Show("Error", "Por favor intente seleccionando nuevamente el perfil a modificar", MessageBoxButtons.OK);
-            }
+
+            frmNuevoUsuario form = new frmNuevoUsuario(false);
+            form.setForm(this);
+            form.legajo = id;
+            form.Show();
         }
     }
 }
