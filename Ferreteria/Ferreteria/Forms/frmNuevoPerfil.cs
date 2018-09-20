@@ -14,6 +14,7 @@ namespace Ferreteria.Forms
     {
         int idProfile = 0;
         frmPerfiles form = null;
+
         public frmNuevoPerfil(frmPerfiles form, int id)
         {
             this.form = form;
@@ -27,12 +28,14 @@ namespace Ferreteria.Forms
             if (idProfile != 0)
                 txtNameProfile.Text = new TipoEmpleado(idProfile).nombre;
         }
+
         private void clean()
         {
             idProfile = 0;
             txtIdProfile.Text = "0";
             txtNameProfile.Text = "";
         }
+
         private void btnSaveProfile_Click(object sender, EventArgs e)
         {
             if(new TipoEmpleado(idProfile, txtNameProfile.Text).save())

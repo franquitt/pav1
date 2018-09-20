@@ -24,7 +24,6 @@ E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmNuevo
 E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmEmpleado.resources
 E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmPerfiles.resources
 E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmNuevoPerfil.resources
-E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmNuevoTipoFactura.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmTipoFacturas.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmNuevoPerfil.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmNuevoUsuario.resources
@@ -50,3 +49,6 @@ D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmLogin.resources
 D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmPerfiles.resources
 D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Properties.Resources.resources
 D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.GenerateResource.Cache
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProducto.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProductos.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmTipoFactura.resources

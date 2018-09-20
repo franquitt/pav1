@@ -57,17 +57,29 @@
     <Compile Include="Forms\frmClasificaciones.Designer.cs">
       <DependentUpon>frmClasificaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmNuevoTipoFactura.cs">
+    <Compile Include="Forms\frmProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmNuevoTipoFactura.Designer.cs">
-      <DependentUpon>frmNuevoTipoFactura.cs</DependentUpon>
+    <Compile Include="Forms\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmTiposDeFacturas.cs">
+    <Compile Include="Forms\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmTiposDeFacturas.Designer.cs">
-      <DependentUpon>frmTiposDeFacturas.cs</DependentUpon>
+    <Compile Include="Forms\frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTipoFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTipoFactura.Designer.cs">
+      <DependentUpon>frmTipoFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTiposFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTiposFactura.Designer.cs">
+      <DependentUpon>frmTiposFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmNuevoPerfil.cs">
       <SubType>Form</SubType>
@@ -108,6 +120,7 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Clasificacion.cs" />
+    <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\TipoFactura.cs" />
     <Compile Include="Models\TipoEmpleado.cs" />
     <Compile Include="Models\Empleado.cs" />
@@ -119,11 +132,17 @@
     <EmbeddedResource Include="Forms\frmClasificaciones.resx">
       <DependentUpon>frmClasificaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNuevoTipoFactura.resx">
-      <DependentUpon>frmNuevoTipoFactura.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmTiposDeFacturas.resx">
-      <DependentUpon>frmTiposDeFacturas.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTipoFactura.resx">
+      <DependentUpon>frmTipoFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTiposFactura.resx">
+      <DependentUpon>frmTiposFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNuevoPerfil.resx">
       <DependentUpon>frmNuevoPerfil.cs</DependentUpon>

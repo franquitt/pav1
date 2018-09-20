@@ -49,9 +49,9 @@ namespace Ferreteria
             new frmClasificaciones().Show();
         }
 
-        private void frmInicio_Load_1(object sender, EventArgs e)
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            new frmProductos().Show();
         }
     }
 }

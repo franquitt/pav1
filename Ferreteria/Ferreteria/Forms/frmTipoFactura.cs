@@ -11,7 +11,7 @@ using Ferreteria.Models;
 
 namespace Ferreteria.Forms
 {
-    public partial class frmNuevoTipoFactura : Form
+    public partial class frmTipoFactura : Form
     {
         int id = 0;
         frmTipoFacturas form = null;
@@ -19,7 +19,7 @@ namespace Ferreteria.Forms
         TipoFactura tipoFactura = null;
 
         //Al crear el formulario lo crea con el id de la factura seleccionada (si se edita) y con id 0 si es nuevo
-        public frmNuevoTipoFactura(frmTipoFacturas form, int id, bool editMode)
+        public frmTipoFactura(frmTipoFacturas form, int id, bool editMode)
         {
             InitializeComponent();
             this.id = id;

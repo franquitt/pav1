@@ -38,7 +38,7 @@
             // 
             // btnSaveProfile
             // 
-            this.btnSaveProfile.Location = new System.Drawing.Point(16, 72);
+            this.btnSaveProfile.Location = new System.Drawing.Point(134, 72);
             this.btnSaveProfile.Name = "btnSaveProfile";
             this.btnSaveProfile.Size = new System.Drawing.Size(95, 40);
             this.btnSaveProfile.TabIndex = 0;
@@ -81,7 +81,7 @@
             // 
             // btnDelProfile
             // 
-            this.btnDelProfile.Location = new System.Drawing.Point(132, 72);
+            this.btnDelProfile.Location = new System.Drawing.Point(16, 73);
             this.btnDelProfile.Name = "btnDelProfile";
             this.btnDelProfile.Size = new System.Drawing.Size(96, 39);
             this.btnDelProfile.TabIndex = 5;

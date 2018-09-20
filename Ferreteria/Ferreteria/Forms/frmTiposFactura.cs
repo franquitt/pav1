@@ -27,13 +27,13 @@ namespace Ferreteria.Forms
         //Abre el formulario para agregar un nuevo tipo de factura
         private void btnAddTipoFactura_Click(object sender, EventArgs e)
         {
-            new frmNuevoTipoFactura(this, 0, false).Show();
+            new frmTipoFactura(this, 0, false).Show();
         }
 
         private void gridTipoFacturas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = Helper.getSelectedId(gridTipoFacturas);
-            new frmNuevoTipoFactura(this, id, true).Show();
+            new frmTipoFactura(this, id, true).Show();
         }
     }
 }
