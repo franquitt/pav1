@@ -28,36 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRemoveTipoFactura = new System.Windows.Forms.Button();
-            this.btnEditTipoFactura = new System.Windows.Forms.Button();
             this.btnAddTipoFactura = new System.Windows.Forms.Button();
             this.gridTipoFacturas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridTipoFacturas)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnRemoveTipoFactura
-            // 
-            this.btnRemoveTipoFactura.Location = new System.Drawing.Point(251, 280);
-            this.btnRemoveTipoFactura.Name = "btnRemoveTipoFactura";
-            this.btnRemoveTipoFactura.Size = new System.Drawing.Size(124, 37);
-            this.btnRemoveTipoFactura.TabIndex = 7;
-            this.btnRemoveTipoFactura.Text = "Dar de baja";
-            this.btnRemoveTipoFactura.UseVisualStyleBackColor = true;
-            this.btnRemoveTipoFactura.Click += new System.EventHandler(this.btnRemoveTipoFactura_Click);
-            // 
-            // btnEditTipoFactura
-            // 
-            this.btnEditTipoFactura.Location = new System.Drawing.Point(134, 280);
-            this.btnEditTipoFactura.Name = "btnEditTipoFactura";
-            this.btnEditTipoFactura.Size = new System.Drawing.Size(111, 37);
-            this.btnEditTipoFactura.TabIndex = 6;
-            this.btnEditTipoFactura.Text = "Editar";
-            this.btnEditTipoFactura.UseVisualStyleBackColor = true;
-            this.btnEditTipoFactura.Click += new System.EventHandler(this.btnEditTipoFactura_Click);
-            // 
             // btnAddTipoFactura
             // 
-            this.btnAddTipoFactura.Location = new System.Drawing.Point(12, 280);
+            this.btnAddTipoFactura.Location = new System.Drawing.Point(259, 280);
             this.btnAddTipoFactura.Name = "btnAddTipoFactura";
             this.btnAddTipoFactura.Size = new System.Drawing.Size(116, 37);
             this.btnAddTipoFactura.TabIndex = 5;
@@ -74,14 +52,13 @@
             this.gridTipoFacturas.Name = "gridTipoFacturas";
             this.gridTipoFacturas.Size = new System.Drawing.Size(363, 262);
             this.gridTipoFacturas.TabIndex = 4;
+            this.gridTipoFacturas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridTipoFacturas_CellDoubleClick);
             // 
             // frmTipoFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 329);
-            this.Controls.Add(this.btnRemoveTipoFactura);
-            this.Controls.Add(this.btnEditTipoFactura);
             this.Controls.Add(this.btnAddTipoFactura);
             this.Controls.Add(this.gridTipoFacturas);
             this.Name = "frmTipoFacturas";
@@ -93,9 +70,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnRemoveTipoFactura;
-        private System.Windows.Forms.Button btnEditTipoFactura;
         private System.Windows.Forms.Button btnAddTipoFactura;
         private System.Windows.Forms.DataGridView gridTipoFacturas;
     }

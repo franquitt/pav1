@@ -13,43 +13,58 @@ namespace Ferreteria.Forms
 {
     public partial class frmNuevoTipoFactura : Form
     {
-        int idTipoFactura = 0;
+        int id = 0;
         frmTipoFacturas form = null;
+        bool editMode = true;
+        TipoFactura tipoFactura = null;
 
         //Al crear el formulario lo crea con el id de la factura seleccionada (si se edita) y con id 0 si es nuevo
-        public frmNuevoTipoFactura(frmTipoFacturas form, int id)
+        public frmNuevoTipoFactura(frmTipoFacturas form, int id, bool editMode)
         {
-            this.form = form;
-            idTipoFactura = id;
             InitializeComponent();
+            this.id = id;
+            this.form = form;
+            this.editMode = editMode;
         }
-        
-        //Al cargar la ventana carga el id de la factura y el nombre
+
+        //Cuando carga el formulario rellena los campos con los datos de la clasificacion a editar si se esta editando
+        //Caso contrario se desactiva el boton para dar de baja
         private void frmNuevoTipoFactura_Load(object sender, EventArgs e)
         {
-            txtIdTipoFactura.Text = idTipoFactura + "";
-            if (idTipoFactura != 0)
-                txtNameTipoFactura.Text = new TipoFactura(idTipoFactura).nombre;
+            if (editMode)
+            {
+                tipoFactura = new TipoFactura(id);
+                txtNameTipoFactura.Text = tipoFactura.nombre;
+                this.Text += " - Id: " + tipoFactura.codigoTipo.ToString();
+                btnSaveTipoFactura.Text = "Guardar cambios";
+            }
+            else
+            {
+                btnDeleteTipoFactura.Visible = false;
+            }
         }
 
         //Limpia los campos
         private void clean()
         {
-            idTipoFactura = 0;
+            id = 0;
             txtIdTipoFactura.Text = "0";
             txtNameTipoFactura.Text = "";
         }
 
-        //Guarda el nuevo tipo de factura o los cambios hechos si se estaba editando una existente
+        //Si se esta creando una nueva, la crea y permite seguir agregando. Si se esta editando guarda los cambios y
+        //vuelve a la lista
         private void btnSaveTipoFactura_Click(object sender, EventArgs e)
         {
-            if (new TipoFactura(idTipoFactura, txtNameTipoFactura.Text).save())
+            if (!editMode)
             {
+                new TipoFactura(id, txtNameTipoFactura.Text).save();
                 var confirmResult = MessageBox.Show("Se ha guardado con éxito el tipo de factura! Desea agregar otro?",
-                                       "Resultado",
-                                       MessageBoxButtons.YesNo);
+                    "Resultado", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
+                {
                     clean();
+                }
                 else
                 {
                     form.frmTipoFacturas_Load(null, null);
@@ -58,7 +73,30 @@ namespace Ferreteria.Forms
             }
             else
             {
+                tipoFactura.nombre = txtNameTipoFactura.Text;
+                tipoFactura.save();
+                form.frmTipoFacturas_Load(null, null);
+                this.Close();
+            }
+        }
 
+        private void btnDeleteTipoFactura_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var confirmResult = MessageBox.Show("Esta seguro que desea deshabilitar esta clasificacion?",
+                                         "Dar de baja!",
+                                         MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    tipoFactura.available(false);
+                    form.frmTipoFacturas_Load(null, null);
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Se produjo un error", "Error", MessageBoxButtons.OK);
             }
         }
     }

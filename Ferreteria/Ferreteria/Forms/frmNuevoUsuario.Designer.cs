@@ -149,7 +149,7 @@
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(16, 209);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(148, 208);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(130, 38);
             this.btnAgregarUsuario.TabIndex = 14;
@@ -177,7 +177,7 @@
             // 
             // btnDelUser
             // 
-            this.btnDelUser.Location = new System.Drawing.Point(152, 209);
+            this.btnDelUser.Location = new System.Drawing.Point(12, 209);
             this.btnDelUser.Name = "btnDelUser";
             this.btnDelUser.Size = new System.Drawing.Size(128, 37);
             this.btnDelUser.TabIndex = 17;

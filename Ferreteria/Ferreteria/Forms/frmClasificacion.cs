@@ -36,7 +36,7 @@ namespace Ferreteria.Forms
                 clasificacion = new Clasificacion(id);
                 txtNombreClasificacion.Text = clasificacion.nombre;
                 txtDescripcionClasificacion.Text = clasificacion.descripcion;
-                this.Text += "Id: " + clasificacion.codigoClasificacion.ToString();
+                this.Text += " - Id: " + clasificacion.codigoClasificacion.ToString();
                 btnSaveClasificacion.Text = "Guardar cambios";
             } else
             {
@@ -71,7 +71,7 @@ namespace Ferreteria.Forms
         {
             if (!editMode) {
                 new Clasificacion(id, txtNombreClasificacion.Text, txtDescripcionClasificacion.Text).save();
-                var confirmResult = MessageBox.Show("Se ha guardado con éxito el tipo de factura! Desea agregar otro?",
+                var confirmResult = MessageBox.Show("Se ha guardado con éxito la clasificacion! Desea agregar otra?",
                     "Resultado", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes) {
                     clean();

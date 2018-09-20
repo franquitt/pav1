@@ -69,7 +69,7 @@ namespace Ferreteria.Models
             }
             catch(Exception ex)
             {
-                return false;
+                throw ex;
             }
             return true;
         }

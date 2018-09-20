@@ -16,22 +16,30 @@ namespace Ferreteria
         public int legajo = 0;
         frmEmpleado form;
         Empleado empleado;
+
         public frmNuevoUsuario(bool agregando)
         {
             this.agregando = agregando;
             InitializeComponent();
         }
+
         public void setForm(frmEmpleado form)
         {
             this.form = form;
         }
+
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
             cmbTipoUser.DataSource = TipoEmpleado.GetAllUserTypes();
             cmbTipoUser.DisplayMember = "nombre";
             cmbTipoUser.ValueMember = "codigoTipo";
             txtLegajo.ReadOnly = true;
-            if (legajo != 0)
+
+            if (agregando)
+            {
+                btnDelUser.Visible = false;
+            }
+            else
             {
                 empleado = new Empleado(legajo);
                 txtLegajo.Text = empleado.legajo.ToString();
@@ -39,9 +47,12 @@ namespace Ferreteria
                 txtApellido.Text = empleado.apellido;
                 txtFechaNac.Text = empleado.fechaNacimiento.ToString("yyyy-MM-dd");
                 txtTelefono.Text = empleado.telefono;
+                this.Text += " - Id: " + empleado.legajo.ToString();
+                btnAgregarUsuario.Text = "Guardar cambios";
             }
             
         }
+
         private void Clean()
         {
             txtLegajo.Text = "";
@@ -51,6 +62,7 @@ namespace Ferreteria
             txtFechaNac.Text = "";
             txtTelefono.Text = "";
         }
+
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
             DateTime timeNow = DateTime.Now;
@@ -75,6 +87,7 @@ namespace Ferreteria
                 }
                 return;
             }
+
             if (new Empleado(legajo, timeNow, txtTelefono.Text, fechaNac, txtNombre.Text, txtApellido.Text, txtPass.Text, tipo, timeNow, true).save())
             {
 

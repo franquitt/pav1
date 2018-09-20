@@ -33,6 +33,7 @@
             this.lblNombreTipoFactura = new System.Windows.Forms.Label();
             this.lblIdTipoFactura = new System.Windows.Forms.Label();
             this.btnSaveTipoFactura = new System.Windows.Forms.Button();
+            this.btnDeleteTipoFactura = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNameTipoFactura
@@ -70,19 +71,30 @@
             // 
             // btnSaveTipoFactura
             // 
-            this.btnSaveTipoFactura.Location = new System.Drawing.Point(12, 68);
+            this.btnSaveTipoFactura.Location = new System.Drawing.Point(149, 68);
             this.btnSaveTipoFactura.Name = "btnSaveTipoFactura";
-            this.btnSaveTipoFactura.Size = new System.Drawing.Size(267, 33);
+            this.btnSaveTipoFactura.Size = new System.Drawing.Size(130, 33);
             this.btnSaveTipoFactura.TabIndex = 5;
             this.btnSaveTipoFactura.Text = "Guardar";
             this.btnSaveTipoFactura.UseVisualStyleBackColor = true;
             this.btnSaveTipoFactura.Click += new System.EventHandler(this.btnSaveTipoFactura_Click);
+            // 
+            // btnDeleteTipoFactura
+            // 
+            this.btnDeleteTipoFactura.Location = new System.Drawing.Point(12, 68);
+            this.btnDeleteTipoFactura.Name = "btnDeleteTipoFactura";
+            this.btnDeleteTipoFactura.Size = new System.Drawing.Size(130, 33);
+            this.btnDeleteTipoFactura.TabIndex = 10;
+            this.btnDeleteTipoFactura.Text = "Eliminar";
+            this.btnDeleteTipoFactura.UseVisualStyleBackColor = true;
+            this.btnDeleteTipoFactura.Click += new System.EventHandler(this.btnDeleteTipoFactura_Click);
             // 
             // frmNuevoTipoFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 109);
+            this.Controls.Add(this.btnDeleteTipoFactura);
             this.Controls.Add(this.txtNameTipoFactura);
             this.Controls.Add(this.txtIdTipoFactura);
             this.Controls.Add(this.lblNombreTipoFactura);
@@ -104,5 +116,6 @@
         private System.Windows.Forms.Label lblNombreTipoFactura;
         private System.Windows.Forms.Label lblIdTipoFactura;
         private System.Windows.Forms.Button btnSaveTipoFactura;
+        private System.Windows.Forms.Button btnDeleteTipoFactura;
     }
 }
