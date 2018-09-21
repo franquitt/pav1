@@ -79,7 +79,7 @@ namespace Ferreteria.Forms
             {
                 producto.nombre = txtNombreProducto.Text;
                 producto.descripcion = txtDescripcionProducto.Text;
-                producto.precio = int.Parse(txtPrecioProducto.Text);
+                producto.precio = decimal.Parse(txtPrecioProducto.Text);
                 producto.codigoClasificacion = (int)cmbClasificacion.SelectedValue;
                 producto.save();
                 formProductos.frmProductos_Load(null, null);
