@@ -26,7 +26,7 @@ namespace Ferreteria.Models
 
         public Producto() { }
 
-        public Producto(int id, string nombre, int precio, string descripcion, int codigoClasificacion)
+        public Producto(int id, string nombre, decimal precio, string descripcion, int codigoClasificacion)
         {
             this.codigoProducto = id;
             this.nombre = nombre;
@@ -52,13 +52,11 @@ namespace Ferreteria.Models
             {
                 if (codigoProducto != 0)//Producto existente
                 {
-                    BDHelper.ExcecuteSQL("UPDATE PRODUCTOS SET nombre = '" + nombre + "', activo = " + getActivo() + "', precio = " + precio + "', descripcion = " + descripcion + "', clasificacion = " + codigoClasificacion + " WHERE codigoProducto = " + codigoProducto);
+                    BDHelper.ExcecuteSQL("UPDATE PRODUCTOS SET nombre = '" + nombre + "', activo = " + getActivo() + ", precio = " + precio.ToString().Replace(",", ".") + ", descripcion = '" + descripcion + "', clasificacion = " + codigoClasificacion + " WHERE codigoProducto = " + codigoProducto);
                 }
                 else//Producto nuevo
                 {
-                    string sql = "INSERT INTO PRODUCTOS(nombre, activo, descripcion, precio, clasificacion) VALUES('" + nombre + "', " + getActivo() + "', " + descripcion + "', " + precio + "', " + codigoClasificacion + ")";
-                    Console.WriteLine(sql);
-                    BDHelper.ExcecuteSQL("INSERT INTO PRODUCTOS(nombre, activo, descripcion, precio, clasificacion) VALUES('" + nombre + "', " + getActivo() + ", '" + descripcion + "', " + precio + ", " + codigoClasificacion + ")");
+                    BDHelper.ExcecuteSQL("INSERT INTO PRODUCTOS(nombre, activo, descripcion, precio, clasificacion) VALUES('" + nombre + "', " + getActivo() + ", '" + descripcion + "', " + precio.ToString().Replace(",", ".") + ", " + codigoClasificacion + ")");
                 }
             }
             catch

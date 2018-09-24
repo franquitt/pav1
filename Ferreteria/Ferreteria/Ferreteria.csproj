@@ -93,17 +93,17 @@
     <Compile Include="Forms\frmPerfiles.Designer.cs">
       <DependentUpon>frmPerfiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmNuevoUsuario.cs">
+    <Compile Include="Forms\frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmNuevoUsuario.Designer.cs">
-      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    <Compile Include="Forms\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmEmpleado.cs">
+    <Compile Include="Forms\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmEmpleado.Designer.cs">
-      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    <Compile Include="Forms\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="BDHelper.cs" />
@@ -147,11 +147,11 @@
     <EmbeddedResource Include="Forms\frmNuevoPerfil.resx">
       <DependentUpon>frmNuevoPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNuevoUsuario.resx">
-      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmEmpleado.resx">
-      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
