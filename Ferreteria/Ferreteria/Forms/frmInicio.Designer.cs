@@ -131,7 +131,7 @@
             // 
             this.clasificacionDeProductosToolStripMenuItem.Name = "clasificacionDeProductosToolStripMenuItem";
             this.clasificacionDeProductosToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.clasificacionDeProductosToolStripMenuItem.Text = "Clasificacion de formProductos";
+            this.clasificacionDeProductosToolStripMenuItem.Text = "Clasificacion de Productos";
             this.clasificacionDeProductosToolStripMenuItem.Click += new System.EventHandler(this.clasificacionDeProductosToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
