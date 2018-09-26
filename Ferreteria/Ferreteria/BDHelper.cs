@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 public static class BDHelper
 {
     //Conexion Franco
     //private static string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-    private static string string_conexion = "Data Source=AGUSVENTURI;Initial Catalog=ProyPav;Integrated Security=True";
+    private static string string_conexion = "Data Source=.;Initial Catalog = ProyPav; Integrated Security = True";
     private static SqlConnection conexion;
     private static SqlCommand cmd;
 

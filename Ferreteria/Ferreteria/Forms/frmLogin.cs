@@ -46,6 +46,7 @@ namespace Ferreteria
                 txtUser.Text = "";
                 txtPass.Text = "";
                 MessageBox.Show("Debe ingresar usuario y/o contraseña válidos");
+                txtUser.Focus();
             }
         }
 
@@ -57,6 +58,11 @@ namespace Ferreteria
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
