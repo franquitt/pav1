@@ -12,6 +12,7 @@ namespace Ferreteria
 {
     public partial class frmLogin : Form
     {
+        bool logued = false;
         public frmLogin()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace Ferreteria
             
             if (Helper.validarUsuario(txtUser.Text, txtPass.Text))
             {
+                logued = true;
                 this.Hide();                
             }
             else
@@ -58,6 +60,12 @@ namespace Ferreteria
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!logued)
+                System.Windows.Forms.Application.Exit();
         }
 
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)

@@ -33,13 +33,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdProfile = new System.Windows.Forms.TextBox();
             this.txtNameProfile = new System.Windows.Forms.TextBox();
+            this.btnDelProfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSaveProfile
             // 
-            this.btnSaveProfile.Location = new System.Drawing.Point(16, 72);
+            this.btnSaveProfile.Location = new System.Drawing.Point(134, 72);
             this.btnSaveProfile.Name = "btnSaveProfile";
-            this.btnSaveProfile.Size = new System.Drawing.Size(213, 40);
+            this.btnSaveProfile.Size = new System.Drawing.Size(95, 40);
             this.btnSaveProfile.TabIndex = 0;
             this.btnSaveProfile.Text = "Guardar";
             this.btnSaveProfile.UseVisualStyleBackColor = true;
@@ -78,11 +79,22 @@
             this.txtNameProfile.Size = new System.Drawing.Size(155, 20);
             this.txtNameProfile.TabIndex = 4;
             // 
+            // btnDelProfile
+            // 
+            this.btnDelProfile.Location = new System.Drawing.Point(16, 73);
+            this.btnDelProfile.Name = "btnDelProfile";
+            this.btnDelProfile.Size = new System.Drawing.Size(96, 39);
+            this.btnDelProfile.TabIndex = 5;
+            this.btnDelProfile.Text = "Dar de Baja";
+            this.btnDelProfile.UseVisualStyleBackColor = true;
+            this.btnDelProfile.Click += new System.EventHandler(this.btnDelProfile_Click);
+            // 
             // frmNuevoPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(241, 124);
+            this.Controls.Add(this.btnDelProfile);
             this.Controls.Add(this.txtNameProfile);
             this.Controls.Add(this.txtIdProfile);
             this.Controls.Add(this.label2);
@@ -104,5 +116,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIdProfile;
         private System.Windows.Forms.TextBox txtNameProfile;
+        private System.Windows.Forms.Button btnDelProfile;
     }
 }

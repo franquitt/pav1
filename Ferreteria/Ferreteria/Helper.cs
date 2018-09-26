@@ -9,7 +9,6 @@ namespace Ferreteria
 {
     class Helper
     {
-
         //Realiza un hash del texto enviado mediante el algoritmo SHA256
         public static string sha256(string randomString)
         {
@@ -23,10 +22,59 @@ namespace Ferreteria
             return hash.ToString();
         }
 
+        public static bool ymd=true;
+
+        public static string convertDate(string fechaOriginal)
+        {/*
+          todos los inputs son en formato YYYY-MM-DD HH:MM:SS.mmm o YYYY-MM-DD
+          * y se devolvera su resultado con los campos MM y DD intercambiados si ymd es true
+          */
+            
+            Console.WriteLine(fechaOriginal);
+
+            if (ymd)
+            {
+                Console.WriteLine(fechaOriginal);
+                return fechaOriginal;
+            }
+
+            string resultado = "";
+            if (fechaOriginal.Contains(":"))
+            {
+                string[] fecha = fechaOriginal.Split(' ')[0].Split('-');
+                resultado = fecha[0]+"-"+fecha[2]+"-"+fecha[1]+" "+fechaOriginal.Split(' ')[1];
+            }
+            else
+            {
+                string[] fecha = fechaOriginal.Split('-');
+                resultado = fecha[0]+"-"+fecha[2]+"-"+fecha[1];
+            }
+            
+            Console.WriteLine(resultado);
+            return resultado;
+        }
+
+        public static void checkDateFormat(){
+            try
+            {
+                BDHelper.ExcecuteSQL("INSERT INTO pruebaFecha(fecha) VALUES('2018-09-19 14:15:16.789')");
+                ymd = true;
+            }
+            catch
+            {
+                BDHelper.ExcecuteSQL("INSERT INTO pruebaFecha(fecha) VALUES('2018-19-09 14:15:16.789')");
+                ymd = false;
+            }
+            //BDHelper.ExcecuteSQL("DELETE FROM pruebaFecha");
+        }
+
         //Valida un usuario contra la DB. En caso de ser correcto el legajo y pass devuelve true
         public static bool validarUsuario(string legajo, string pass)
         {
             pass = Helper.sha256(pass);
+            Console.WriteLine("SELECT * FROM USUARIO WHERE legajo =  \'"
+                            + legajo + "\' AND password = \'"
+                            + pass + "\'");
             DataTable tabla = BDHelper.ConsultaSQL("SELECT * FROM USUARIO WHERE legajo =  \'"
                             + legajo + "\' AND password = \'"
                             + pass + "\'");

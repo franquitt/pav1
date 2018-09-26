@@ -125,12 +125,13 @@
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
             this.productosToolStripMenuItem1.Size = new System.Drawing.Size(214, 22);
             this.productosToolStripMenuItem1.Text = "Productos";
+            this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
             // 
             // clasificacionDeProductosToolStripMenuItem
             // 
             this.clasificacionDeProductosToolStripMenuItem.Name = "clasificacionDeProductosToolStripMenuItem";
             this.clasificacionDeProductosToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.clasificacionDeProductosToolStripMenuItem.Text = "Clasificacion de productos";
+            this.clasificacionDeProductosToolStripMenuItem.Text = "Clasificacion de formProductos";
             this.clasificacionDeProductosToolStripMenuItem.Click += new System.EventHandler(this.clasificacionDeProductosToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem

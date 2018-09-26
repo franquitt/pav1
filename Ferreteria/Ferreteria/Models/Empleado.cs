@@ -18,10 +18,12 @@ namespace Ferreteria.Models
         public TipoEmpleado tipo = new TipoEmpleado(0, "");
         public DateTime ultimoLogin = new DateTime();
         public bool activo = true;
+
         public Empleado()
         {
 
         }
+
         public Empleado(DateTime fechaIngreso, string telefono, DateTime fechaNacimiento, string nombre, string apellido, string password, TipoEmpleado tipo, DateTime ultimoLogin, bool activo)
         {
             this.fechaIngreso = fechaIngreso;
@@ -34,6 +36,7 @@ namespace Ferreteria.Models
             this.ultimoLogin = ultimoLogin;
             this.activo = activo;
         }
+
         public Empleado(int legajo, DateTime fechaIngreso, string telefono, DateTime fechaNacimiento, string nombre, string apellido, string password, TipoEmpleado tipo, DateTime ultimoLogin, bool activo)
         {
             this.legajo = legajo;
@@ -48,31 +51,34 @@ namespace Ferreteria.Models
             this.ultimoLogin = ultimoLogin;
             this.activo = activo;
         }
+
         public Empleado(int legajo)
         {
             this.legajo = legajo;
             readAttrs();
         }
+
         public bool save()
         {
             try
             {
 
                 if (legajo == 0)
-                    BDHelper.ExcecuteSQL("INSERT INTO USUARIO(fechaIngreso, telefono, fechaNacimiento, nombre, apellido, password, tipo, ultimoLogin, activo) VALUES('" + fechaIngreso.ToString("yyyy-MM-dd") + "', '" + telefono + "', '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', '" + nombre + "', '" + apellido + "', '" + password + "', " + tipo.codigoTipo + ", '" + ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', " + getActivo() + ")");
+                    BDHelper.ExcecuteSQL("INSERT INTO USUARIO(fechaIngreso, telefono, fechaNacimiento, nombre, apellido, password, tipo, ultimoLogin, activo) VALUES('" + fechaIngreso.ToString("yyyy-MM-dd") + "', '" + telefono + "', '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', '" + nombre + "', '" + apellido + "', '" + password + "', " + tipo.codigoTipo + ", '" + Helper.convertDate(ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff")) + "', " + getActivo() + ")");
                 else
                     if(!password.Equals(""))
-                        BDHelper.ExcecuteSQL("UPDATE USUARIO SET fechaIngreso = '" + fechaIngreso.ToString("yyyy-MM-dd") + "', telefono = '" + telefono + "', fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', nombre = '" + nombre + "', apellido = '" + apellido + "', password = '" + password + "', tipo = " + tipo.codigoTipo + ", ultimoLogin = '" + ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', activo = " + getActivo() + " WHERE legajo = " + legajo);
+                        BDHelper.ExcecuteSQL("UPDATE USUARIO SET fechaIngreso = '" + fechaIngreso.ToString("yyyy-MM-dd") + "', telefono = '" + telefono + "', fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', nombre = '" + nombre + "', apellido = '" + apellido + "', password = '" + password + "', tipo = " + tipo.codigoTipo + ", ultimoLogin = '" + Helper.convertDate(ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff")) + "', activo = " + getActivo() + " WHERE legajo = " + legajo);
                     else
-                        BDHelper.ExcecuteSQL("UPDATE USUARIO SET fechaIngreso = '" + fechaIngreso.ToString("yyyy-MM-dd") + "', telefono = '" + telefono + "', fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', nombre = '" + nombre + "', apellido = '" + apellido + "', tipo = " + tipo.codigoTipo + ", ultimoLogin = '" + ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', activo = " + getActivo() + " WHERE legajo = " + legajo);
+                        BDHelper.ExcecuteSQL("UPDATE USUARIO SET fechaIngreso = '" + fechaIngreso.ToString("yyyy-MM-dd") + "', telefono = '" + telefono + "', fechaNacimiento = '" + fechaNacimiento.ToString("yyyy-MM-dd") + "', nombre = '" + nombre + "', apellido = '" + apellido + "', tipo = " + tipo.codigoTipo + ", ultimoLogin = '" + Helper.convertDate(ultimoLogin.ToString("yyyy-MM-dd HH:mm:ss.fff")) + "', activo = " + getActivo() + " WHERE legajo = " + legajo);
 
             }
-            catch
+            catch(Exception ex)
             {
-                return false;
+                throw ex;
             }
             return true;
         }
+
         private void readAttrs()
         {
             DataTable values = BDHelper.ConsultaSQL("SELECT fechaIngreso, telefono, fechaNacimiento, nombre, apellido, password, tipo, ultimoLogin, activo FROM USUARIO WHERE legajo = "+legajo);
@@ -86,14 +92,17 @@ namespace Ferreteria.Models
             ultimoLogin = DateTime.Parse(values.Rows[0]["ultimoLogin"].ToString());
             activo = (bool) values.Rows[0]["activo"];
         }
+
         public void available(bool state)
         {
             activo = state;
             BDHelper.ExcecuteSQL("UPDATE USUARIO SET activo = "+ getActivo() + " WHERE legajo = " + legajo);
         }
+
         public static DataTable GetAllEmployes() {
             return BDHelper.ConsultaSQL("SELECT legajo AS 'Legajo', USUARIO.nombre, apellido, TIPO_USUARIO.nombre AS 'Tipo de Usuario' FROM USUARIO JOIN TIPO_USUARIO ON(USUARIO.tipo=TIPO_USUARIO.codigoTipo) WHERE USUARIO.activo = 1 ORDER BY apellido, nombre");
         }
+
         private string getActivo()
         {
             if (activo)
