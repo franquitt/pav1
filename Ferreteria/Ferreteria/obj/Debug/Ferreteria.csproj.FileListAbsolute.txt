@@ -52,3 +52,26 @@ D:\pav1-master\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.GenerateResourc
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProducto.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProductos.resources
 E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmTipoFactura.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.exe.config
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.exe
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\bin\Debug\Ferreteria.pdb
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csprojAssemblyReference.cache
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClasificacion.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClasificaciones.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProducto.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProductos.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmTipoFactura.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmTipoFacturas.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmNuevoPerfil.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmNuevoUsuario.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmEmpleado.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmInicio.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.frmLogin.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmPerfiles.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Properties.Resources.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.GenerateResource.cache
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.CoreCompileInputs.cache
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.exe
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.pdb
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClientes.resources
+C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmCliente.resources

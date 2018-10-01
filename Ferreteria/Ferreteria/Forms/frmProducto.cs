@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ferreteria.Models;
 
@@ -63,7 +56,7 @@ namespace Ferreteria.Forms
             if (!editMode)
             {
                 new Producto(id, txtNombreProducto.Text, decimal.Parse(txtPrecioProducto.Text.Replace(".", ",")), txtDescripcionProducto.Text, (int)cmbClasificacion.SelectedValue).save();
-                var confirmResult = MessageBox.Show("Se ha guardado con éxito el tipo de factura! Desea agregar otro?",
+                var confirmResult = MessageBox.Show("Se ha guardado con éxito el producto! Desea agregar otro?",
                     "Resultado", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
                 {

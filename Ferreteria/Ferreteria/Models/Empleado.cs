@@ -99,7 +99,8 @@ namespace Ferreteria.Models
             BDHelper.ExcecuteSQL("UPDATE USUARIO SET activo = "+ getActivo() + " WHERE legajo = " + legajo);
         }
 
-        public static DataTable GetAllEmployes() {
+        public static DataTable GetAllEmployes()
+        {
             return BDHelper.ConsultaSQL("SELECT legajo AS 'Legajo', USUARIO.nombre, apellido, TIPO_USUARIO.nombre AS 'Tipo de Usuario' FROM USUARIO JOIN TIPO_USUARIO ON(USUARIO.tipo=TIPO_USUARIO.codigoTipo) WHERE USUARIO.activo = 1 ORDER BY apellido, nombre");
         }
 

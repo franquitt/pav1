@@ -57,6 +57,18 @@
     <Compile Include="Forms\frmClasificaciones.Designer.cs">
       <DependentUpon>frmClasificaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,7 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Clasificacion.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\TipoFactura.cs" />
     <Compile Include="Models\TipoEmpleado.cs" />
@@ -131,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmClasificaciones.resx">
       <DependentUpon>frmClasificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProducto.resx">
       <DependentUpon>frmProducto.cs</DependentUpon>
