@@ -58,5 +58,10 @@ namespace Ferreteria
         {
             new frmClientes().Show();
         }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmProveedores().Show();
+        }
     }
 }
