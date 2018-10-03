@@ -47,6 +47,7 @@
             // 
             this.gridVendedores.AllowUserToAddRows = false;
             this.gridVendedores.AllowUserToDeleteRows = false;
+            this.gridVendedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridVendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridVendedores.Location = new System.Drawing.Point(13, 13);
             this.gridVendedores.MultiSelect = false;

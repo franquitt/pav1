@@ -77,3 +77,8 @@ C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Fo
 C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmCliente.resources
 C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProveedor.resources
 C:\Users\Leo\Documents\GitHub\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProveedores.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmCliente.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClientes.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProveedor.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProveedores.resources
+E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmVenta.resources

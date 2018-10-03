@@ -37,6 +37,7 @@
             // 
             this.gridProfiles.AllowUserToAddRows = false;
             this.gridProfiles.AllowUserToDeleteRows = false;
+            this.gridProfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridProfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridProfiles.Location = new System.Drawing.Point(13, 13);
             this.gridProfiles.Name = "gridProfiles";

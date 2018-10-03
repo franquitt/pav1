@@ -47,6 +47,7 @@
             // 
             this.gridClasificaciones.AllowUserToAddRows = false;
             this.gridClasificaciones.AllowUserToDeleteRows = false;
+            this.gridClasificaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridClasificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridClasificaciones.Location = new System.Drawing.Point(12, 12);
             this.gridClasificaciones.Name = "gridClasificaciones";

@@ -66,7 +66,7 @@ namespace Ferreteria
 
         private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmCompra().Show();
+            new frmVenta().Show();
         }
     }
 }

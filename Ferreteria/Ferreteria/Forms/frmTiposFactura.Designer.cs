@@ -47,6 +47,7 @@
             // 
             this.gridTipoFacturas.AllowUserToAddRows = false;
             this.gridTipoFacturas.AllowUserToDeleteRows = false;
+            this.gridTipoFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridTipoFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridTipoFacturas.Location = new System.Drawing.Point(12, 12);
             this.gridTipoFacturas.Name = "gridTipoFacturas";

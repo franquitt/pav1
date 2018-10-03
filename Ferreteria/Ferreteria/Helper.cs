@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ferreteria
 {
@@ -106,6 +107,15 @@ namespace Ferreteria
                 }
             }
             return id;
+        }
+
+        //Llena el combobox pasado como parametro
+        public static void llenarCbo (ComboBox cbo, DataTable t, string d, string v)
+        {
+            cbo.DataSource = t;
+            cbo.DisplayMember = d;
+            cbo.ValueMember = v;
+            cbo.SelectedIndex = -1;
         }
     }
 }

@@ -101,7 +101,7 @@ namespace Ferreteria.Models
 
         public static DataTable GetAllEmployes()
         {
-            return BDHelper.ConsultaSQL("SELECT legajo AS 'Legajo', USUARIO.nombre, apellido, TIPO_USUARIO.nombre AS 'Tipo de Usuario' FROM USUARIO JOIN TIPO_USUARIO ON(USUARIO.tipo=TIPO_USUARIO.codigoTipo) WHERE USUARIO.activo = 1 ORDER BY apellido, nombre");
+            return BDHelper.ConsultaSQL("SELECT legajo AS 'Legajo', CONCAT(USUARIO.apellido, CONCAT(' ', USUARIO.nombre)) AS 'Nombre', TIPO_USUARIO.nombre AS 'Tipo de Usuario' FROM USUARIO JOIN TIPO_USUARIO ON(USUARIO.tipo=TIPO_USUARIO.codigoTipo) WHERE USUARIO.activo = 1 ORDER BY apellido, nombre");
         }
 
         private string getActivo()
