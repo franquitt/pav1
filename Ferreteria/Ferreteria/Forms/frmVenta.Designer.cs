@@ -38,9 +38,11 @@
             this.lblVendedor = new System.Windows.Forms.Label();
             this.cboTipoFactura = new System.Windows.Forms.ComboBox();
             this.gboxCliente = new System.Windows.Forms.GroupBox();
-            this.btnAgregarCliente = new System.Windows.Forms.Button();
-            this.cboCodigoCliente = new System.Windows.Forms.ComboBox();
+            this.cboCuit = new System.Windows.Forms.ComboBox();
+            this.lblCuitCliente = new System.Windows.Forms.Label();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.gboxProducto = new System.Windows.Forms.GroupBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.cboProducto = new System.Windows.Forms.ComboBox();
@@ -54,8 +56,6 @@
             this.lblPrecioUnitario = new System.Windows.Forms.Label();
             this.lblPrecioTotal = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lblCuitCliente = new System.Windows.Forms.Label();
-            this.cboCuit = new System.Windows.Forms.ComboBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gboxNuevoCliente = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -148,7 +148,7 @@
             // 
             this.gboxCliente.Controls.Add(this.cboCuit);
             this.gboxCliente.Controls.Add(this.lblCuitCliente);
-            this.gboxCliente.Controls.Add(this.cboCodigoCliente);
+            this.gboxCliente.Controls.Add(this.cboCliente);
             this.gboxCliente.Controls.Add(this.label3);
             this.gboxCliente.Location = new System.Drawing.Point(12, 88);
             this.gboxCliente.Name = "gboxCliente";
@@ -157,22 +157,32 @@
             this.gboxCliente.TabStop = false;
             this.gboxCliente.Text = "Cliente";
             // 
-            // btnAgregarCliente
+            // cboCuit
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(9, 19);
-            this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(126, 26);
-            this.btnAgregarCliente.TabIndex = 10;
-            this.btnAgregarCliente.Text = "Agregar Cliente";
-            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.cboCuit.FormattingEnabled = true;
+            this.cboCuit.Location = new System.Drawing.Point(345, 23);
+            this.cboCuit.Name = "cboCuit";
+            this.cboCuit.Size = new System.Drawing.Size(98, 21);
+            this.cboCuit.TabIndex = 13;
+            this.cboCuit.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboCuit_KeyUp);
             // 
-            // cboCodigoCliente
+            // lblCuitCliente
             // 
-            this.cboCodigoCliente.FormattingEnabled = true;
-            this.cboCodigoCliente.Location = new System.Drawing.Point(59, 23);
-            this.cboCodigoCliente.Name = "cboCodigoCliente";
-            this.cboCodigoCliente.Size = new System.Drawing.Size(239, 21);
-            this.cboCodigoCliente.TabIndex = 5;
+            this.lblCuitCliente.AutoSize = true;
+            this.lblCuitCliente.Location = new System.Drawing.Point(304, 26);
+            this.lblCuitCliente.Name = "lblCuitCliente";
+            this.lblCuitCliente.Size = new System.Drawing.Size(35, 13);
+            this.lblCuitCliente.TabIndex = 12;
+            this.lblCuitCliente.Text = "CUIT:";
+            // 
+            // cboCliente
+            // 
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.Location = new System.Drawing.Point(59, 23);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(239, 21);
+            this.cboCliente.TabIndex = 5;
+            this.cboCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboCliente_KeyUp);
             // 
             // label3
             // 
@@ -182,6 +192,15 @@
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Cliente";
+            // 
+            // btnAgregarCliente
+            // 
+            this.btnAgregarCliente.Location = new System.Drawing.Point(9, 19);
+            this.btnAgregarCliente.Name = "btnAgregarCliente";
+            this.btnAgregarCliente.Size = new System.Drawing.Size(126, 26);
+            this.btnAgregarCliente.TabIndex = 10;
+            this.btnAgregarCliente.Text = "Agregar Cliente";
+            this.btnAgregarCliente.UseVisualStyleBackColor = true;
             // 
             // gboxProducto
             // 
@@ -213,6 +232,7 @@
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(196, 21);
             this.cboProducto.TabIndex = 6;
+            this.cboProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cboProducto_KeyUp);
             // 
             // txtCantidadProducto
             // 
@@ -304,23 +324,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Subtotal";
             // 
-            // lblCuitCliente
-            // 
-            this.lblCuitCliente.AutoSize = true;
-            this.lblCuitCliente.Location = new System.Drawing.Point(304, 26);
-            this.lblCuitCliente.Name = "lblCuitCliente";
-            this.lblCuitCliente.Size = new System.Drawing.Size(35, 13);
-            this.lblCuitCliente.TabIndex = 12;
-            this.lblCuitCliente.Text = "CUIT:";
-            // 
-            // cboCuit
-            // 
-            this.cboCuit.FormattingEnabled = true;
-            this.cboCuit.Location = new System.Drawing.Point(345, 23);
-            this.cboCuit.Name = "cboCuit";
-            this.cboCuit.Size = new System.Drawing.Size(98, 21);
-            this.cboCuit.TabIndex = 13;
-            // 
             // gboxNuevoCliente
             // 
             this.gboxNuevoCliente.Controls.Add(this.btnAgregarCliente);
@@ -372,7 +375,7 @@
         private System.Windows.Forms.ComboBox cboTipoFactura;
         private System.Windows.Forms.GroupBox gboxCliente;
         private System.Windows.Forms.Button btnAgregarCliente;
-        private System.Windows.Forms.ComboBox cboCodigoCliente;
+        private System.Windows.Forms.ComboBox cboCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox gboxProducto;
         private System.Windows.Forms.ComboBox cboProducto;

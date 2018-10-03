@@ -74,6 +74,12 @@ namespace Ferreteria.Models
                 "WHERE PRODUCTOS.activo = 1 ORDER BY nombre");
         }
 
+        public static DataTable GetAllProductosByName(string name)
+        {
+            return BDHelper.ConsultaSQL("" +
+                "SELECT codigoProducto, nombre FROM PRODUCTOS WHERE PRODUCTOS.activo = 1 AND nombre LIKE '%" + name + "%'");
+        }
+
         private string getActivo()
         {
             if (activo)
