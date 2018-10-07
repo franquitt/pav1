@@ -40,9 +40,17 @@ namespace Ferreteria.Models
             return BDHelper.ConsultaSQL("SELECT codigoCliente AS 'Codigo Cliente', nombre AS 'Nombre', apellido AS 'Apellido', telefono AS 'Teléfono', cuit AS 'CUIT' FROM CLIENTES");
         }
 
-        public static DataTable GetClientesByName(string name)
+        public static DataTable GetClientesByName(string str, bool name)
         {
-            return BDHelper.ConsultaSQL("SELECT codigoCliente, CONCAT(apellido, CONCAT(' ', nombre)) AS 'fullname', cuit FROM CLIENTES WHERE nombre LIKE '%" + name + "%' OR apellido LIKE '%" + name + "%'");
+            string sql = "SELECT codigoCliente, CONCAT(apellido, CONCAT(' ', nombre)) AS 'fullname', cuit FROM CLIENTES WHERE";
+            if (name)
+            {
+                sql += " nombre LIKE '%" + str + "%' OR apellido LIKE '%" + str + "%'";
+            } else
+            {
+                sql += " cuit LIKE '" + str + "%'";
+            }
+            return BDHelper.ConsultaSQL(sql);
         }
 
         public bool save()

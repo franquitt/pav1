@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Data;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ferreteria
@@ -88,7 +85,7 @@ namespace Ferreteria
         }
 
         //Devuelve el ID de la fila seleccionada en un DataGrid pasado como parametro
-        public static int getSelectedId(System.Windows.Forms.DataGridView grid)
+        public static int getSelectedId(DataGridView grid)
         {
             int id = 0;
             try
