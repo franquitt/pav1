@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Ferreteria"
+    "\\Ferreteria",
+    "\\Ferreteria\\Ferreteria"
   ],
-  "SelectedNode": "\\Ferreteria\\Ferreteria.sln",
+  "SelectedNode": "\\CODE_OF_CONDUCT.md",
   "PreviewInSolutionExplorer": false
 }

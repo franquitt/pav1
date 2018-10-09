@@ -24,6 +24,7 @@ namespace Ferreteria.Forms
 
             txtCantidadProducto.TextChanged += new EventHandler(txtCantidadProducto_TextChanged);
             btnAgregarProducto.Enabled = false;
+            lblTotalNeto.Visible = false;
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -35,6 +36,8 @@ namespace Ferreteria.Forms
             lblPrecioUnitario.Text = "Precio unitario:";
             lblPrecioTotal.Text = "Precio total:";
             btnAgregarProducto.Enabled = false;
+            lblTotalNeto.Text ="$" + CalcularTotal().ToString();
+            lblTotalNeto.Visible = true;
         }
 
         private void txtCantidadProducto_TextChanged(object sender, EventArgs e)
@@ -121,6 +124,7 @@ namespace Ferreteria.Forms
             if (index > -1)
             {
                 gridProductos.Rows.RemoveAt(index);
+                lblTotalNeto.Text = "$" + CalcularTotal().ToString();
             }
         }
 
@@ -181,6 +185,16 @@ namespace Ferreteria.Forms
             {
                 MessageBox.Show("Debes cargar productos a la lista para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private decimal CalcularTotal()
+        {
+            decimal total = 0;
+            for (int i = 0; i < gridProductos.Rows.Count; i++)
+            {
+                total += Convert.ToDecimal((gridProductos.Rows[i].Cells[4].Value).ToString().Replace("$",""));
+            }
+            return total;
         }
     }
 }

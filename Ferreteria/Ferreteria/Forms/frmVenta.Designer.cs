@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridProductos = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.gboxFactura = new System.Windows.Forms.GroupBox();
             this.lblFechaFactura = new System.Windows.Forms.Label();
@@ -60,11 +65,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gboxNuevoCliente = new System.Windows.Forms.GroupBox();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.gBoxImporte = new System.Windows.Forms.GroupBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalNeto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.gboxFactura.SuspendLayout();
             this.gboxCliente.SuspendLayout();
@@ -73,6 +77,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.gboxNuevoCliente.SuspendLayout();
+            this.gBoxImporte.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridProductos
@@ -91,6 +96,36 @@
             this.gridProductos.ReadOnly = true;
             this.gridProductos.Size = new System.Drawing.Size(502, 264);
             this.gridProductos.TabIndex = 0;
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "Id";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            // 
+            // nombreProducto
+            // 
+            this.nombreProducto.HeaderText = "Producto";
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // precioUnitario
+            // 
+            this.precioUnitario.HeaderText = "Precio Unitario";
+            this.precioUnitario.Name = "precioUnitario";
+            this.precioUnitario.ReadOnly = true;
+            // 
+            // subtotal
+            // 
+            this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
             // 
             // label2
             // 
@@ -376,41 +411,41 @@
             this.gboxNuevoCliente.TabStop = false;
             this.gboxNuevoCliente.Text = "Nuevo cliente";
             // 
-            // idProducto
+            // gBoxImporte
             // 
-            this.idProducto.HeaderText = "Id";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
+            this.gBoxImporte.Controls.Add(this.lblTotalNeto);
+            this.gBoxImporte.Controls.Add(this.lblTotal);
+            this.gBoxImporte.Location = new System.Drawing.Point(521, 367);
+            this.gBoxImporte.Name = "gBoxImporte";
+            this.gBoxImporte.Size = new System.Drawing.Size(97, 86);
+            this.gBoxImporte.TabIndex = 15;
+            this.gBoxImporte.TabStop = false;
+            this.gBoxImporte.Text = "Importe";
             // 
-            // nombreProducto
+            // lblTotal
             // 
-            this.nombreProducto.HeaderText = "Producto";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.ReadOnly = true;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(6, 40);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(31, 13);
+            this.lblTotal.TabIndex = 16;
+            this.lblTotal.Text = "Total";
             // 
-            // cantidad
+            // lblTotalNeto
             // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // precioUnitario
-            // 
-            this.precioUnitario.HeaderText = "Precio Unitario";
-            this.precioUnitario.Name = "precioUnitario";
-            this.precioUnitario.ReadOnly = true;
-            // 
-            // subtotal
-            // 
-            this.subtotal.HeaderText = "Subtotal";
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
+            this.lblTotalNeto.AutoSize = true;
+            this.lblTotalNeto.Location = new System.Drawing.Point(43, 40);
+            this.lblTotalNeto.Name = "lblTotalNeto";
+            this.lblTotalNeto.Size = new System.Drawing.Size(13, 13);
+            this.lblTotalNeto.TabIndex = 16;
+            this.lblTotalNeto.Text = "0";
             // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 611);
+            this.ClientSize = new System.Drawing.Size(629, 611);
+            this.Controls.Add(this.gBoxImporte);
             this.Controls.Add(this.gboxNuevoCliente);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnCancelar);
@@ -435,6 +470,8 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.gboxNuevoCliente.ResumeLayout(false);
+            this.gBoxImporte.ResumeLayout(false);
+            this.gBoxImporte.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -477,5 +514,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox gBoxImporte;
+        private System.Windows.Forms.Label lblTotalNeto;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
