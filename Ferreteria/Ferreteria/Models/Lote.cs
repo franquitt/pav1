@@ -20,7 +20,7 @@ namespace Ferreteria.Models
             this.nroLote = nroLote;
             readAttrs();
         }
-        public Lote(int codigoProveedor, int codigoProducto, int stockInicial, int stockActual = 0, fechaIngreso)
+        public Lote(int codigoProveedor, int codigoProducto, int stockInicial, int stockActual, DateTime fechaIngreso)
         {
             this.codigoProveedor = codigoProveedor;
             this.codigoProducto = codigoProducto;
