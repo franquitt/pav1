@@ -30,7 +30,6 @@ namespace Ferreteria.Forms
         private void frmLote_Load(object sender, EventArgs e)
         {
             Helper.llenarCbo(cboProducto, Producto.GetNames(), "nombre", "codigoProducto");
-            Console.WriteLine("Entrando");
             if (editMode)
             {
                 lote = new Lote(idLote);
@@ -103,6 +102,15 @@ namespace Ferreteria.Forms
             cboProveedor.DroppedDown = false;
             Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByName(aBuscar), "nombre", "codigoProveedor");
             cboProveedor.DroppedDown = true;
+        }
+
+        private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByProducto(int.Parse(cboProducto.SelectedValue.ToString())), "fullname", "codigoProveedor");
+            }
+            catch { }
         }
     }
 }

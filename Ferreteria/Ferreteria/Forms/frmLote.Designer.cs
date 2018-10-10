@@ -63,6 +63,7 @@
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(260, 21);
             this.cboProducto.TabIndex = 1;
+            this.cboProducto.SelectedIndexChanged += new System.EventHandler(this.cboProducto_SelectedIndexChanged);
             // 
             // txtBusquedaProducto
             // 
