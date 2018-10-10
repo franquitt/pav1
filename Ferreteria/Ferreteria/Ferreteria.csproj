@@ -157,6 +157,7 @@
     </Compile>
     <Compile Include="Models\Clasificacion.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Lote.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\TipoFactura.cs" />
