@@ -67,8 +67,9 @@
             this.gboxNuevoCliente = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gBoxImporte = new System.Windows.Forms.GroupBox();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalNeto = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.gboxFactura.SuspendLayout();
             this.gboxCliente.SuspendLayout();
@@ -275,6 +276,7 @@
             // 
             // gboxProducto
             // 
+            this.gboxProducto.Controls.Add(this.lblStock);
             this.gboxProducto.Controls.Add(this.txtCantidadProducto);
             this.gboxProducto.Controls.Add(this.txtBusquedaProducto);
             this.gboxProducto.Controls.Add(this.btnAgregarProducto);
@@ -422,6 +424,15 @@
             this.gBoxImporte.TabStop = false;
             this.gBoxImporte.Text = "Importe";
             // 
+            // lblTotalNeto
+            // 
+            this.lblTotalNeto.AutoSize = true;
+            this.lblTotalNeto.Location = new System.Drawing.Point(43, 40);
+            this.lblTotalNeto.Name = "lblTotalNeto";
+            this.lblTotalNeto.Size = new System.Drawing.Size(13, 13);
+            this.lblTotalNeto.TabIndex = 16;
+            this.lblTotalNeto.Text = "0";
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -431,14 +442,14 @@
             this.lblTotal.TabIndex = 16;
             this.lblTotal.Text = "Total";
             // 
-            // lblTotalNeto
+            // lblStock
             // 
-            this.lblTotalNeto.AutoSize = true;
-            this.lblTotalNeto.Location = new System.Drawing.Point(43, 40);
-            this.lblTotalNeto.Name = "lblTotalNeto";
-            this.lblTotalNeto.Size = new System.Drawing.Size(13, 13);
-            this.lblTotalNeto.TabIndex = 16;
-            this.lblTotalNeto.Text = "0";
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(275, 48);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(41, 13);
+            this.lblStock.TabIndex = 11;
+            this.lblStock.Text = "Stock: ";
             // 
             // frmVenta
             // 
@@ -518,5 +529,6 @@
         private System.Windows.Forms.GroupBox gBoxImporte;
         private System.Windows.Forms.Label lblTotalNeto;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblStock;
     }
 }

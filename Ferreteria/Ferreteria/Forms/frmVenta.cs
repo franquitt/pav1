@@ -64,6 +64,7 @@ namespace Ferreteria.Forms
                 lblPrecioUnitario.Text = "Precio unitario: $" + productoElegido.precio;
                 lblPrecioTotal.Text = "Precio total:";
                 txtCantidadProducto.Text = "0";
+                lblStock.Text = "Stock: " + (productoElegido.stock.ToString());
             }
             catch { }
             btnAgregarProducto.Enabled = false;
