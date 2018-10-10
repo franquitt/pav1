@@ -209,7 +209,7 @@ namespace Ferreteria.Forms
                         break;
                 }
             }
-            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; \n BEGIN TRANSACTION;\n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ + "\nCOMMIT TRANSACTION;";
+            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; \n BEGIN TRANSACTION;\n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ;
             
 
             if (productos.Length == 0)
@@ -217,6 +217,9 @@ namespace Ferreteria.Forms
                 MessageBox.Show("Debes cargar productos a la lista para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            string ahora = DateTime.Today.ToString("yyyy-MM-dd");
+            laTransact += "\n INSERT INTO VENTAS(tipoFactura, vendedor, cliente, fecha, activo)";
+            laTransact += "\nCOMMIT TRANSACTION;";
             Console.WriteLine(laTransact);
             BDHelper.ExcecuteSQL(laTransact);
         }
