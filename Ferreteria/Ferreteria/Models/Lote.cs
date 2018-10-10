@@ -50,7 +50,7 @@ namespace Ferreteria.Models
         }
 
         public static DataTable getAllLotes() {
-            return BDHelper.ConsultaSQL("SELECT LOTES.numeroLote, PROVEEDOR.nombre AS nomProveedor, PRODUCTOS.nombre AS nomProducto, LOTES.stockActual, LOTES.fechaIngreso FROM LOTES JOIN PROVEEDOR ON(PROVEEDOR.codigoProveedor = LOTES.codigoProveedor) JOIN PRODUCTOS ON(PRODUCTOS.codigoProducto = LOTES.codigoProducto) WHERE stockActual != 0 ORDER BY LOTES.fechaIngreso");
+            return BDHelper.ConsultaSQL("SELECT LOTES.numeroLote AS '#', CONCAT(PROVEEDOR.apellido, CONCAT(' ', PROVEEDOR.nombre)) AS 'Proveedor', PRODUCTOS.nombre AS 'Producto', LOTES.stockActual AS 'Stock', LOTES.fechaIngreso AS 'Fecha ingreso' FROM LOTES JOIN PROVEEDOR ON(PROVEEDOR.codigoProveedor = LOTES.codigoProveedor) JOIN PRODUCTOS ON(PRODUCTOS.codigoProducto = LOTES.codigoProducto) WHERE stockActual != 0 ORDER BY LOTES.fechaIngreso");
         }
 
         public static Lote[] getAllLotesObjectsByProduct(int codProd)

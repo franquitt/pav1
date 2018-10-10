@@ -16,6 +16,7 @@ namespace Ferreteria.Forms
         {
             gridProductos.DataSource = Producto.GetAllProductos();
             gridProductos.Columns[2].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            gridProductos.Columns[0].Width = 25;
         }
 
         //Abre el formulario para agregar un nuevo producto

@@ -13,12 +13,13 @@ namespace Ferreteria
         public void Vendedores_Load(object sender, EventArgs e)
         {
             gridVendedores.DataSource = Empleado.GetAllEmployes();
+            gridVendedores.Columns[0].Width = 50;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             frmNuevoUsuario form = new frmNuevoUsuario(true);
-            form.setForm(this);
+            form.SetForm(this);
             form.Show();
         }
 
@@ -27,7 +28,7 @@ namespace Ferreteria
             int id = Helper.getSelectedId(gridVendedores);
 
             frmNuevoUsuario form = new frmNuevoUsuario(false);
-            form.setForm(this);
+            form.SetForm(this);
             form.legajo = id;
             form.Show();
         }

@@ -17,13 +17,13 @@ namespace Ferreteria.Forms
 
         private void btnAddProfile_Click(object sender, EventArgs e)
         {
-            new frmNuevoPerfil(this, 0).Show();
+            new frmPerfil(this, 0).Show();
         }
 
         private void gridProfiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = Helper.getSelectedId(gridProfiles);
-            new frmNuevoPerfil(this, id).Show();
+            new frmPerfil(this, id).Show();
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ferreteria.Models;
 
@@ -22,6 +15,9 @@ namespace Ferreteria.Forms
         public void frmLotes_Load(object sender, EventArgs e)
         {
             gridLotes.DataSource = Lote.getAllLotes();
+            gridLotes.Columns[0].Width = 40;
+            gridLotes.Columns[3].Width = 45;
+            gridLotes.Columns[4].Width = 70;
         }
 
         //Abre el formulario para agregar un nuevo lote

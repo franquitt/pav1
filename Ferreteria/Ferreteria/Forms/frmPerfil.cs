@@ -3,12 +3,12 @@ using System.Windows.Forms;
 using Ferreteria.Models;
 namespace Ferreteria.Forms
 {
-    public partial class frmNuevoPerfil : Form
+    public partial class frmPerfil : Form
     {
         int idProfile = 0;
         frmPerfiles form = null;
 
-        public frmNuevoPerfil(frmPerfiles form, int id)
+        public frmPerfil(frmPerfiles form, int id)
         {
             this.form = form;
             idProfile = id;

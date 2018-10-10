@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 
 namespace Ferreteria.Models
@@ -43,7 +39,7 @@ namespace Ferreteria.Models
 
         public static DataTable GetAllProveedores()
         {
-            return BDHelper.ConsultaSQL("SELECT codigoProveedor AS 'Codigo Proveedor', nombre AS 'Nombre', apellido AS 'Apellido', direccion AS 'Dirección', telefono AS 'Teléfono' FROM PROVEEDOR WHERE activo = 1");
+            return BDHelper.ConsultaSQL("SELECT codigoProveedor AS '#', nombre AS 'Nombre', apellido AS 'Apellido', direccion AS 'Dirección', telefono AS 'Teléfono' FROM PROVEEDOR WHERE activo = 1");
         }
 
         public static DataTable GetAllProveedoresByName(string str)

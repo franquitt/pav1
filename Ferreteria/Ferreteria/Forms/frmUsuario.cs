@@ -16,16 +16,14 @@ namespace Ferreteria
             InitializeComponent();
         }
 
-        public void setForm(frmEmpleado form)
+        public void SetForm(frmEmpleado form)
         {
             this.form = form;
         }
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
-            cmbTipoUser.DataSource = TipoEmpleado.GetAllUserTypes();
-            cmbTipoUser.DisplayMember = "nombre";
-            cmbTipoUser.ValueMember = "codigoTipo";
+            Helper.llenarCbo(cmbTipoUser, TipoEmpleado.GetAllUserTypes(), "nombre", "codigoTipo");
             txtLegajo.ReadOnly = true;
 
             if (agregando)
@@ -42,6 +40,7 @@ namespace Ferreteria
                 txtTelefono.Text = empleado.telefono;
                 this.Text += " - Id: " + empleado.legajo.ToString();
                 btnAgregarUsuario.Text = "Guardar cambios";
+                cmbTipoUser.SelectedValue = empleado.tipo.codigoTipo;
             }
             
         }
@@ -84,21 +83,11 @@ namespace Ferreteria
             if (new Empleado(legajo, timeNow, txtTelefono.Text, fechaNac, txtNombre.Text, txtApellido.Text, txtPass.Text, tipo, timeNow, true).save())
             {
 
-                var confirmResult = MessageBox.Show("Se ha guardado con éxito el usuario! Desea agregar otro?",
+                MessageBox.Show("Se han guardado con éxito los cambios!",
                                     "Resultado",
-                                    MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
-                {
-                    agregando = true;
-                    legajo = 0;
-                    Clean();
-                }
-                else
-                {
-                    form.Vendedores_Load(null, null);
-                    this.Close();
-                }
-
+                                    MessageBoxButtons.OK);
+                form.Vendedores_Load(null, null);
+                this.Close();
             }
 
         }

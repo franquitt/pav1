@@ -5,8 +5,8 @@ using System.Windows.Forms;
 
 public static class BDHelper
 {
-    private static string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-    //private static string string_conexion = "Data Source=AGUSVENTURI;Initial Catalog=ProyPav;Integrated Security=True";
+    //private static string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+    private static string string_conexion = "Data Source=AGUSVENTURI;Initial Catalog=ProyPav;Integrated Security=True";
     //private static string string_conexion = "Data Source=MAQUIS;Initial Catalog=ProyPav;User ID=avisuales1;Password=avisuales1";
     //private static string string_conexion = "Data Source=.;Initial Catalog = ProyPav; Integrated Security = True";
     private static SqlConnection conexion;
@@ -15,12 +15,16 @@ public static class BDHelper
     //Se conecta a la DB especificada en el string de conexion y crea el comando SQL en modo texto
     private static void Conectar()
     {
-        conexion = new SqlConnection();
-        conexion.ConnectionString = string_conexion;
+        conexion = new SqlConnection
+        {
+            ConnectionString = string_conexion
+        };
         conexion.Open();
-        cmd = new SqlCommand();
-        cmd.Connection = conexion;
-        cmd.CommandType = CommandType.Text;
+        cmd = new SqlCommand
+        {
+            Connection = conexion,
+            CommandType = CommandType.Text
+        };
     }
 
     //Se desconecta de la DB una vez que se termina de usar
