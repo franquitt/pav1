@@ -42,6 +42,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(270, 20);
             this.txtUser.TabIndex = 0;
+            this.txtUser.Text = "1";
             // 
             // txtPass
             // 
@@ -50,7 +51,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(270, 20);
             this.txtPass.TabIndex = 1;
-            this.txtPass.Text = "pepitoclavounclavito";
+            this.txtPass.Text = "1";
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // btnLogin

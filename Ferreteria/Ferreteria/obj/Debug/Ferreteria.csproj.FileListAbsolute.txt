@@ -108,3 +108,15 @@ C:\Users\Leo\Source\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj
 C:\Users\Leo\Source\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.csproj.CoreCompileInputs.cache
 C:\Users\Leo\Source\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.exe
 C:\Users\Leo\Source\Repos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.pdb
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClasificacion.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClasificaciones.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmCliente.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmClientes.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmVenta.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProducto.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProductos.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProveedor.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmTipoFactura.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmTipoFacturas.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmProveedores.resources
+E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\obj\Debug\Ferreteria.Forms.frmLotes.resources
