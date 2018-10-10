@@ -81,7 +81,22 @@ namespace Ferreteria.Forms
 
         private void btnDeleteProducto_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var confirmResult = MessageBox.Show("Esta seguro que desea deshabilitar este producto?",
+                                         "Dar de baja!",
+                                         MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    producto.available(false);
+                    formProductos.frmProductos_Load(null, null);
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Se produjo un error", "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }
