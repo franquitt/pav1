@@ -31,7 +31,7 @@ namespace Ferreteria.Models
 
         public void readAttrs()
         {
-            DataTable values = BDHelper.ConsultaSQL("SELECT nombre, descripcion, precio, clasificacion, activo, stocky.stocp FROM PRODUCTOS, (SELECT SUM(stockActual) as stocp FROM LOTES WHERE LOTES.codigoProducto =  " + codigoProducto + " GROUP BY codigoProducto) as stocky WHERE PRODUCTOS.codigoProducto = " + codigoProducto);
+            DataTable values = BDHelper.ConsultaSQL("SELECT nombre, descripcion, precio, clasificacion, activo, stocky.stocp FROM PRODUCTOS LEFT JOIN (SELECT SUM(stockActual) stocp, codigoProducto FROM LOTES WHERE LOTES.codigoProducto = " + codigoProducto + " GROUP BY codigoProducto) as stocky ON (stocky.codigoProducto = PRODUCTOS.codigoProducto) WHERE PRODUCTOS.codigoProducto = " + codigoProducto);
             nombre = values.Rows[0]["nombre"].ToString();
             descripcion = values.Rows[0]["descripcion"].ToString();
             precio = (decimal)values.Rows[0]["precio"];

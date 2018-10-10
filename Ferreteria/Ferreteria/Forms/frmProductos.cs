@@ -29,6 +29,7 @@ namespace Ferreteria.Forms
         private void gridProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = Helper.getSelectedId(gridProductos);
+            Console.WriteLine(id);
             new frmProducto(id, this, true).Show();
         }
     }

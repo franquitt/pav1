@@ -180,8 +180,12 @@ namespace Ferreteria.Forms
 
             Producto[] productos = new Producto[gridProductos.RowCount];
             int[] cantidades = new int[gridProductos.RowCount];
+
             string selectConditions = "";
             string updatesQ = "";
+            int[] stockAlcanzado = new int[gridProductos.RowCount];
+            string detallesValues = "";
+
             for (int i = 0; i < gridProductos.RowCount; i++)
             {
                 productos[i] = new Producto((int)gridProductos.Rows[i].Cells[0].Value);
@@ -189,27 +193,35 @@ namespace Ferreteria.Forms
                 Lote[] lotes = Lote.getAllLotesObjectsByProduct(productos[i].codigoProducto);
 
                 int[] stockNuevos = new int[lotes.Length];
-                int stockAlcanzado = 0;
                 int index = 0;
+                stockAlcanzado[i] = 0;
                 for (index=0; index < lotes.Length; index++)
                 {
-                    if (stockAlcanzado + lotes[index].stockActual <= cantidades[i])//le tengo que sacar el stock completo!
+                    if (stockAlcanzado[i] + lotes[index].stockActual <= cantidades[i])//le tengo que sacar el stock completo!
                     {
                         stockNuevos[index] = 0;
-                        stockAlcanzado += lotes[index].stockActual;
+                        stockAlcanzado[i] += lotes[index].stockActual;
                     }else{
-                        stockNuevos[index] = lotes[index].stockActual - (cantidades[i]- stockAlcanzado);//a lo que tenia le saco lo que me hace falta nomas
+                        stockNuevos[index] = lotes[index].stockActual - (cantidades[i]- stockAlcanzado[i]);//a lo que tenia le saco lo que me hace falta nomas
+                        stockAlcanzado[i] = cantidades[i];
                     }
                     if (selectConditions.Equals(""))
                         selectConditions += "numeroLote = " + lotes[index].nroLote;
                     else
                         selectConditions += " OR numeroLote = " + lotes[index].nroLote;
                     updatesQ += "\n UPDATE LOTES SET stockActual = " + stockNuevos[index] + " WHERE numeroLote = " + lotes[index].nroLote+";";
-                    if (stockAlcanzado == cantidades[i])//si ya obtuve el stock que queria cortar
+                    if (stockAlcanzado[i] != 0)
+                    {
+                        if (!detallesValues.Equals(""))
+                            detallesValues += ", ";
+                        detallesValues += "("+ lotes[index].nroLote + ", @@IDENTITY, "+ stockNuevos[index] + ", '"+ productos[i].precio+ "')";
+                    }
+                    if (stockAlcanzado[i] == cantidades[i])//si ya obtuve el stock que queria cortar
                         break;
                 }
+                
             }
-            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; \n BEGIN TRANSACTION;\n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ + "\nCOMMIT TRANSACTION;";
+            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; \n BEGIN TRANSACTION;\n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ;
             
 
             if (productos.Length == 0)
@@ -217,6 +229,10 @@ namespace Ferreteria.Forms
                 MessageBox.Show("Debes cargar productos a la lista para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            string ahora = DateTime.Today.ToString("yyyy-MM-dd");
+            laTransact += "\n INSERT INTO VENTAS(tipoFactura, vendedor, cliente, fecha, activo) VALUES("+tipoFactura.codigoTipo+", "+vendedor.legajo+", "+cliente.codigoCliente+", '"+ ahora + "', 1);";
+            laTransact += "\nINSERT INTO DETALLE_VENTA(numeroLote, numeroVenta, cantidad, precioVenta) VALUES " + detallesValues;
+            laTransact += "\nCOMMIT TRANSACTION;";
             Console.WriteLine(laTransact);
             BDHelper.ExcecuteSQL(laTransact);
         }
