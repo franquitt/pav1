@@ -29,9 +29,13 @@ namespace Ferreteria.Forms
 
         private void frmLote_Load(object sender, EventArgs e)
         {
+            Helper.llenarCbo(cboProducto, Producto.GetNames(), "nombre", "codigoProducto");
             if (editMode)
             {
                 lote = new Lote(idLote);
+                cboProducto.SelectedValue = lote.codigoProducto;
+                Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByProducto(lote.codigoProducto), "nombre", "codigoProveedor");
+                cboProveedor.SelectedValue = lote.codigoProveedor;
                 txtCantidad.Text = lote.stockInicial.ToString();
                 txtFecha.Text = lote.fechaIngreso.ToString("dd-MM-yyyy");
                 this.Text += " - Id: " + lote.nroLote.ToString();
@@ -45,7 +49,7 @@ namespace Ferreteria.Forms
         {
             if (!editMode)
             {
-                //new Lote(id, txtNombreClasificacion.Text, txtDescripcionClasificacion.Text).save();
+                new Lote(int.Parse(cboProveedor.SelectedValue.ToString()), int.Parse(cboProducto.SelectedValue.ToString()), int.Parse(txtCantidad.Text), int.Parse(txtCantidad.Text), DateTime.Parse(txtFecha.Text)).save();
                 var confirmResult = MessageBox.Show("Se ha guardado con éxito el lote! Desea agregar otra?",
                     "Resultado", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
