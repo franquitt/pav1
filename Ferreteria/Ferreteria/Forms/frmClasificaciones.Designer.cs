@@ -35,9 +35,9 @@
             // 
             // btnAddClasificaciones
             // 
-            this.btnAddClasificaciones.Location = new System.Drawing.Point(12, 268);
+            this.btnAddClasificaciones.Location = new System.Drawing.Point(334, 268);
             this.btnAddClasificaciones.Name = "btnAddClasificaciones";
-            this.btnAddClasificaciones.Size = new System.Drawing.Size(410, 37);
+            this.btnAddClasificaciones.Size = new System.Drawing.Size(88, 37);
             this.btnAddClasificaciones.TabIndex = 5;
             this.btnAddClasificaciones.Text = "Agregar";
             this.btnAddClasificaciones.UseVisualStyleBackColor = true;
