@@ -22,12 +22,12 @@ namespace Ferreteria.Forms
 
         private void frmLote_Load(object sender, EventArgs e)
         {
-            Helper.llenarCbo(cboProducto, Producto.GetNames(), "nombre", "codigoProducto");
+            Helper.llenarCbo(cboProducto, ProvXProd.GetAllProd(), "nombre", "codProducto");
             if (editMode)
             {
                 lote = new Lote(idLote);
                 cboProducto.SelectedValue = lote.codigoProducto;
-                Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByProducto(lote.codigoProducto), "fullname", "codigoProveedor");
+                Helper.llenarCbo(cboProveedor, ProvXProd.GetAllProveedoresByProducto(lote.codigoProducto), "fullname", "codigoProveedor");
                 cboProveedor.SelectedValue = lote.codigoProveedor;
                 txtCantidad.Text = lote.stockInicial.ToString();
                 txtFecha.Text = lote.fechaIngreso.ToString("dd-MM-yyyy");
@@ -84,7 +84,7 @@ namespace Ferreteria.Forms
         {
             string aBuscar = txtBusquedaProducto.Text;
             cboProducto.DroppedDown = false;
-            Helper.llenarCbo(cboProducto, Producto.GetAllProductosByName(aBuscar), "nombre", "codigoProducto");
+            Helper.llenarCbo(cboProducto, ProvXProd.GetAllProd(aBuscar), "nombre", "codProducto");
             cboProducto.DroppedDown = true;
         }
 
@@ -92,7 +92,7 @@ namespace Ferreteria.Forms
         {
             try
             {
-                Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByProducto(int.Parse(cboProducto.SelectedValue.ToString())), "fullname", "codigoProveedor");
+                Helper.llenarCbo(cboProveedor, ProvXProd.GetAllProveedoresByProducto(int.Parse(cboProducto.SelectedValue.ToString())), "fullname", "codigoProveedor");
             }
             catch { }
         }

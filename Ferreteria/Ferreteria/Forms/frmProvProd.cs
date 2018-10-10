@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ferreteria.Models;
 
@@ -122,6 +115,22 @@ namespace Ferreteria.Forms
             cboProducto.SelectedIndex = -1;
             txtPrecio.Text = "";
             txtTiempo.Text = "";
+        }
+
+        private void txtBusquedaProducto_TextChanged(object sender, EventArgs e)
+        {
+            string aBuscar = txtBusquedaProducto.Text;
+            cboProducto.DroppedDown = false;
+            Helper.llenarCbo(cboProducto, Producto.GetAllProductosByName(aBuscar), "nombre", "codigoProducto");
+            cboProducto.DroppedDown = true;
+        }
+
+        private void txtBusquedaProveedor_TextChanged(object sender, EventArgs e)
+        {
+            string aBuscar = txtBusquedaProveedor.Text;
+            cboProveedor.DroppedDown = false;
+            Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByName(aBuscar), "fullname", "codigoProveedor");
+            cboProveedor.DroppedDown = true;
         }
     }
 }

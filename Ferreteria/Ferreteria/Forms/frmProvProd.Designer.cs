@@ -30,6 +30,7 @@
         {
             this.txtTiempo = new System.Windows.Forms.NumericUpDown();
             this.gboxProveedor = new System.Windows.Forms.GroupBox();
+            this.txtBusquedaProveedor = new System.Windows.Forms.TextBox();
             this.cboProveedor = new System.Windows.Forms.ComboBox();
             this.gboxProducto = new System.Windows.Forms.GroupBox();
             this.cboProducto = new System.Windows.Forms.ComboBox();
@@ -37,7 +38,6 @@
             this.lblTiempo = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtBusquedaProveedor = new System.Windows.Forms.TextBox();
             this.btnSaveAsociacion = new System.Windows.Forms.Button();
             this.btnDeleteAsociacion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtTiempo)).BeginInit();
@@ -63,8 +63,17 @@
             this.gboxProveedor.TabStop = false;
             this.gboxProveedor.Text = "Proveedor";
             // 
+            // txtBusquedaProveedor
+            // 
+            this.txtBusquedaProveedor.Location = new System.Drawing.Point(7, 18);
+            this.txtBusquedaProveedor.Name = "txtBusquedaProveedor";
+            this.txtBusquedaProveedor.Size = new System.Drawing.Size(115, 20);
+            this.txtBusquedaProveedor.TabIndex = 2;
+            this.txtBusquedaProveedor.TextChanged += new System.EventHandler(this.txtBusquedaProveedor_TextChanged);
+            // 
             // cboProveedor
             // 
+            this.cboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProveedor.FormattingEnabled = true;
             this.cboProveedor.Location = new System.Drawing.Point(128, 18);
             this.cboProveedor.Name = "cboProveedor";
@@ -84,6 +93,7 @@
             // 
             // cboProducto
             // 
+            this.cboProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProducto.FormattingEnabled = true;
             this.cboProducto.Location = new System.Drawing.Point(128, 20);
             this.cboProducto.Name = "cboProducto";
@@ -96,6 +106,7 @@
             this.txtBusquedaProducto.Name = "txtBusquedaProducto";
             this.txtBusquedaProducto.Size = new System.Drawing.Size(115, 20);
             this.txtBusquedaProducto.TabIndex = 0;
+            this.txtBusquedaProducto.TextChanged += new System.EventHandler(this.txtBusquedaProducto_TextChanged);
             // 
             // lblTiempo
             // 
@@ -121,13 +132,6 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(109, 20);
             this.txtPrecio.TabIndex = 8;
-            // 
-            // txtBusquedaProveedor
-            // 
-            this.txtBusquedaProveedor.Location = new System.Drawing.Point(7, 18);
-            this.txtBusquedaProveedor.Name = "txtBusquedaProveedor";
-            this.txtBusquedaProveedor.Size = new System.Drawing.Size(115, 20);
-            this.txtBusquedaProveedor.TabIndex = 2;
             // 
             // btnSaveAsociacion
             // 

@@ -38,7 +38,27 @@ namespace Ferreteria.Models
         //Devuelve una tabla con todas las asociaciones del sistema
         public static DataTable GetAllProvProd()
         {
-            return BDHelper.ConsultaSQL("SELECT X.codigoProveedor, X.codigoProducto, X.tiempoEntrega AS 'Tiempo de entrega', X.precio AS 'Precio', P.nombre AS 'Producto', CONCAT(PR.apellido, CONCAT(' ', PR.nombre)) AS 'Proveedro' FROM PROVxPROD X JOIN PRODUCTOS P ON(X.codigoProducto = P.codigoProducto) JOIN PROVEEDOR PR ON(X.codigoProveedor = PR.codigoProveedor)");
+            return BDHelper.ConsultaSQL("SELECT X.codigoProveedor, X.codigoProducto, X.tiempoEntrega AS 'Tiempo de entrega', X.precio AS 'Precio', P.nombre AS 'Producto', CONCAT(PR.apellido, CONCAT(' ', PR.nombre)) AS 'Proveedor' FROM PROVxPROD X JOIN PRODUCTOS P ON(X.codigoProducto = P.codigoProducto) JOIN PROVEEDOR PR ON(X.codigoProveedor = PR.codigoProveedor)");
+        }
+        
+        //Devuelve una tabla con los productos que tienen algun proveedor
+        public static DataTable GetAllProd()
+        {
+            return BDHelper.ConsultaSQL("SELECT DISTINCT X.codigoProducto AS 'codProducto', P.nombre AS 'nombre' FROM PROVxPROD X JOIN PRODUCTOS P ON(X.codigoProducto = P.codigoProducto)");
+        }
+
+        //Devuelve una tabla con los productos que tienen algun proveedor y cierto nombre
+        public static DataTable GetAllProd(string name)
+        {
+            return BDHelper.ConsultaSQL("SELECT DISTINCT X.codigoProducto AS 'codProducto', P.nombre AS 'nombre' FROM PROVxPROD X JOIN PRODUCTOS P ON(X.codigoProducto = P.codigoProducto) WHERE nombre LIKE '%" + name + "%'");
+        }
+
+        //Devuelve una tabla con los proveedores que venden cierto producto
+        public static DataTable GetAllProveedoresByProducto(int cod)
+        {
+            return BDHelper.ConsultaSQL("SELECT P.codigoProveedor AS 'codigoProveedor', CONCAT(P.apellido, CONCAT(' ', P.nombre)) AS 'fullname' " +
+                "FROM PROVEEDOR P JOIN PROVxPROD PR ON(PR.codigoProducto = " + cod + " AND P.codigoProveedor = PR.codigoProveedor) " +
+                "WHERE P.activo = 1");
         }
 
         //Metodo que guarda los datos de una asociacion nueva o una ya existente

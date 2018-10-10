@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gboxProducto = new System.Windows.Forms.GroupBox();
             this.cboProducto = new System.Windows.Forms.ComboBox();
             this.txtBusquedaProducto = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             // 
             // cboProducto
             // 
+            this.cboProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProducto.FormattingEnabled = true;
             this.cboProducto.Location = new System.Drawing.Point(128, 20);
             this.cboProducto.Name = "cboProducto";
@@ -84,6 +84,7 @@
             // 
             // cboProveedor
             // 
+            this.cboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProveedor.FormattingEnabled = true;
             this.cboProveedor.Location = new System.Drawing.Point(7, 18);
             this.cboProveedor.Name = "cboProveedor";
@@ -159,8 +160,6 @@
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox gboxProducto;
         private System.Windows.Forms.ComboBox cboProducto;
         private System.Windows.Forms.TextBox txtBusquedaProducto;
