@@ -40,9 +40,22 @@ namespace Ferreteria.Models
             telefono = tabla.Rows[0]["telefono"].ToString();
             activo = (bool)tabla.Rows[0]["activo"];
         }
+
         public static DataTable GetAllProveedores()
         {
             return BDHelper.ConsultaSQL("SELECT codigoProveedor AS 'Codigo Proveedor', nombre AS 'Nombre', apellido AS 'Apellido', direccion AS 'Dirección', telefono AS 'Teléfono' FROM PROVEEDOR WHERE activo = 1");
+        }
+
+        public static DataTable GetAllProveedoresByName(string str)
+        {
+            return BDHelper.ConsultaSQL("SELECT codigoProveedor, CONCAT(apellido, CONCAT(' ', nombre)) AS 'fullname' FROM PROVEEDOR WHERE activo = 1 AND nombre LIKE '%" + str + "%' OR apellido LIKE '%" + str + "%'");
+        }
+
+        public static DataTable GetAllProveedoresByProducto(int cod)
+        {
+            return BDHelper.ConsultaSQL("SELECT P.codigoProveedor, CONCAT(P.apellido, CONCAT(' ', P.nombre)) AS 'fullname' " +
+                "FROM PROVEEDOR P JOIN PROVxPROD PR ON(PR.codigoProducto = " + cod + " AND P.codigoProveedor = PR.codigoProveedor) " +
+                "WHERE P.activo = 1");
         }
 
         public bool save()
