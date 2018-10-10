@@ -84,19 +84,24 @@ namespace Ferreteria
                 return false;
         }
 
-        //Devuelve el ID de la fila seleccionada en un DataGrid pasado como parametro
         public static int getSelectedId(DataGridView grid)
+        {
+            return (getSelectedId(grid, 0));
+        }
+
+        //Devuelve el ID de la fila seleccionada en un DataGrid y una celda pasado como parametro
+        public static int getSelectedId(DataGridView grid, int cell)
         {
             int id = 0;
             try
             {
-                id = (int)grid.SelectedRows[0].Cells[0].Value;
+                id = (int)grid.SelectedRows[0].Cells[cell].Value;
             }
             catch
             {
                 try
                 {
-                    id = (int)grid.Rows[(int)grid.SelectedCells[0].RowIndex].Cells[0].Value;
+                    id = (int)grid.Rows[(int)grid.SelectedCells[0].RowIndex].Cells[cell].Value;
                 }
                 catch
                 {

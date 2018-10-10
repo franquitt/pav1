@@ -81,6 +81,18 @@
     <Compile Include="Forms\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmProvProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProvProd.Designer.cs">
+      <DependentUpon>frmProvProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmProvsProds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProvsProds.Designer.cs">
+      <DependentUpon>frmProvsProds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,7 @@
     <Compile Include="Models\Lote.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
+    <Compile Include="Models\ProvXProd.cs" />
     <Compile Include="Models\TipoFactura.cs" />
     <Compile Include="Models\TipoEmpleado.cs" />
     <Compile Include="Models\Empleado.cs" />
@@ -188,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLotes.resx">
       <DependentUpon>frmLotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProvProd.resx">
+      <DependentUpon>frmProvProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProvsProds.resx">
+      <DependentUpon>frmProvsProds.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>

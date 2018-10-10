@@ -77,7 +77,7 @@ namespace Ferreteria.Forms
         {
             try
             {
-                var confirmResult = MessageBox.Show("Esta seguro que desea deshabilitar esta clasificacion?",
+                var confirmResult = MessageBox.Show("Esta seguro que desea deshabilitar este tipo de factura?",
                                          "Dar de baja!",
                                          MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)

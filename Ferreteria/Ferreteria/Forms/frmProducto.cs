@@ -78,5 +78,10 @@ namespace Ferreteria.Forms
                 this.Close();
             }
         }
+
+        private void btnDeleteProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

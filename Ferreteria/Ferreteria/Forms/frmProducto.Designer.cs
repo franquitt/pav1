@@ -107,6 +107,7 @@
             this.btnDeleteProducto.TabIndex = 8;
             this.btnDeleteProducto.Text = "Dar de baja";
             this.btnDeleteProducto.UseVisualStyleBackColor = true;
+            this.btnDeleteProducto.Click += new System.EventHandler(this.btnDeleteProducto_Click);
             // 
             // lblClasificacionProducto
             // 

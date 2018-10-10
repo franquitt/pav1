@@ -221,7 +221,10 @@ namespace Ferreteria.Forms
                 }
                 
             }
-            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; \n BEGIN TRANSACTION;\n begin try \n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ;
+            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; " +
+                "\n BEGIN TRANSACTION;" +
+                "\n begin try " +
+                "\n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ;
             
 
             if (productos.Length == 0)
