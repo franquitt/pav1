@@ -23,9 +23,7 @@ namespace Ferreteria.Forms
         //Caso contrario se desactiva el boton para dar de baja
         private void frmProducto_Load(object sender, EventArgs e)
         {
-            cmbClasificacion.DataSource = Clasificacion.GetAllClasificaciones();
-            cmbClasificacion.DisplayMember = "nombre";
-            cmbClasificacion.ValueMember = "codigoClasificacion";
+            Helper.llenarCbo(cmbClasificacion, Clasificacion.GetAllClasificaciones(), "nombre", "codigoClasificacion");
 
             if (editMode)
             {
@@ -35,6 +33,7 @@ namespace Ferreteria.Forms
                 txtDescripcionProducto.Text = producto.descripcion;
                 this.Text += " - Id: " + producto.codigoProducto.ToString();
                 btnSaveProducto.Text = "Guardar cambios";
+                cmbClasificacion.SelectedValue = producto.codigoClasificacion;
             }
             else
             {

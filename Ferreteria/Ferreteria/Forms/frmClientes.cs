@@ -15,6 +15,7 @@ namespace Ferreteria.Forms
         public void frmClientes_Load(object sender, EventArgs e)
         {
             gridClientes.DataSource = Cliente.GetAllClientes();
+            gridClientes.Columns[0].Width = 25;
         }
 
         private void btnAddCliente_Click(object sender, EventArgs e)

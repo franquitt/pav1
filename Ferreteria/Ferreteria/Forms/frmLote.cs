@@ -85,7 +85,6 @@ namespace Ferreteria.Forms
             cboProducto.SelectedIndex = -1;
             cboProveedor.SelectedIndex = -1;
             txtBusquedaProducto.Text = "";
-            txtBusquedaProveedor.Text = "";
         }
 
         private void txtBusquedaProducto_TextChanged(object sender, EventArgs e)
@@ -94,14 +93,6 @@ namespace Ferreteria.Forms
             cboProducto.DroppedDown = false;
             Helper.llenarCbo(cboProducto, Producto.GetAllProductosByName(aBuscar), "nombre", "codigoProducto");
             cboProducto.DroppedDown = true;
-        }
-
-        private void txtBusquedaProveedor_TextChanged(object sender, EventArgs e)
-        {
-            string aBuscar = txtBusquedaProveedor.Text;
-            cboProveedor.DroppedDown = false;
-            Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByName(aBuscar), "nombre", "codigoProveedor");
-            cboProveedor.DroppedDown = true;
         }
 
         private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)

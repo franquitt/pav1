@@ -34,7 +34,6 @@
             this.txtBusquedaProducto = new System.Windows.Forms.TextBox();
             this.gboxProveedor = new System.Windows.Forms.GroupBox();
             this.cboProveedor = new System.Windows.Forms.ComboBox();
-            this.txtBusquedaProveedor = new System.Windows.Forms.TextBox();
             this.lblStockInicial = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.NumericUpDown();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -76,7 +75,6 @@
             // gboxProveedor
             // 
             this.gboxProveedor.Controls.Add(this.cboProveedor);
-            this.gboxProveedor.Controls.Add(this.txtBusquedaProveedor);
             this.gboxProveedor.Location = new System.Drawing.Point(12, 69);
             this.gboxProveedor.Name = "gboxProveedor";
             this.gboxProveedor.Size = new System.Drawing.Size(394, 51);
@@ -87,18 +85,10 @@
             // cboProveedor
             // 
             this.cboProveedor.FormattingEnabled = true;
-            this.cboProveedor.Location = new System.Drawing.Point(128, 18);
+            this.cboProveedor.Location = new System.Drawing.Point(7, 18);
             this.cboProveedor.Name = "cboProveedor";
-            this.cboProveedor.Size = new System.Drawing.Size(260, 21);
+            this.cboProveedor.Size = new System.Drawing.Size(381, 21);
             this.cboProveedor.TabIndex = 2;
-            // 
-            // txtBusquedaProveedor
-            // 
-            this.txtBusquedaProveedor.Location = new System.Drawing.Point(7, 19);
-            this.txtBusquedaProveedor.Name = "txtBusquedaProveedor";
-            this.txtBusquedaProveedor.Size = new System.Drawing.Size(115, 20);
-            this.txtBusquedaProveedor.TabIndex = 2;
-            this.txtBusquedaProveedor.TextChanged += new System.EventHandler(this.txtBusquedaProveedor_TextChanged);
             // 
             // lblStockInicial
             // 
@@ -162,7 +152,6 @@
             this.gboxProducto.ResumeLayout(false);
             this.gboxProducto.PerformLayout();
             this.gboxProveedor.ResumeLayout(false);
-            this.gboxProveedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,7 +166,6 @@
         private System.Windows.Forms.TextBox txtBusquedaProducto;
         private System.Windows.Forms.GroupBox gboxProveedor;
         private System.Windows.Forms.ComboBox cboProveedor;
-        private System.Windows.Forms.TextBox txtBusquedaProveedor;
         private System.Windows.Forms.Label lblStockInicial;
         private System.Windows.Forms.NumericUpDown txtCantidad;
         private System.Windows.Forms.Label lblFecha;

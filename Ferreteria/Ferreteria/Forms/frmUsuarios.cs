@@ -13,6 +13,7 @@ namespace Ferreteria
         public void Vendedores_Load(object sender, EventArgs e)
         {
             gridVendedores.DataSource = Empleado.GetAllEmployes();
+            gridVendedores.Columns[0].Width = 50;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)

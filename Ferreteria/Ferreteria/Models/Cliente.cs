@@ -37,7 +37,7 @@ namespace Ferreteria.Models
 
         public static DataTable GetAllClientes()
         {
-            return BDHelper.ConsultaSQL("SELECT codigoCliente AS 'Codigo Cliente', nombre AS 'Nombre', apellido AS 'Apellido', telefono AS 'Teléfono', cuit AS 'CUIT' FROM CLIENTES");
+            return BDHelper.ConsultaSQL("SELECT codigoCliente AS '#', nombre AS 'Nombre', apellido AS 'Apellido', telefono AS 'Teléfono', cuit AS 'CUIT' FROM CLIENTES");
         }
 
         public static DataTable GetClientesByName(string str, bool name)

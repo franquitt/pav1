@@ -70,7 +70,7 @@ namespace Ferreteria.Models
         public static DataTable GetAllProductos()
         {
             return BDHelper.ConsultaSQL("" +
-                "SELECT PRODUCTOS.codigoProducto AS 'Codigo', PRODUCTOS.nombre AS 'Nombre', PRODUCTOS.descripcion as 'Descripcion', PRODUCTOS.precio as 'Precio', CLASIFICACION.nombre AS 'Clasificacion' " +
+                "SELECT PRODUCTOS.codigoProducto AS '#', PRODUCTOS.nombre AS 'Nombre', PRODUCTOS.descripcion as 'Descripcion', PRODUCTOS.precio as 'Precio', CLASIFICACION.nombre AS 'Clasificacion' " +
                 "FROM PRODUCTOS JOIN CLASIFICACION ON(PRODUCTOS.clasificacion=CLASIFICACION.codigoClasificacion) " +
                 "WHERE PRODUCTOS.activo = 1 ORDER BY nombre");
         }

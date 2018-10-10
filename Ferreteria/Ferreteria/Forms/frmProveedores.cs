@@ -20,6 +20,7 @@ namespace Ferreteria.Forms
         public void frmProveedores_Load(object sender, EventArgs e)
         {
             gridProveedores.DataSource = Proveedor.GetAllProveedores();
+            gridProveedores.Columns[0].Width = 25;
         }
 
         private void gridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
