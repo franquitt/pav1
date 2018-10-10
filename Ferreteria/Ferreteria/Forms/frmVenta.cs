@@ -180,19 +180,45 @@ namespace Ferreteria.Forms
 
             Producto[] productos = new Producto[gridProductos.RowCount];
             int[] cantidades = new int[gridProductos.RowCount];
+            string selectConditions = "";
+            string updatesQ = "";
             for (int i = 0; i < gridProductos.RowCount; i++)
             {
                 productos[i] = new Producto((int)gridProductos.Rows[i].Cells[0].Value);
                 cantidades[i] = int.Parse(gridProductos.Rows[i].Cells[2].Value.ToString());
                 Lote[] lotes = Lote.getAllLotesObjectsByProduct(productos[i].codigoProducto);
+
+                int[] stockNuevos = new int[lotes.Length];
+                int stockAlcanzado = 0;
+                int index = 0;
+                for (index=0; index < lotes.Length; index++)
+                {
+                    if (stockAlcanzado + lotes[index].stockActual <= cantidades[i])//le tengo que sacar el stock completo!
+                    {
+                        stockNuevos[index] = 0;
+                        stockAlcanzado += lotes[index].stockActual;
+                    }else{
+                        stockNuevos[index] = lotes[index].stockActual - (cantidades[i]- stockAlcanzado);//a lo que tenia le saco lo que me hace falta nomas
+                    }
+                    if (selectConditions.Equals(""))
+                        selectConditions += "numeroLote = " + lotes[index].nroLote;
+                    else
+                        selectConditions += " OR numeroLote = " + lotes[index].nroLote;
+                    updatesQ += "\n UPDATE LOTES SET stockActual = " + stockNuevos[index] + " WHERE numeroLote = " + lotes[index].nroLote+";";
+                    if (stockAlcanzado == cantidades[i])//si ya obtuve el stock que queria cortar
+                        break;
+                }
             }
+            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; \n BEGIN TRANSACTION;\n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ + "\nCOMMIT TRANSACTION;";
+            
 
             if (productos.Length == 0)
             {
                 MessageBox.Show("Debes cargar productos a la lista para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+            Console.WriteLine(laTransact);
+            BDHelper.ExcecuteSQL(laTransact);
         }
 
         private decimal CalcularTotal()
