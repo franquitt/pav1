@@ -30,11 +30,12 @@ namespace Ferreteria.Forms
         private void frmLote_Load(object sender, EventArgs e)
         {
             Helper.llenarCbo(cboProducto, Producto.GetNames(), "nombre", "codigoProducto");
+            Console.WriteLine("Entrando");
             if (editMode)
             {
                 lote = new Lote(idLote);
                 cboProducto.SelectedValue = lote.codigoProducto;
-                Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByProducto(lote.codigoProducto), "nombre", "codigoProveedor");
+                Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByProducto(lote.codigoProducto), "fullname", "codigoProveedor");
                 cboProveedor.SelectedValue = lote.codigoProveedor;
                 txtCantidad.Text = lote.stockInicial.ToString();
                 txtFecha.Text = lote.fechaIngreso.ToString("dd-MM-yyyy");

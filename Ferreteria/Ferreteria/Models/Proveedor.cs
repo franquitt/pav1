@@ -53,6 +53,10 @@ namespace Ferreteria.Models
 
         public static DataTable GetAllProveedoresByProducto(int cod)
         {
+            string sql = "SELECT P.codigoProveedor, CONCAT(P.apellido, CONCAT(' ', P.nombre)) AS 'fullname' " +
+                "FROM PROVEEDOR P JOIN PROVxPROD PR ON(PR.codigoProducto = " + cod + " AND P.codigoProveedor = PR.codigoProveedor) " +
+                "WHERE P.activo = 1";
+            Console.WriteLine(sql);
             return BDHelper.ConsultaSQL("SELECT P.codigoProveedor, CONCAT(P.apellido, CONCAT(' ', P.nombre)) AS 'fullname' " +
                 "FROM PROVEEDOR P JOIN PROVxPROD PR ON(PR.codigoProducto = " + cod + " AND P.codigoProveedor = PR.codigoProveedor) " +
                 "WHERE P.activo = 1");
