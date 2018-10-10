@@ -214,14 +214,14 @@ namespace Ferreteria.Forms
                     {
                         if (!detallesValues.Equals(""))
                             detallesValues += ", ";
-                        detallesValues += "("+ lotes[index].nroLote + ", @@IDENTITY, "+ stockNuevos[index] + ", '"+ productos[i].precio+ "')";
+                        detallesValues += "("+ lotes[index].nroLote + ", @@IDENTITY, "+ stockAlcanzado[i] + ", '"+ productos[i].precio+ "')";
                     }
                     if (stockAlcanzado[i] == cantidades[i])//si ya obtuve el stock que queria cortar
                         break;
                 }
                 
             }
-            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; \n BEGIN TRANSACTION;\n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ;
+            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; \n BEGIN TRANSACTION;\n begin try \n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ;
             
 
             if (productos.Length == 0)
@@ -232,9 +232,22 @@ namespace Ferreteria.Forms
             string ahora = DateTime.Today.ToString("yyyy-MM-dd");
             laTransact += "\n INSERT INTO VENTAS(tipoFactura, vendedor, cliente, fecha, activo) VALUES("+tipoFactura.codigoTipo+", "+vendedor.legajo+", "+cliente.codigoCliente+", '"+ ahora + "', 1);";
             laTransact += "\nINSERT INTO DETALLE_VENTA(numeroLote, numeroVenta, cantidad, precioVenta) VALUES " + detallesValues;
-            laTransact += "\nCOMMIT TRANSACTION;";
+            laTransact += "\nCOMMIT TRANSACTION;\n end try";
+            laTransact += "\n begin catch" +
+                "\n rollback transaction" +
+                "\n raiserror('Error generando venta', 16, 1)" +                  
+                "\n end catch";
             Console.WriteLine(laTransact);
-            BDHelper.ExcecuteSQL(laTransact);
+            try
+            {
+                BDHelper.ExcecuteSQL(laTransact);
+                MessageBox.Show("Venta confirmada", "Genial!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un problema generando la venta", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private decimal CalcularTotal()
