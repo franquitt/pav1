@@ -20,10 +20,18 @@ namespace Ferreteria.Models
             this.nroLote = nroLote;
             readAttrs();
         }
+        public Lote(int codigoProveedor, int codigoProducto, int stockInicial, int stockActual = 0, fechaIngreso)
+        {
+            this.codigoProveedor = codigoProveedor;
+            this.codigoProducto = codigoProducto;
+            this.stockInicial = stockInicial;
+            this.stockActual = stockActual;
+            this.fechaIngreso = fechaIngreso;
+        }
         public Lote()
         {
-        }
 
+        }
         public void save()
         {
             if (nroLote == 0)
@@ -40,9 +48,11 @@ namespace Ferreteria.Models
             stockActual = (int)values.Rows[0]["stockActual"];
             fechaIngreso = DateTime.Parse(values.Rows[0]["fechaIngreso"].ToString());
         }
+
         public static DataTable getAllLotes() {
             return BDHelper.ConsultaSQL("SELECT LOTES.numeroLote, PROVEEDOR.nombre AS nomProveedor, PRODUCTOS.nombre AS nomProducto, LOTES.stockActual, LOTES.fechaIngreso FROM LOTES JOIN PROVEEDOR ON(PROVEEDOR.codigoProveedor = LOTES.codigoProveedor) JOIN PRODUCTOS ON(PRODUCTOS.codigoProducto = LOTES.codigoProducto) ORDER BY LOTES.fechaIngreso");
         }
+
         public static Lote[] getAllLotesObjectsByProduct(int codProd)
         {
             DataTable values =  BDHelper.ConsultaSQL("SELECT numeroLote, codigoProveedor, codigoProducto, stockInicial, stockActual, fechaIngreso FROM LOTES WHERE codigoProducto = "+ codProd + " ORDER BY fechaIngreso ASC");
