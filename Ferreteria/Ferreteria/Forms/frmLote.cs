@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ferreteria.Models;
 
 namespace Ferreteria.Forms
 {
@@ -15,7 +16,7 @@ namespace Ferreteria.Forms
         bool editMode = false;
         frmLotes formLotes = null;
         int idLote = 0;
-        //Lote lote = null;
+        Lote lote = null;
 
         //Iniciliza el formulario
         public frmLote(int id, bool editMode, frmLotes frm)
@@ -30,36 +31,11 @@ namespace Ferreteria.Forms
         {
             if (editMode)
             {
-                //lote = new Lote(id);
-                //txtCantidad.Text = lote.stockInicial;
-                //txtFecha.Text = lote.fechaIngreso.ToString("dd-MM-yyyy");
-                //this.Text += " - Id: " + lote.nroLote.ToString();
+                lote = new Lote(idLote);
+                txtCantidad.Text = lote.stockInicial.ToString();
+                txtFecha.Text = lote.fechaIngreso.ToString("dd-MM-yyyy");
+                this.Text += " - Id: " + lote.nroLote.ToString();
                 btnSaveLote.Text = "Guardar cambios";
-            }
-            else
-            {
-                btnDeleteLote.Visible = false;
-            }
-        }
-
-        //Permite dar de baja la clasificacion que se está modificando
-        private void btnDeleteLote_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var confirmResult = MessageBox.Show("Esta seguro que desea deshabilitar este lote?",
-                                         "Dar de baja!",
-                                         MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
-                {
-                    //lote.available(false);
-                    formLotes.frmLotes_Load(null, null);
-                    this.Close();
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Se produjo un error", "Error", MessageBoxButtons.OK);
             }
         }
 
@@ -78,16 +54,19 @@ namespace Ferreteria.Forms
                 }
                 else
                 {
-                    form.frmClasificaciones_Load(null, null);
+                    formLotes.frmLotes_Load(null, null);
                     this.Close();
                 }
             }
             else
             {
-                clasificacion.nombre = txtNombreClasificacion.Text;
-                clasificacion.descripcion = txtDescripcionClasificacion.Text;
-                clasificacion.save();
-                form.frmClasificaciones_Load(null, null);
+                lote.stockInicial = int.Parse(txtCantidad.Text);
+                lote.stockActual = int.Parse(txtCantidad.Text);
+                lote.fechaIngreso = DateTime.Parse(txtFecha.Text);
+                lote.codigoProducto = int.Parse(cboProducto.SelectedValue.ToString());
+                lote.codigoProveedor = int.Parse(cboProveedor.SelectedValue.ToString());
+                lote.save();
+                formLotes.frmLotes_Load(null, null);
                 this.Close();
             }
         }
@@ -103,6 +82,22 @@ namespace Ferreteria.Forms
             cboProveedor.SelectedIndex = -1;
             txtBusquedaProducto.Text = "";
             txtBusquedaProveedor.Text = "";
+        }
+
+        private void txtBusquedaProducto_TextChanged(object sender, EventArgs e)
+        {
+            string aBuscar = txtBusquedaProducto.Text;
+            cboProducto.DroppedDown = false;
+            Helper.llenarCbo(cboProducto, Producto.GetAllProductosByName(aBuscar), "nombre", "codigoProducto");
+            cboProducto.DroppedDown = true;
+        }
+
+        private void txtBusquedaProveedor_TextChanged(object sender, EventArgs e)
+        {
+            string aBuscar = txtBusquedaProveedor.Text;
+            cboProveedor.DroppedDown = false;
+            Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByName(aBuscar), "nombre", "codigoProveedor");
+            cboProveedor.DroppedDown = true;
         }
     }
 }
