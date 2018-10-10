@@ -136,9 +136,13 @@ namespace Ferreteria.Forms
 
         private void btnConfirmarVenta_Click(object sender, EventArgs e)
         {
+            Cliente cliente;
+            Empleado vendedor;
+            TipoFactura tipoFactura;
+
             if (cboVendedor.SelectedValue != null)
             {
-                Empleado vendedor = new Empleado((int)cboVendedor.SelectedValue);
+                vendedor = new Empleado((int)cboVendedor.SelectedValue);
             } else
             {
                 MessageBox.Show("Debes elegir un vendedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -148,7 +152,7 @@ namespace Ferreteria.Forms
 
             if (cboTipoFactura.SelectedValue != null)
             {
-                TipoFactura tipoFactura = new TipoFactura((int)cboTipoFactura.SelectedValue);
+                tipoFactura = new TipoFactura((int)cboTipoFactura.SelectedValue);
             }
             else
             {
@@ -161,10 +165,10 @@ namespace Ferreteria.Forms
             {
                 if (cboCliente.SelectedValue != null)
                 {
-                    Cliente cliente = new Cliente((int)cboCliente.SelectedValue);
+                    cliente = new Cliente((int)cboCliente.SelectedValue);
                 } else
                 {
-                    Cliente cliente = new Cliente((int)cboCuit.SelectedValue);
+                    cliente = new Cliente((int)cboCuit.SelectedValue);
                 }
             }
             else
@@ -180,12 +184,15 @@ namespace Ferreteria.Forms
             {
                 productos[i] = new Producto((int)gridProductos.Rows[i].Cells[0].Value);
                 cantidades[i] = int.Parse(gridProductos.Rows[i].Cells[2].Value.ToString());
+                Lote[] lotes = Lote.getAllLotesObjectsByProduct(productos[i].codigoProducto);
             }
 
             if (productos.Length == 0)
             {
                 MessageBox.Show("Debes cargar productos a la lista para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+            
         }
 
         private decimal CalcularTotal()
