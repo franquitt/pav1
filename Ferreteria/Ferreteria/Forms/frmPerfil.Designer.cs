@@ -1,6 +1,6 @@
 ﻿namespace Ferreteria.Forms
 {
-    partial class frmNuevoPerfil
+    partial class frmPerfil
     {
         /// <summary>
         /// Required designer variable.

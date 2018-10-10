@@ -43,7 +43,7 @@
             // lblNombreProveedor
             // 
             this.lblNombreProveedor.AutoSize = true;
-            this.lblNombreProveedor.Location = new System.Drawing.Point(101, 40);
+            this.lblNombreProveedor.Location = new System.Drawing.Point(12, 9);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
             this.lblNombreProveedor.Size = new System.Drawing.Size(44, 13);
             this.lblNombreProveedor.TabIndex = 0;
@@ -52,7 +52,7 @@
             // lblApellidoProveedor
             // 
             this.lblApellidoProveedor.AutoSize = true;
-            this.lblApellidoProveedor.Location = new System.Drawing.Point(101, 66);
+            this.lblApellidoProveedor.Location = new System.Drawing.Point(12, 35);
             this.lblApellidoProveedor.Name = "lblApellidoProveedor";
             this.lblApellidoProveedor.Size = new System.Drawing.Size(44, 13);
             this.lblApellidoProveedor.TabIndex = 1;
@@ -61,7 +61,7 @@
             // lblDireccionProveedor
             // 
             this.lblDireccionProveedor.AutoSize = true;
-            this.lblDireccionProveedor.Location = new System.Drawing.Point(93, 92);
+            this.lblDireccionProveedor.Location = new System.Drawing.Point(12, 61);
             this.lblDireccionProveedor.Name = "lblDireccionProveedor";
             this.lblDireccionProveedor.Size = new System.Drawing.Size(52, 13);
             this.lblDireccionProveedor.TabIndex = 2;
@@ -70,7 +70,7 @@
             // lblTelefonoProveedor
             // 
             this.lblTelefonoProveedor.AutoSize = true;
-            this.lblTelefonoProveedor.Location = new System.Drawing.Point(96, 118);
+            this.lblTelefonoProveedor.Location = new System.Drawing.Point(12, 87);
             this.lblTelefonoProveedor.Name = "lblTelefonoProveedor";
             this.lblTelefonoProveedor.Size = new System.Drawing.Size(49, 13);
             this.lblTelefonoProveedor.TabIndex = 3;
@@ -78,37 +78,37 @@
             // 
             // txtNombreProveedor
             // 
-            this.txtNombreProveedor.Location = new System.Drawing.Point(176, 37);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(68, 6);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(100, 20);
+            this.txtNombreProveedor.Size = new System.Drawing.Size(191, 20);
             this.txtNombreProveedor.TabIndex = 4;
             // 
             // txtApellidoProveedor
             // 
-            this.txtApellidoProveedor.Location = new System.Drawing.Point(176, 63);
+            this.txtApellidoProveedor.Location = new System.Drawing.Point(68, 32);
             this.txtApellidoProveedor.Name = "txtApellidoProveedor";
-            this.txtApellidoProveedor.Size = new System.Drawing.Size(100, 20);
+            this.txtApellidoProveedor.Size = new System.Drawing.Size(191, 20);
             this.txtApellidoProveedor.TabIndex = 5;
             // 
             // txtDireccionProveedor
             // 
-            this.txtDireccionProveedor.Location = new System.Drawing.Point(176, 89);
+            this.txtDireccionProveedor.Location = new System.Drawing.Point(68, 58);
             this.txtDireccionProveedor.Name = "txtDireccionProveedor";
-            this.txtDireccionProveedor.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccionProveedor.Size = new System.Drawing.Size(191, 20);
             this.txtDireccionProveedor.TabIndex = 6;
             // 
             // txtTelefonoProveedor
             // 
-            this.txtTelefonoProveedor.Location = new System.Drawing.Point(176, 115);
+            this.txtTelefonoProveedor.Location = new System.Drawing.Point(68, 84);
             this.txtTelefonoProveedor.Name = "txtTelefonoProveedor";
-            this.txtTelefonoProveedor.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonoProveedor.Size = new System.Drawing.Size(191, 20);
             this.txtTelefonoProveedor.TabIndex = 7;
             // 
             // btnDeleteProveedor
             // 
-            this.btnDeleteProveedor.Location = new System.Drawing.Point(68, 153);
+            this.btnDeleteProveedor.Location = new System.Drawing.Point(68, 110);
             this.btnDeleteProveedor.Name = "btnDeleteProveedor";
-            this.btnDeleteProveedor.Size = new System.Drawing.Size(120, 32);
+            this.btnDeleteProveedor.Size = new System.Drawing.Size(92, 45);
             this.btnDeleteProveedor.TabIndex = 13;
             this.btnDeleteProveedor.Text = "Dar de baja";
             this.btnDeleteProveedor.UseVisualStyleBackColor = true;
@@ -116,9 +116,9 @@
             // 
             // btnSaveProveedor
             // 
-            this.btnSaveProveedor.Location = new System.Drawing.Point(194, 153);
+            this.btnSaveProveedor.Location = new System.Drawing.Point(167, 110);
             this.btnSaveProveedor.Name = "btnSaveProveedor";
-            this.btnSaveProveedor.Size = new System.Drawing.Size(123, 32);
+            this.btnSaveProveedor.Size = new System.Drawing.Size(92, 45);
             this.btnSaveProveedor.TabIndex = 14;
             this.btnSaveProveedor.Text = "Guardar";
             this.btnSaveProveedor.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 226);
+            this.ClientSize = new System.Drawing.Size(271, 165);
             this.Controls.Add(this.btnSaveProveedor);
             this.Controls.Add(this.btnDeleteProveedor);
             this.Controls.Add(this.txtTelefonoProveedor);
@@ -140,7 +140,7 @@
             this.Controls.Add(this.lblApellidoProveedor);
             this.Controls.Add(this.lblNombreProveedor);
             this.Name = "frmProveedor";
-            this.Text = "frmProveedor";
+            this.Text = "Proveedor";
             this.Load += new System.EventHandler(this.frmProveedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

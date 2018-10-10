@@ -19,7 +19,7 @@ namespace Ferreteria
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             frmNuevoUsuario form = new frmNuevoUsuario(true);
-            form.setForm(this);
+            form.SetForm(this);
             form.Show();
         }
 
@@ -28,7 +28,7 @@ namespace Ferreteria
             int id = Helper.getSelectedId(gridVendedores);
 
             frmNuevoUsuario form = new frmNuevoUsuario(false);
-            form.setForm(this);
+            form.SetForm(this);
             form.legajo = id;
             form.Show();
         }

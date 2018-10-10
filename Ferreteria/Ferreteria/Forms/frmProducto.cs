@@ -54,7 +54,7 @@ namespace Ferreteria.Forms
         {
             if (!editMode)
             {
-                new Producto(id, txtNombreProducto.Text, decimal.Parse(txtPrecioProducto.Text.Replace(".", ",")), txtDescripcionProducto.Text, (int)cmbClasificacion.SelectedValue).save();
+                new Producto(id, txtNombreProducto.Text, decimal.Parse(txtPrecioProducto.Text.Replace(".", ",")), txtDescripcionProducto.Text, (int)cmbClasificacion.SelectedValue).Save();
                 var confirmResult = MessageBox.Show("Se ha guardado con éxito el producto! Desea agregar otro?",
                     "Resultado", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
@@ -73,7 +73,7 @@ namespace Ferreteria.Forms
                 producto.descripcion = txtDescripcionProducto.Text;
                 producto.precio = decimal.Parse(txtPrecioProducto.Text.Replace(".",","));
                 producto.codigoClasificacion = (int)cmbClasificacion.SelectedValue;
-                producto.save();
+                producto.Save();
                 formProductos.frmProductos_Load(null, null);
                 this.Close();
             }
