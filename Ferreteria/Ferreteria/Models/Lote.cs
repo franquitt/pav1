@@ -34,10 +34,11 @@ namespace Ferreteria.Models
         }
         public void save()
         {
+            Console.WriteLine("INSERT INTO LOTES(codigoProveedor, codigoProducto, stockInicial, stockActual, fechaIngreso) VALUES(" + codigoProveedor + ", " + codigoProducto + ", " + stockInicial + ", " + stockActual + ", '" + fechaIngreso.ToString("yyyy-MM-dd") + "')");
             if (nroLote == 0)
-                BDHelper.ExcecuteSQL("INSERT INTO LOTES(codigoProveedor, codigoProducto, stockInicial, stockActual, fechaIngreso) VALUES("+codigoProveedor+", "+codigoProducto+", "+stockInicial+", "+stockActual+", '"+fechaIngreso+"')");
+                BDHelper.ExcecuteSQL("INSERT INTO LOTES(codigoProveedor, codigoProducto, stockInicial, stockActual, fechaIngreso) VALUES("+codigoProveedor+", "+codigoProducto+", "+stockInicial+", "+stockActual+", '"+fechaIngreso.ToString("yyyy-MM-dd") + "')");
             else
-                BDHelper.ExcecuteSQL("UPDATE LOTES SET codigoProveedor = " + codigoProveedor + ", codigoProducto = " + codigoProducto + ", stockInicial = " + stockInicial + ", stockActual = " + stockActual + ", fechaIngreso = '" + fechaIngreso + "' WHERE numeroLote = "+ nroLote+"");
+                BDHelper.ExcecuteSQL("UPDATE LOTES SET codigoProveedor = " + codigoProveedor + ", codigoProducto = " + codigoProducto + ", stockInicial = " + stockInicial + ", stockActual = " + stockActual + ", fechaIngreso = '" + fechaIngreso.ToString("yyyy-MM-dd") + "' WHERE numeroLote = "+ nroLote+"");
         }
         public void readAttrs()
         {
