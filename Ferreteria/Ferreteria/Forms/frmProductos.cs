@@ -32,5 +32,10 @@ namespace Ferreteria.Forms
             Console.WriteLine(id);
             new frmProducto(id, this, true).Show();
         }
+
+        private void btnAsociarConProveedor_Click(object sender, EventArgs e)
+        {
+            new frmProvsProds().Show();
+        }
     }
 }

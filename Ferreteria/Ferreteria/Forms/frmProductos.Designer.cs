@@ -30,6 +30,7 @@
         {
             this.gridProductos = new System.Windows.Forms.DataGridView();
             this.btnAddProducto = new System.Windows.Forms.Button();
+            this.btnAsociarConProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +58,22 @@
             this.btnAddProducto.UseVisualStyleBackColor = true;
             this.btnAddProducto.Click += new System.EventHandler(this.btnAddProducto_Click);
             // 
+            // btnAsociarConProveedor
+            // 
+            this.btnAsociarConProveedor.Location = new System.Drawing.Point(456, 270);
+            this.btnAsociarConProveedor.Name = "btnAsociarConProveedor";
+            this.btnAsociarConProveedor.Size = new System.Drawing.Size(146, 39);
+            this.btnAsociarConProveedor.TabIndex = 2;
+            this.btnAsociarConProveedor.Text = "Asociar con proveedor";
+            this.btnAsociarConProveedor.UseVisualStyleBackColor = true;
+            this.btnAsociarConProveedor.Click += new System.EventHandler(this.btnAsociarConProveedor_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 321);
+            this.Controls.Add(this.btnAsociarConProveedor);
             this.Controls.Add(this.btnAddProducto);
             this.Controls.Add(this.gridProductos);
             this.Name = "frmProductos";
@@ -76,5 +88,6 @@
 
         private System.Windows.Forms.DataGridView gridProductos;
         private System.Windows.Forms.Button btnAddProducto;
+        private System.Windows.Forms.Button btnAsociarConProveedor;
     }
 }
