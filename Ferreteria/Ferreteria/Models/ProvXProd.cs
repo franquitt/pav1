@@ -61,12 +61,23 @@ namespace Ferreteria.Models
                 "WHERE P.activo = 1");
         }
 
+        //Devuelve una tabla con los proveedores que venden cierto producto
+        public static bool ExisteAsociacion(int prod, int prov)
+        {
+            DataTable t = BDHelper.ConsultaSQL("SELECT * FROM PROVxPROD WHERE codigoProveedor = " + prov + "AND codigoProducto = " + prod);
+            if (t.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         //Metodo que guarda los datos de una asociacion nueva o una ya existente
         public bool save(bool nuevo)
         {
             try
             {
-                if (!nuevo)//Asociacion existente
+                if(!nuevo)//Asociacion existente
                 {
                     BDHelper.ExcecuteSQL("UPDATE PROVxPROD SET codigoProveedor = " + prov + ", codigoProducto = " + prod + ", tiempoEntrega = " + tiempo + ", precio = " + precio.ToString().Replace(",", ".") + " WHERE codigoProveedor = " + prov + "AND codigoProducto = " + prod);
                 }

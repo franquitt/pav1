@@ -69,7 +69,15 @@ namespace Ferreteria.Forms
             }
             if (!editMode)
             {
-                new ProvXProd(int.Parse(cboProducto.SelectedValue.ToString()), int.Parse(cboProveedor.SelectedValue.ToString()), int.Parse(txtTiempo.Text), decimal.Parse(txtPrecio.Text.Replace(".", ","))).save(true);
+                int prod = int.Parse(cboProducto.SelectedValue.ToString());
+                int prov = int.Parse(cboProveedor.SelectedValue.ToString());
+                if (ProvXProd.ExisteAsociacion(prod, prov))
+                {
+                    MessageBox.Show("Ya existe una asociacion entre este producto y este proveedor",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                new ProvXProd(prod, prov, int.Parse(txtTiempo.Text), decimal.Parse(txtPrecio.Text.Replace(".", ","))).save(true);
                 var confirmResult = MessageBox.Show("Se ha guardado con éxito la asociacion! Desea agregar otra?",
                     "Resultado", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
