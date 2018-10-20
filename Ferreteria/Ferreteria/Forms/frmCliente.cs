@@ -35,6 +35,14 @@ namespace Ferreteria.Forms
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtApellidoCliente.Text) || 
+                string.IsNullOrEmpty(txtCuitCliente.Text) ||
+                string.IsNullOrEmpty(txtNombreCliente.Text) ||
+                string.IsNullOrEmpty(txtTelefonoCliente.Text))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!editMode)
             {
                 new Cliente(codigoCliente, txtNombreCliente.Text, txtApellidoCliente.Text, txtTelefonoCliente.Text, txtCuitCliente.Text).save();

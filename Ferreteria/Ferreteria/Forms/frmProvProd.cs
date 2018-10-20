@@ -59,6 +59,14 @@ namespace Ferreteria.Forms
 
         private void btnSaveAsociacion_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtPrecio.Text) ||
+                string.IsNullOrEmpty(txtTiempo.Text) ||
+                (cboProveedor.SelectedIndex == -1) ||
+                (cboProducto.SelectedIndex == -1))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!editMode)
             {
                 new ProvXProd(int.Parse(cboProducto.SelectedValue.ToString()), int.Parse(cboProveedor.SelectedValue.ToString()), int.Parse(txtTiempo.Text), decimal.Parse(txtPrecio.Text.Replace(".", ","))).save(true);

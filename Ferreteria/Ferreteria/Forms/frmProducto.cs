@@ -23,7 +23,7 @@ namespace Ferreteria.Forms
         //Caso contrario se desactiva el boton para dar de baja
         private void frmProducto_Load(object sender, EventArgs e)
         {
-            Helper.llenarCbo(cmbClasificacion, Clasificacion.GetAllClasificaciones(), "nombre", "codigoClasificacion");
+            Helper.llenarCbo(cboClasificacion, Clasificacion.GetAllClasificaciones(), "nombre", "codigoClasificacion");
 
             if (editMode)
             {
@@ -33,7 +33,7 @@ namespace Ferreteria.Forms
                 txtDescripcionProducto.Text = producto.descripcion;
                 this.Text += " - Id: " + producto.codigoProducto.ToString();
                 btnSaveProducto.Text = "Guardar cambios";
-                cmbClasificacion.SelectedValue = producto.codigoClasificacion;
+                cboClasificacion.SelectedValue = producto.codigoClasificacion;
             }
             else
             {
@@ -52,9 +52,17 @@ namespace Ferreteria.Forms
 
         private void btnSaveProducto_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombreProducto.Text) ||
+                string.IsNullOrEmpty(txtPrecioProducto.Text) ||
+                string.IsNullOrEmpty(txtDescripcionProducto.Text) ||
+                (cboClasificacion.SelectedIndex == -1))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!editMode)
             {
-                new Producto(id, txtNombreProducto.Text, decimal.Parse(txtPrecioProducto.Text.Replace(".", ",")), txtDescripcionProducto.Text, (int)cmbClasificacion.SelectedValue).Save();
+                new Producto(id, txtNombreProducto.Text, decimal.Parse(txtPrecioProducto.Text.Replace(".", ",")), txtDescripcionProducto.Text, (int)cboClasificacion.SelectedValue).Save();
                 var confirmResult = MessageBox.Show("Se ha guardado con éxito el producto! Desea agregar otro?",
                     "Resultado", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
@@ -72,7 +80,7 @@ namespace Ferreteria.Forms
                 producto.nombre = txtNombreProducto.Text;
                 producto.descripcion = txtDescripcionProducto.Text;
                 producto.precio = decimal.Parse(txtPrecioProducto.Text.Replace(".",","));
-                producto.codigoClasificacion = (int)cmbClasificacion.SelectedValue;
+                producto.codigoClasificacion = (int)cboClasificacion.SelectedValue;
                 producto.Save();
                 formProductos.frmProductos_Load(null, null);
                 this.Close();

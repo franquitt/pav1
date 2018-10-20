@@ -39,6 +39,14 @@ namespace Ferreteria.Forms
 
         private void btnSaveProveedor_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombreProveedor.Text) ||
+                string.IsNullOrEmpty(txtApellidoProveedor.Text) ||
+                string.IsNullOrEmpty(txtTelefonoProveedor.Text) ||
+                string.IsNullOrEmpty(txtDireccionProveedor.Text))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (editMode)
             {
                 proveedor.nombre = txtNombreProveedor.Text;

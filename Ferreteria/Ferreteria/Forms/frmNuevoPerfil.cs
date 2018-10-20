@@ -31,7 +31,12 @@ namespace Ferreteria.Forms
 
         private void btnSaveProfile_Click(object sender, EventArgs e)
         {
-            if(new TipoEmpleado(idProfile, txtNameProfile.Text).save())
+            if (string.IsNullOrEmpty(txtNameProfile.Text))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (new TipoEmpleado(idProfile, txtNameProfile.Text).save())
             {
                 var confirmResult = MessageBox.Show("Se ha guardado con éxito el perfil! Desea agregar otro?",
                                        "Resultado",

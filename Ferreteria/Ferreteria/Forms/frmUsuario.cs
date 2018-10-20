@@ -23,7 +23,7 @@ namespace Ferreteria
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
-            Helper.llenarCbo(cmbTipoUser, TipoEmpleado.GetAllUserTypes(), "nombre", "codigoTipo");
+            Helper.llenarCbo(cboTipoUser, TipoEmpleado.GetAllUserTypes(), "nombre", "codigoTipo");
             txtLegajo.ReadOnly = true;
 
             if (agregando)
@@ -40,7 +40,7 @@ namespace Ferreteria
                 txtTelefono.Text = empleado.telefono;
                 this.Text += " - Id: " + empleado.legajo.ToString();
                 btnAgregarUsuario.Text = "Guardar cambios";
-                cmbTipoUser.SelectedValue = empleado.tipo.codigoTipo;
+                cboTipoUser.SelectedValue = empleado.tipo.codigoTipo;
             }
             
         }
@@ -57,11 +57,25 @@ namespace Ferreteria
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtApellido.Text) ||
+                string.IsNullOrEmpty(txtNombre.Text) ||
+                string.IsNullOrEmpty(txtFechaNac.Text) ||
+                string.IsNullOrEmpty(txtTelefono.Text) ||
+                (cboTipoUser.SelectedIndex == -1))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DateTime timeNow = DateTime.Now;
-            TipoEmpleado tipo = new TipoEmpleado((int)cmbTipoUser.SelectedValue);
+            TipoEmpleado tipo = new TipoEmpleado((int)cboTipoUser.SelectedValue);
             DateTime fechaNac = DateTime.Parse(txtFechaNac.Text);
             if (agregando)
             {
+                if (string.IsNullOrEmpty(txtPass.Text))
+                {
+                    MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if ( new Empleado(timeNow, txtTelefono.Text, fechaNac, txtNombre.Text, txtApellido.Text, txtPass.Text, tipo, timeNow, true).save())
                 {
 

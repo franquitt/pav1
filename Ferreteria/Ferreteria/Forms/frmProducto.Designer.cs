@@ -37,7 +37,7 @@
             this.btnSaveProducto = new System.Windows.Forms.Button();
             this.btnDeleteProducto = new System.Windows.Forms.Button();
             this.lblClasificacionProducto = new System.Windows.Forms.Label();
-            this.cmbClasificacion = new System.Windows.Forms.ComboBox();
+            this.cboClasificacion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtNombreProducto
@@ -118,21 +118,21 @@
             this.lblClasificacionProducto.TabIndex = 9;
             this.lblClasificacionProducto.Text = "Clasificacion";
             // 
-            // cmbClasificacion
+            // cboClasificacion
             // 
-            this.cmbClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbClasificacion.FormattingEnabled = true;
-            this.cmbClasificacion.Location = new System.Drawing.Point(81, 239);
-            this.cmbClasificacion.Name = "cmbClasificacion";
-            this.cmbClasificacion.Size = new System.Drawing.Size(325, 21);
-            this.cmbClasificacion.TabIndex = 10;
+            this.cboClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboClasificacion.FormattingEnabled = true;
+            this.cboClasificacion.Location = new System.Drawing.Point(81, 239);
+            this.cboClasificacion.Name = "cboClasificacion";
+            this.cboClasificacion.Size = new System.Drawing.Size(325, 21);
+            this.cboClasificacion.TabIndex = 10;
             // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 332);
-            this.Controls.Add(this.cmbClasificacion);
+            this.Controls.Add(this.cboClasificacion);
             this.Controls.Add(this.lblClasificacionProducto);
             this.Controls.Add(this.btnDeleteProducto);
             this.Controls.Add(this.btnSaveProducto);
@@ -161,6 +161,6 @@
         private System.Windows.Forms.Button btnSaveProducto;
         private System.Windows.Forms.Button btnDeleteProducto;
         private System.Windows.Forms.Label lblClasificacionProducto;
-        private System.Windows.Forms.ComboBox cmbClasificacion;
+        private System.Windows.Forms.ComboBox cboClasificacion;
     }
 }

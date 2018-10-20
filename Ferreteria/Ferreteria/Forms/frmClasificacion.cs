@@ -62,6 +62,11 @@ namespace Ferreteria.Forms
         //vuelve a la lista
         private void btnSaveClasificacion_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombreClasificacion.Text) || string.IsNullOrEmpty(txtDescripcionClasificacion.Text))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!editMode) {
                 new Clasificacion(id, txtNombreClasificacion.Text, txtDescripcionClasificacion.Text).save();
                 var confirmResult = MessageBox.Show("Se ha guardado con éxito la clasificacion! Desea agregar otra?",

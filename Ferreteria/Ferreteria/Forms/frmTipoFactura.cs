@@ -41,7 +41,6 @@ namespace Ferreteria.Forms
         private void clean()
         {
             id = 0;
-            txtIdTipoFactura.Text = "0";
             txtNameTipoFactura.Text = "";
         }
 
@@ -49,6 +48,11 @@ namespace Ferreteria.Forms
         //vuelve a la lista
         private void btnSaveTipoFactura_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNameTipoFactura.Text))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!editMode)
             {
                 new TipoFactura(id, txtNameTipoFactura.Text).save();

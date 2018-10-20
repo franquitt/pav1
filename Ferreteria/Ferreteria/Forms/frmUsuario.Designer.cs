@@ -41,7 +41,7 @@
             this.txtFechaNac = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
-            this.cmbTipoUser = new System.Windows.Forms.ComboBox();
+            this.cboTipoUser = new System.Windows.Forms.ComboBox();
             this.lblTipoUser = new System.Windows.Forms.Label();
             this.btnDelUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -149,22 +149,22 @@
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(148, 208);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(198, 208);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(130, 38);
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(80, 38);
             this.btnAgregarUsuario.TabIndex = 14;
             this.btnAgregarUsuario.Text = "Guardar";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
-            // cmbTipoUser
+            // cboTipoUser
             // 
-            this.cmbTipoUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoUser.FormattingEnabled = true;
-            this.cmbTipoUser.Location = new System.Drawing.Point(125, 173);
-            this.cmbTipoUser.Name = "cmbTipoUser";
-            this.cmbTipoUser.Size = new System.Drawing.Size(153, 21);
-            this.cmbTipoUser.TabIndex = 15;
+            this.cboTipoUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoUser.FormattingEnabled = true;
+            this.cboTipoUser.Location = new System.Drawing.Point(125, 173);
+            this.cboTipoUser.Name = "cboTipoUser";
+            this.cboTipoUser.Size = new System.Drawing.Size(153, 21);
+            this.cboTipoUser.TabIndex = 15;
             // 
             // lblTipoUser
             // 
@@ -177,11 +177,11 @@
             // 
             // btnDelUser
             // 
-            this.btnDelUser.Location = new System.Drawing.Point(12, 209);
+            this.btnDelUser.Location = new System.Drawing.Point(112, 208);
             this.btnDelUser.Name = "btnDelUser";
-            this.btnDelUser.Size = new System.Drawing.Size(128, 37);
+            this.btnDelUser.Size = new System.Drawing.Size(80, 37);
             this.btnDelUser.TabIndex = 17;
-            this.btnDelUser.Text = "Eliminar";
+            this.btnDelUser.Text = "Dar de baja";
             this.btnDelUser.UseVisualStyleBackColor = true;
             this.btnDelUser.Click += new System.EventHandler(this.btnDelUser_Click);
             // 
@@ -192,7 +192,7 @@
             this.ClientSize = new System.Drawing.Size(290, 259);
             this.Controls.Add(this.btnDelUser);
             this.Controls.Add(this.lblTipoUser);
-            this.Controls.Add(this.cmbTipoUser);
+            this.Controls.Add(this.cboTipoUser);
             this.Controls.Add(this.btnAgregarUsuario);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtFechaNac);
@@ -230,7 +230,7 @@
         private System.Windows.Forms.MaskedTextBox txtFechaNac;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Button btnAgregarUsuario;
-        private System.Windows.Forms.ComboBox cmbTipoUser;
+        private System.Windows.Forms.ComboBox cboTipoUser;
         private System.Windows.Forms.Label lblTipoUser;
         private System.Windows.Forms.Button btnDelUser;
     }

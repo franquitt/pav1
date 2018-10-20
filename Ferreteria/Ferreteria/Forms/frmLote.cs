@@ -40,6 +40,14 @@ namespace Ferreteria.Forms
         //guarda los cambios y vuelve a la lista
         private void btnSaveLote_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtCantidad.Text) ||
+                string.IsNullOrEmpty(txtFecha.Text) ||
+                (cboProducto.SelectedIndex == -1) ||
+                (cboProveedor.SelectedIndex == -1))
+            {
+                MessageBox.Show("Debes completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!editMode)
             {
                 new Lote(int.Parse(cboProveedor.SelectedValue.ToString()), int.Parse(cboProducto.SelectedValue.ToString()), int.Parse(txtCantidad.Text), int.Parse(txtCantidad.Text), DateTime.Parse(txtFecha.Text)).save();
