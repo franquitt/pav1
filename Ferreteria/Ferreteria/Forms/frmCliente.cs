@@ -11,6 +11,7 @@ namespace Ferreteria.Forms
         frmClientes frmClientes = null;
         Cliente cliente = null;
 
+        //Inicializa el formulario y las variables pasadas por parametros
         public frmCliente(int codigoCliente, frmClientes frmClientes, bool editMode)
         {
             InitializeComponent();
@@ -19,6 +20,8 @@ namespace Ferreteria.Forms
             this.editMode = editMode;
         }
 
+        //si se esta editando un cliente, al cargar la ventana, carga los datos de ese cliente y cambia el titulo
+        // de la ventana para mostrar que cliente se esta editando
         private void frmCliente_Load(object sender, EventArgs e)
         {
             if (editMode)
@@ -33,6 +36,8 @@ namespace Ferreteria.Forms
             }
         }
 
+        //Corrobora que los campos esten llenos y luego agrega un cliente nuevo o modifica el ya existente
+        //Tambien permite seguir agregando clientes si asi lo desea el usuario
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtApellidoCliente.Text) || 
@@ -73,6 +78,7 @@ namespace Ferreteria.Forms
             }
         }
 
+        //limpia todos los campos del formulario
         private void clean()
         {
             codigoCliente = 0;

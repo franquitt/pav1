@@ -8,6 +8,7 @@ namespace Ferreteria.Forms
         int idProfile = 0;
         frmPerfiles form = null;
 
+        //Inicializa el formulario con los datos pasados por parametro
         public frmPerfil(frmPerfiles form, int id)
         {
             this.form = form;
@@ -15,6 +16,7 @@ namespace Ferreteria.Forms
             InitializeComponent();
         }
 
+        //Si se esta editando configura los datos del perfil a editar al cargar la ventana
         private void frmNuevoPerfil_Load(object sender, EventArgs e)
         {
             txtIdProfile.Text = idProfile + "";
@@ -22,6 +24,7 @@ namespace Ferreteria.Forms
                 txtNameProfile.Text = new TipoEmpleado(idProfile).nombre;
         }
 
+        //Limpia los distintos campos
         private void clean()
         {
             idProfile = 0;
@@ -29,6 +32,8 @@ namespace Ferreteria.Forms
             txtNameProfile.Text = "";
         }
 
+        //Primero corrobora si estan completos todos los datos solicitados. Si ese es el caso, procede a guardar un
+        // nuevo perfil o a editar uno existente si se esta editando
         private void btnSaveProfile_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNameProfile.Text))
@@ -55,6 +60,7 @@ namespace Ferreteria.Forms
             }
         }
 
+        //Pide confirmacion para dar de baja un perfil. Caso afirmativo, procede a darlo de baja
         private void btnDelProfile_Click(object sender, EventArgs e)
         {
             TipoEmpleado tipo = new TipoEmpleado(idProfile);

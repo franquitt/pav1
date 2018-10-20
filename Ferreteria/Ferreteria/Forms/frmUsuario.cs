@@ -21,6 +21,9 @@ namespace Ferreteria
             this.form = form;
         }
 
+        //Al cargar la ventana, carga el combobox de tipo de usuario con todos los tipos. Si se esta agregando uno
+        // nuevo, deshabilita el boton dar de baja, si se esta editando, llena los campos con los datos del usuario
+        // a editar
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
             Helper.llenarCbo(cboTipoUser, TipoEmpleado.GetAllUserTypes(), "nombre", "codigoTipo");
@@ -45,6 +48,7 @@ namespace Ferreteria
             
         }
 
+        //Limpia los campos del formulario
         private void Clean()
         {
             txtLegajo.Text = "";
@@ -55,6 +59,8 @@ namespace Ferreteria
             txtTelefono.Text = "";
         }
 
+        //Primero chequea que todos los campos esten completos. Una vez hecho esto crea un nuevo usuario o guarda
+        // los cambios del usuario que se estaba editando
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtApellido.Text) ||
@@ -106,6 +112,7 @@ namespace Ferreteria
 
         }
 
+        //Previa confirmacion del usuario, procede a dar de baja el usuario elegido
         private void btnDelUser_Click(object sender, EventArgs e)
         {
 

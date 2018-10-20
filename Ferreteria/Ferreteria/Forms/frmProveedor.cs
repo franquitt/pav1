@@ -11,6 +11,7 @@ namespace Ferreteria.Forms
         bool editMode = true;
         Proveedor proveedor = null;
 
+        //inicializa el formulario con los datos pasados como parametro
         public frmProveedor(int id, frmProveedores form, bool editMode)
         {
             InitializeComponent();
@@ -19,6 +20,8 @@ namespace Ferreteria.Forms
             this.codigoProveedor = id;
         }
 
+        //Cuando carga el formulario rellena los campos con los datos del proveedor a editar si se esta editando
+        //Caso contrario se desactiva el boton para dar de baja
         private void frmProveedor_Load(object sender, EventArgs e)
         {
             if (editMode)
@@ -37,6 +40,8 @@ namespace Ferreteria.Forms
             }
         }
 
+        //Chequea que todos los datos esten ingresados. Si lo estan procede a guardar el proveedor nuevo o a editarlo
+        // si se estaba editando
         private void btnSaveProveedor_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombreProveedor.Text) ||
@@ -75,6 +80,7 @@ namespace Ferreteria.Forms
 
         }
 
+        //Previa confirmacion del usuario da de baja el proveedor
         private void btnDeleteProveedor_Click(object sender, EventArgs e)
         {
             try
@@ -95,6 +101,7 @@ namespace Ferreteria.Forms
             }
         }
 
+        //Limpia los campos del formulario
         private void clean()
         {
             codigoProveedor = 0;

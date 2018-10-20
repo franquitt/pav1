@@ -11,7 +11,7 @@ namespace Ferreteria.Forms
         bool editMode = true;
         TipoFactura tipoFactura = null;
 
-        //Al crear el formulario lo crea con el id de la factura seleccionada (si se edita) y con id 0 si es nuevo
+        //Inicializa el formulario con los datos pasados como parametro
         public frmTipoFactura(frmTipoFacturas form, int id, bool editMode)
         {
             InitializeComponent();
@@ -77,6 +77,7 @@ namespace Ferreteria.Forms
             }
         }
 
+        //Previa confirmacion del usuario, da de baja el tipo de factura
         private void btnDeleteTipoFactura_Click(object sender, EventArgs e)
         {
             try

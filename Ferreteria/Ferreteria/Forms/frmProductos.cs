@@ -33,6 +33,7 @@ namespace Ferreteria.Forms
             new frmProducto(id, this, true).Show();
         }
 
+        //Abre la ventana de asociaciones entre productos y proveedores
         private void btnAsociarConProveedor_Click(object sender, EventArgs e)
         {
             new frmProvsProds().Show();

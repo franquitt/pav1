@@ -23,6 +23,7 @@ namespace Ferreteria.Forms
             new frmTipoFactura(this, 0, false).Show();
         }
 
+        //Abre el formulario para editar pasando como parametro el id del tipo a editar
         private void gridTipoFacturas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = Helper.getSelectedId(gridTipoFacturas);

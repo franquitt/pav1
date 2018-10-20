@@ -11,6 +11,9 @@ namespace Ferreteria
             InitializeComponent();
         }
 
+        //Corrobora que se hayan completado los campos necesarios para loguearse. Luego corrobora que el usuario sea
+        // valido (solo numeros) y finalmente intenta validarlo contra la base de datos. En caso de no acceder
+        // muestra el correspondiente mensaje
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUser.Text == "")
@@ -45,20 +48,10 @@ namespace Ferreteria
             }
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!logued)
-                System.Windows.Forms.Application.Exit();
+                Application.Exit();
         }
 
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)

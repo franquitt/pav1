@@ -20,6 +20,8 @@ namespace Ferreteria.Forms
             InitializeComponent();
         }
 
+        //Al cargar la ventana llena el combobox con todos los productos. Si se esta editando, configura los valores
+        // para que correspondan con el lote a editar.
         private void frmLote_Load(object sender, EventArgs e)
         {
             Helper.llenarCbo(cboProducto, ProvXProd.GetAllProd(), "nombre", "codProducto");
@@ -37,7 +39,8 @@ namespace Ferreteria.Forms
         }
 
         //Si se esta creando uno nuevo, lo crea y permite seguir agregando. Si se esta editando 
-        //guarda los cambios y vuelve a la lista
+        // guarda los cambios y vuelve a la lista
+        //Previamente chequea que se ingresen todos los valores y no permite guardar si no esta completo
         private void btnSaveLote_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtCantidad.Text) ||
@@ -88,18 +91,21 @@ namespace Ferreteria.Forms
             txtBusquedaProducto.Text = "";
         }
 
+        //Cuando cambia el texto (el usuario busca algo) se completa el combobox y muestra los valores encontrados
         private void txtBusquedaProducto_TextChanged(object sender, EventArgs e)
         {
             Helper.llenarCboBuscador(cboProducto, ProvXProd.GetAllProd(txtBusquedaProducto.Text), "nombre", "codProducto");
         }
 
+        //Cuando el usuario selecciona algun producto de la lista intenta cargar todos los proveedores que esten
+        // asociados al producto elegido
         private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 Helper.llenarCbo(cboProveedor, ProvXProd.GetAllProveedoresByProducto(int.Parse(cboProducto.SelectedValue.ToString())), "fullname", "codigoProveedor");
             }
-            catch { }
+            catch {}
         }
     }
 }

@@ -60,6 +60,7 @@ namespace Ferreteria.Forms
 
         //Si se esta creando una nueva, la crea y permite seguir agregando. Si se esta editando guarda los cambios y
         //vuelve a la lista
+        //Al principio chequea que se haya ingresado todo lo necesario y no permite el guardado si no es asi
         private void btnSaveClasificacion_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombreClasificacion.Text) || string.IsNullOrEmpty(txtDescripcionClasificacion.Text))

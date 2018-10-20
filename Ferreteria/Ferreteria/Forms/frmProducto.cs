@@ -11,6 +11,7 @@ namespace Ferreteria.Forms
         bool editMode = false;
         Producto producto = null;
 
+        //inicializa el formulario con los datos pasados como parametro
         public frmProducto(int id, frmProductos productos, bool editMode)
         {
             this.id = id;
@@ -50,6 +51,8 @@ namespace Ferreteria.Forms
             txtDescripcionProducto.Text = "";
         }
 
+        //Chequea que todos los datos esten ingresados. Si lo estan procede a guardar el producto nuevo o a editarlo
+        // si se estaba editando
         private void btnSaveProducto_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombreProducto.Text) ||
@@ -87,6 +90,7 @@ namespace Ferreteria.Forms
             }
         }
 
+        //Previa confirmacion del usuario, procede a dar de baja el producto
         private void btnDeleteProducto_Click(object sender, EventArgs e)
         {
             try

@@ -52,7 +52,6 @@
             this.txtPass.Size = new System.Drawing.Size(270, 20);
             this.txtPass.TabIndex = 1;
             this.txtPass.Text = "1";
-            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // btnLogin
             // 
@@ -106,7 +105,6 @@
             this.Name = "frmLogin";
             this.Text = "Iniciar sesión";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
