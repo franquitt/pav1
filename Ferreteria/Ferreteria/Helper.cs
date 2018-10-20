@@ -119,5 +119,14 @@ namespace Ferreteria
             cbo.ValueMember = v;
             cbo.SelectedIndex = -1;
         }
+
+        //Llena el combobox buscador pasado como parametro
+        public static void llenarCboBuscador(ComboBox cbo, DataTable t, string display, string value)
+        {
+            cbo.DroppedDown = false;
+            Helper.llenarCbo(cbo, t, display, value);
+            cbo.DroppedDown = true;
+            Cursor.Current = Cursors.Default;
+        }
     }
 }

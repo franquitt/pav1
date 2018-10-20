@@ -119,18 +119,12 @@ namespace Ferreteria.Forms
 
         private void txtBusquedaProducto_TextChanged(object sender, EventArgs e)
         {
-            string aBuscar = txtBusquedaProducto.Text;
-            cboProducto.DroppedDown = false;
-            Helper.llenarCbo(cboProducto, Producto.GetAllProductosByName(aBuscar), "nombre", "codigoProducto");
-            cboProducto.DroppedDown = true;
+            Helper.llenarCboBuscador(cboProducto, Producto.GetAllProductosByName(txtBusquedaProducto.Text), "nombre", "codigoProducto");
         }
 
         private void txtBusquedaProveedor_TextChanged(object sender, EventArgs e)
         {
-            string aBuscar = txtBusquedaProveedor.Text;
-            cboProveedor.DroppedDown = false;
-            Helper.llenarCbo(cboProveedor, Proveedor.GetAllProveedoresByName(aBuscar), "fullname", "codigoProveedor");
-            cboProveedor.DroppedDown = true;
+            Helper.llenarCboBuscador(cboProveedor, Proveedor.GetAllProveedoresByName(txtBusquedaProveedor.Text), "fullname", "codigoProveedor");
         }
     }
 }

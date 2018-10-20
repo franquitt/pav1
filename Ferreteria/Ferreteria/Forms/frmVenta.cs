@@ -25,6 +25,8 @@ namespace Ferreteria.Forms
             txtCantidadProducto.TextChanged += new EventHandler(txtCantidadProducto_TextChanged);
             btnAgregarProducto.Enabled = false;
             lblTotalNeto.Visible = false;
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -72,30 +74,30 @@ namespace Ferreteria.Forms
 
         private void txtBusquedaProducto_TextChanged(object sender, EventArgs e)
         {
-            string aBuscar = txtBusquedaProducto.Text;
-            cboProducto.DroppedDown = false;
-            Helper.llenarCbo(cboProducto, Producto.GetAllProductosByName(aBuscar), "nombre", "codigoProducto");
-            cboProducto.DroppedDown = true;
+            Helper.llenarCboBuscador(cboProducto, Producto.GetAllProductosByName(txtBusquedaProducto.Text), "nombre", "codigoProducto");
         }
 
         private void txtBusquedaCliente_TextChanged(object sender, EventArgs e)
         {
-            string aBuscar = txtBusquedaCliente.Text;
-            cboCliente.DroppedDown = false;
-            DataTable t = Cliente.GetClientesByName(aBuscar, true);
-            Helper.llenarCbo(cboCliente, t, "fullname", "codigoCliente");
+            DataTable t = Cliente.GetClientesByName(txtBusquedaCliente.Text, true);
+            Helper.llenarCboBuscador(cboCliente, t, "fullname", "codigoCliente");
             Helper.llenarCbo(cboCuit, t, "cuit", "codigoCliente");
-            cboCliente.DroppedDown = true;
         }
 
         private void txtBusquedaCuit_TextChanged(object sender, EventArgs e)
         {
-            string aBuscar = txtBusquedaCuit.Text;
-            cboCuit.DroppedDown = false;
-            DataTable t = Cliente.GetClientesByName(aBuscar, false);
-            Helper.llenarCbo(cboCuit, t, "cuit", "codigoCliente");
+            DataTable t = Cliente.GetClientesByName(txtBusquedaCuit.Text, false);
+            Helper.llenarCboBuscador(cboCuit, t, "cuit", "codigoCliente");
             Helper.llenarCbo(cboCliente, t, "fullname", "codigoCliente");
-            cboCuit.DroppedDown = true;
+        }
+
+        private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                cboCuit.SelectedIndex = cboCliente.SelectedIndex;
+            }
+            catch { }
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)

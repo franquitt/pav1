@@ -82,10 +82,7 @@ namespace Ferreteria.Forms
 
         private void txtBusquedaProducto_TextChanged(object sender, EventArgs e)
         {
-            string aBuscar = txtBusquedaProducto.Text;
-            cboProducto.DroppedDown = false;
-            Helper.llenarCbo(cboProducto, ProvXProd.GetAllProd(aBuscar), "nombre", "codProducto");
-            cboProducto.DroppedDown = true;
+            Helper.llenarCboBuscador(cboProducto, ProvXProd.GetAllProd(txtBusquedaProducto.Text), "nombre", "codProducto");
         }
 
         private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)

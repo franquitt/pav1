@@ -43,7 +43,6 @@
             this.lblVendedor = new System.Windows.Forms.Label();
             this.cboTipoFactura = new System.Windows.Forms.ComboBox();
             this.gboxCliente = new System.Windows.Forms.GroupBox();
-            this.txtBusquedaCuit = new System.Windows.Forms.TextBox();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
             this.cboCuit = new System.Windows.Forms.ComboBox();
             this.lblCuitCliente = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.gboxProducto = new System.Windows.Forms.GroupBox();
+            this.lblStock = new System.Windows.Forms.Label();
             this.txtCantidadProducto = new System.Windows.Forms.NumericUpDown();
             this.txtBusquedaProducto = new System.Windows.Forms.TextBox();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.gBoxImporte = new System.Windows.Forms.GroupBox();
             this.lblTotalNeto = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
+            this.txtBusquedaCuit = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.gboxFactura.SuspendLayout();
             this.gboxCliente.SuspendLayout();
@@ -212,14 +212,6 @@
             this.gboxCliente.TabStop = false;
             this.gboxCliente.Text = "Cliente";
             // 
-            // txtBusquedaCuit
-            // 
-            this.txtBusquedaCuit.Location = new System.Drawing.Point(353, 23);
-            this.txtBusquedaCuit.Name = "txtBusquedaCuit";
-            this.txtBusquedaCuit.Size = new System.Drawing.Size(98, 20);
-            this.txtBusquedaCuit.TabIndex = 15;
-            this.txtBusquedaCuit.TextChanged += new System.EventHandler(this.txtBusquedaCuit_TextChanged);
-            // 
             // txtBusquedaCliente
             // 
             this.txtBusquedaCliente.Location = new System.Drawing.Point(51, 23);
@@ -254,6 +246,7 @@
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(256, 21);
             this.cboCliente.TabIndex = 5;
+            this.cboCliente.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -289,6 +282,15 @@
             this.gboxProducto.TabIndex = 9;
             this.gboxProducto.TabStop = false;
             this.gboxProducto.Text = "Producto";
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(275, 48);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(41, 13);
+            this.lblStock.TabIndex = 11;
+            this.lblStock.Text = "Stock: ";
             // 
             // txtCantidadProducto
             // 
@@ -442,14 +444,13 @@
             this.lblTotal.TabIndex = 16;
             this.lblTotal.Text = "Total";
             // 
-            // lblStock
+            // txtBusquedaCuit
             // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(275, 48);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(41, 13);
-            this.lblStock.TabIndex = 11;
-            this.lblStock.Text = "Stock: ";
+            this.txtBusquedaCuit.Location = new System.Drawing.Point(353, 23);
+            this.txtBusquedaCuit.Name = "txtBusquedaCuit";
+            this.txtBusquedaCuit.Size = new System.Drawing.Size(98, 20);
+            this.txtBusquedaCuit.TabIndex = 15;
+            this.txtBusquedaCuit.TextChanged += new System.EventHandler(this.txtBusquedaCuit_TextChanged);
             // 
             // frmVenta
             // 
@@ -466,6 +467,8 @@
             this.Controls.Add(this.gboxCliente);
             this.Controls.Add(this.gboxFactura);
             this.Controls.Add(this.gridProductos);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmVenta";
             this.Text = "Venta";
             this.Load += new System.EventHandler(this.frmVenta_Load);
@@ -519,7 +522,6 @@
         private System.Windows.Forms.TextBox txtBusquedaProducto;
         private System.Windows.Forms.NumericUpDown txtCantidadProducto;
         private System.Windows.Forms.TextBox txtBusquedaCliente;
-        private System.Windows.Forms.TextBox txtBusquedaCuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
@@ -530,5 +532,6 @@
         private System.Windows.Forms.Label lblTotalNeto;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.TextBox txtBusquedaCuit;
     }
 }
