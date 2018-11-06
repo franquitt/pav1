@@ -71,5 +71,10 @@ namespace Ferreteria
         {
             new frmProvsProds().Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new frmInformeTop10().Show();
+        }
     }
 }

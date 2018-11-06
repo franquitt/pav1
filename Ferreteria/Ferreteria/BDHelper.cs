@@ -4,8 +4,8 @@ using System.Data.SqlClient;
 
 public static class BDHelper
 {
-    //private static string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-    private static string string_conexion = "Data Source=AGUSVENTURI;Initial Catalog=ProyPav;Integrated Security=True";
+    private static string string_conexion = "Data Source=FRANCOMAIN-PC\\TEW_SQLEXPRESS;Initial Catalog=BugsClase03;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+    //private static string string_conexion = "Data Source=AGUSVENTURI;Initial Catalog=ProyPav;Integrated Security=True";
     //private static string string_conexion = "Data Source=MAQUIS;Initial Catalog=ProyPav;User ID=avisuales1;Password=avisuales1";
     //private static string string_conexion = "Data Source=.;Initial Catalog = ProyPav; Integrated Security = True";
     private static SqlConnection conexion;
