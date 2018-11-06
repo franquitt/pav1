@@ -48,7 +48,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,19 +63,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DS_top10.cs">
+    <Compile Include="Datasets\DS_top10.cs">
       <DependentUpon>DS_top10.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_top10.Designer.cs">
+    <Compile Include="Datasets\DS_top10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_top10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DS_worst10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_worst10.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmInformeTop10.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmInformeTop10.Designer.cs">
       <DependentUpon>frmInformeTop10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInformeWorst10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInformeWorst10.Designer.cs">
+      <DependentUpon>frmInformeWorst10.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmLote.cs">
       <SubType>Form</SubType>
@@ -232,6 +243,9 @@
     <EmbeddedResource Include="Forms\frmInformeTop10.resx">
       <DependentUpon>frmInformeTop10.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInformeWorst10.resx">
+      <DependentUpon>frmInformeWorst10.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLote.resx">
       <DependentUpon>frmLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,7 +297,7 @@
     <EmbeddedResource Include="Forms\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Informe_top10.rdlc" />
+    <EmbeddedResource Include="Reportes\Informe_top10.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -293,16 +307,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DS_top10.xsc">
+    <EmbeddedResource Include="Reportes\Informe_worst10.rdlc" />
+    <None Include="Datasets\DS_top10.xsc">
       <DependentUpon>DS_top10.xsd</DependentUpon>
     </None>
-    <None Include="DS_top10.xsd">
+    <None Include="Datasets\DS_top10.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DS_top10.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DS_top10.xss">
+    <None Include="Datasets\DS_top10.xss">
       <DependentUpon>DS_top10.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_worst10.xsc">
+      <DependentUpon>DS_worst10.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_worst10.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_worst10.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DS_worst10.xss">
+      <DependentUpon>DS_worst10.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
