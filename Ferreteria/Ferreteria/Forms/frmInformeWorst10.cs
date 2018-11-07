@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ferreteria.Datasets;
 using Ferreteria.Datasets.DS_worst10TableAdapters;
@@ -22,7 +16,6 @@ namespace Ferreteria.Forms
 
         private void frmInformeWorst10_Load(object sender, EventArgs e)
         {
-
             var myDataTable = new DS_worst10.PRODUCTOSDataTable();
             var myTableAdapter = new PRODUCTOSTableAdapter();
             myTableAdapter.Fill(myDataTable);

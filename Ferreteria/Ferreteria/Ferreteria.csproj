@@ -71,6 +71,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_top10.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\DS_worst10.cs">
+      <DependentUpon>DS_worst10.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\DS_worst10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -358,6 +361,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

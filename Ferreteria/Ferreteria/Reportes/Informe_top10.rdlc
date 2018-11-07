@@ -11,16 +11,12 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DS_top10">
       <Query>
         <DataSourceName>DS_top10</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="Id">
           <DataField>Id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -29,14 +25,18 @@
           <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Cantidad">
+          <DataField>Cantidad</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DS_top10</rd:DataSetName>
-        <rd:SchemaPath>E:\Documentos\Proyectos\pav1\Ferreteria\Ferreteria\DS_top10.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Programacion\Visual Studio\Repos\pav1\Ferreteria\Ferreteria\Datasets\DS_top10.xsd</rd:SchemaPath>
         <rd:TableName>PRODUCTOS</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>PRODUCTOSTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>PRODUCTOSTopTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -203,9 +203,9 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
-            <Top>6.05578cm</Top>
-            <Left>6.34937cm</Left>
+            <DataSetName>DS_top10</DataSetName>
+            <Top>0.47307cm</Top>
+            <Left>11.50874cm</Left>
             <Height>1.2cm</Height>
             <Width>5cm</Width>
             <Style>
@@ -529,7 +529,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Título del gráfico</Caption>
+                <Caption>Top 10 de los productos más vendidos</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -558,9 +558,9 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>DS_top10</DataSetName>
             <Height>5cm</Height>
-            <Width>18.97318cm</Width>
+            <Width>10.9925cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -572,10 +572,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.436in</Height>
+        <Height>2.10267in</Height>
         <Style />
       </Body>
-      <Width>7.46975in</Width>
+      <Width>7.46976in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

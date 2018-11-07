@@ -11,7 +11,7 @@ namespace Ferreteria.Datasets.DS_top10TableAdapters
 {
 
 
-    public partial class PRODUCTOSTableAdapter
+    public partial class PRODUCTOSTopTableAdapter
     {
     }
 }
