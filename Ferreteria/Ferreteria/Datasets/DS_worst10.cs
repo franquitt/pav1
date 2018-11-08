@@ -1,1 +1,3 @@
-﻿
+﻿namespace Ferreteria.Datasets
+{
+}
