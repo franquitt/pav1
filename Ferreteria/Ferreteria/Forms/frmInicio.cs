@@ -81,5 +81,10 @@ namespace Ferreteria
         {
             new frmInformeWorst10().Show();
         }
+
+        private void frmInicio_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

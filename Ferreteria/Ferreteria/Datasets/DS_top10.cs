@@ -15,3 +15,12 @@ namespace Ferreteria.Datasets.DS_top10TableAdapters
     {
     }
 }
+
+namespace Ferreteria.Datasets.DS_top10TableAdapters
+{
+
+
+    public partial class PRODUCTOSTopTableAdapter
+    {
+    }
+}

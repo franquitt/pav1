@@ -799,7 +799,7 @@ namespace Ferreteria.Datasets.DS_top10TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = Ferreteria.BDHelper.string_conexion;
+            this._connection.ConnectionString = global::Ferreteria.Properties.Settings.Default.ProyPavConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -813,19 +813,33 @@ FROM         DETALLE_VENTA INNER JOIN
                       LOTES ON DETALLE_VENTA.numeroLote = LOTES.numeroLote INNER JOIN
                       PRODUCTOS ON LOTES.codigoProducto = PRODUCTOS.codigoProducto INNER JOIN
                       VENTAS ON DETALLE_VENTA.numeroVenta = VENTAS.numeroVenta
-WHERE VENTAS.fecha >= DATEADD(month, -1, GETDATE())
+WHERE VENTAS.fecha >= @desde AND VENTAS.fecha <= @hasta
 GROUP BY PRODUCTOS.codigoProducto, PRODUCTOS.nombre
 ORDER BY Cantidad DESC
 ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@desde", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_top10.PRODUCTOSDataTable dataTable) {
+        public virtual int Fill(DS_top10.PRODUCTOSDataTable dataTable, string desde, string hasta) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((desde == null)) {
+                throw new global::System.ArgumentNullException("desde");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(desde));
+            }
+            if ((hasta == null)) {
+                throw new global::System.ArgumentNullException("hasta");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(hasta));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -837,8 +851,20 @@ ORDER BY Cantidad DESC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_top10.PRODUCTOSDataTable GetData() {
+        public virtual DS_top10.PRODUCTOSDataTable GetData(string desde, string hasta) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((desde == null)) {
+                throw new global::System.ArgumentNullException("desde");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(desde));
+            }
+            if ((hasta == null)) {
+                throw new global::System.ArgumentNullException("hasta");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(hasta));
+            }
             DS_top10.PRODUCTOSDataTable dataTable = new DS_top10.PRODUCTOSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

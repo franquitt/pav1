@@ -34,10 +34,10 @@
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ferreteria.Reportes.Informe_worst10.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(13, 13);
+            this.reportViewer1.Location = new System.Drawing.Point(13, 43);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(775, 425);
+            this.reportViewer1.Size = new System.Drawing.Size(775, 395);
             this.reportViewer1.TabIndex = 0;
             // 
             // frmInformeWorst10

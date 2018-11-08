@@ -18,7 +18,23 @@ namespace Ferreteria.Forms
         {
             var myDataTable = new DS_top10.PRODUCTOSDataTable();
             var myTableAdapter = new PRODUCTOSTopTableAdapter();
-            myTableAdapter.Fill(myDataTable);
+            string ahora = DateTime.Today.ToString("yyyy-MM-dd");
+            string hace1Mes = DateTime.Today.AddMonths(-1).ToString("yyyy-MM-dd");
+            txtDesde.Text = hace1Mes;
+            txtHasta.Text = ahora;
+            myTableAdapter.Fill(myDataTable, hace1Mes, ahora);
+            var rds = new ReportDataSource("DS_top10", myDataTable as DataTable);
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(rds);
+            reportViewer1.RefreshReport();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var myDataTable = new DS_top10.PRODUCTOSDataTable();
+            var myTableAdapter = new PRODUCTOSTopTableAdapter();
+            myTableAdapter.Fill(myDataTable, txtDesde.Text, txtHasta.Text);
             var rds = new ReportDataSource("DS_top10", myDataTable as DataTable);
 
             reportViewer1.LocalReport.DataSources.Clear();

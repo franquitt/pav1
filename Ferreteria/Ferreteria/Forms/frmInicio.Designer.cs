@@ -200,6 +200,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmInicio";
             this.Text = "Gestor Ferreteria";
+            this.Load += new System.EventHandler(this.frmInicio_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
