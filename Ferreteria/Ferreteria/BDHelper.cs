@@ -6,8 +6,12 @@ namespace Ferreteria
     public static class BDHelper
     {
         public static string string_conexion = global::Ferreteria.Properties.Settings.Default.ProyPavConnectionString;
+        //CAMBIAR CONEXION DESDE PROPERTIES DEL PROYECTO
+        //NO CAMBIAR NI DESCOMENTAR
         //private static string string_conexion = "Data Source=AGUSVENTURI;Initial Catalog=ProyPav;Integrated Security=True";
+        //NO CAMBIAR NI DESCOMENTAR
         //private static string string_conexion = "Data Source=MAQUIS;Initial Catalog=ProyPav;User ID=avisuales1;Password=avisuales1";
+        //NO CAMBIAR NI DESCOMENTAR
         //private static string string_conexion = "Data Source=.;Initial Catalog = ProyPav; Integrated Security = True";
         private static SqlConnection conexion;
         private static SqlCommand cmd;

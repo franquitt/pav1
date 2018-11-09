@@ -71,6 +71,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_top10.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\DS_TopSellers.cs">
+      <DependentUpon>DS_TopSellers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DS_TopSellers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_TopSellers.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\DS_worst10.cs">
       <DependentUpon>DS_worst10.xsd</DependentUpon>
     </Compile>
@@ -84,6 +92,12 @@
     </Compile>
     <Compile Include="Forms\frmInformeTop10.Designer.cs">
       <DependentUpon>frmInformeTop10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInformeTopSellers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInformeTopSellers.Designer.cs">
+      <DependentUpon>frmInformeTopSellers.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmInformeWorst10.cs">
       <SubType>Form</SubType>
@@ -246,6 +260,9 @@
     <EmbeddedResource Include="Forms\frmInformeTop10.resx">
       <DependentUpon>frmInformeTop10.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInformeTopSellers.resx">
+      <DependentUpon>frmInformeTopSellers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInformeWorst10.resx">
       <DependentUpon>frmInformeWorst10.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +327,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\Informe_TopSellers.rdlc" />
     <EmbeddedResource Include="Reportes\Informe_worst10.rdlc" />
     <None Include="Datasets\DS_top10.xsc">
       <DependentUpon>DS_top10.xsd</DependentUpon>
@@ -321,6 +339,17 @@
     </None>
     <None Include="Datasets\DS_top10.xss">
       <DependentUpon>DS_top10.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_TopSellers.xsc">
+      <DependentUpon>DS_TopSellers.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_TopSellers.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_TopSellers.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DS_TopSellers.xss">
+      <DependentUpon>DS_TopSellers.xsd</DependentUpon>
     </None>
     <None Include="Datasets\DS_worst10.xsc">
       <DependentUpon>DS_worst10.xsd</DependentUpon>
