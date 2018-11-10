@@ -44,6 +44,9 @@
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
@@ -83,6 +86,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_TopSellers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DS_Ventas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Ventas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\DS_worst10.cs">
       <DependentUpon>DS_worst10.xsd</DependentUpon>
@@ -230,6 +238,12 @@
     <Compile Include="Forms\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmInformeVentasAnio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInformeVentasAnio.Designer.cs">
+      <DependentUpon>frmInformeVentasAnio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="BDHelper.cs" />
     <Compile Include="Forms\frmInicio.cs">
@@ -331,6 +345,9 @@
     <EmbeddedResource Include="Forms\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInformeVentasAnio.resx">
+      <DependentUpon>frmInformeVentasAnio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Informe_top10.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -342,6 +359,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reportes\Informe_TopSellers.rdlc" />
+    <EmbeddedResource Include="Reportes\Informe_Ventas.rdlc" />
     <EmbeddedResource Include="Reportes\Informe_worst10.rdlc" />
     <EmbeddedResource Include="Reportes\Informe_Cat.rdlc" />
     <None Include="Datasets\DS_Cat.xsc">
@@ -376,6 +394,17 @@
     </None>
     <None Include="Datasets\DS_TopSellers.xss">
       <DependentUpon>DS_TopSellers.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_Ventas.xsc">
+      <DependentUpon>DS_Ventas.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_Ventas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Ventas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DS_Ventas.xss">
+      <DependentUpon>DS_Ventas.xsd</DependentUpon>
     </None>
     <None Include="Datasets\DS_worst10.xsc">
       <DependentUpon>DS_worst10.xsd</DependentUpon>

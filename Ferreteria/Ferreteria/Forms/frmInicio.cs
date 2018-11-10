@@ -96,5 +96,10 @@ namespace Ferreteria
         {
             new frmInformeCat().Show();
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            new frmInformeVentasAnio().Show();
+        }
     }
 }
