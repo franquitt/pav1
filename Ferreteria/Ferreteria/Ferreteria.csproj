@@ -63,6 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datasets\DS_Cat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Cat.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\DS_top10.cs">
       <DependentUpon>DS_top10.xsd</DependentUpon>
     </Compile>
@@ -92,6 +97,12 @@
     </Compile>
     <Compile Include="Forms\frmInformeTop10.Designer.cs">
       <DependentUpon>frmInformeTop10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInformeCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInformeCat.Designer.cs">
+      <DependentUpon>frmInformeCat.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmInformeTopSellers.cs">
       <SubType>Form</SubType>
@@ -260,6 +271,9 @@
     <EmbeddedResource Include="Forms\frmInformeTop10.resx">
       <DependentUpon>frmInformeTop10.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInformeCat.resx">
+      <DependentUpon>frmInformeCat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInformeTopSellers.resx">
       <DependentUpon>frmInformeTopSellers.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +343,18 @@
     </Compile>
     <EmbeddedResource Include="Reportes\Informe_TopSellers.rdlc" />
     <EmbeddedResource Include="Reportes\Informe_worst10.rdlc" />
+    <EmbeddedResource Include="Reportes\Informe_Cat.rdlc" />
+    <None Include="Datasets\DS_Cat.xsc">
+      <DependentUpon>DS_Cat.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_Cat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Cat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DS_Cat.xss">
+      <DependentUpon>DS_Cat.xsd</DependentUpon>
+    </None>
     <None Include="Datasets\DS_top10.xsc">
       <DependentUpon>DS_top10.xsd</DependentUpon>
     </None>

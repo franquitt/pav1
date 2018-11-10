@@ -91,5 +91,10 @@ namespace Ferreteria
         {
             new frmInformeTopSellers().Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new frmInformeCat().Show();
+        }
     }
 }
