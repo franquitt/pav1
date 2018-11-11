@@ -71,6 +71,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Cat.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\DS_Crecimiento.cs">
+      <DependentUpon>DS_Crecimiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\DS_Crecimiento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Crecimiento.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\DS_top10.cs">
       <DependentUpon>DS_top10.xsd</DependentUpon>
     </Compile>
@@ -99,6 +107,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_worst10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInformeCrecimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInformeCrecimiento.Designer.cs">
+      <DependentUpon>frmInformeCrecimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmInformeTop10.cs">
       <SubType>Form</SubType>
@@ -282,6 +296,9 @@
     <EmbeddedResource Include="Forms\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInformeCrecimiento.resx">
+      <DependentUpon>frmInformeCrecimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInformeTop10.resx">
       <DependentUpon>frmInformeTop10.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +365,7 @@
     <EmbeddedResource Include="Forms\frmInformeVentasAnio.resx">
       <DependentUpon>frmInformeVentasAnio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Informe_Crecimiento.rdlc" />
     <EmbeddedResource Include="Reportes\Informe_top10.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -372,6 +390,17 @@
     </None>
     <None Include="Datasets\DS_Cat.xss">
       <DependentUpon>DS_Cat.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_Crecimiento.xsc">
+      <DependentUpon>DS_Crecimiento.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\DS_Crecimiento.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Crecimiento.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\DS_Crecimiento.xss">
+      <DependentUpon>DS_Crecimiento.xsd</DependentUpon>
     </None>
     <None Include="Datasets\DS_top10.xsc">
       <DependentUpon>DS_top10.xsd</DependentUpon>

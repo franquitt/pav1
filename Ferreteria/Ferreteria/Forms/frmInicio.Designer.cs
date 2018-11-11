@@ -48,6 +48,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -222,11 +223,22 @@
             this.btnVentas.UseVisualStyleBackColor = true;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 184);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(258, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Crecimiento por Año";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 210);
+            this.ClientSize = new System.Drawing.Size(285, 218);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -265,5 +277,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Button button5;
     }
 }
