@@ -32,14 +32,22 @@ namespace Ferreteria.Forms
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            var myDataTable = new DS_worst10.PRODUCTOSDataTable();
-            var myTableAdapter = new PRODUCTOSTableAdapter();
-            myTableAdapter.Fill(myDataTable, txtDesde.Text, txtHasta.Text);
-            var rds = new ReportDataSource("DS_worst10", myDataTable as DataTable);
+            DateTime fecha;
+            if (DateTime.TryParse(txtDesde.Text, out fecha) & DateTime.TryParse(txtHasta.Text, out fecha))
+            {
+                var myDataTable = new DS_worst10.PRODUCTOSDataTable();
+                var myTableAdapter = new PRODUCTOSTableAdapter();
+                myTableAdapter.Fill(myDataTable, txtDesde.Text, txtHasta.Text);
+                var rds = new ReportDataSource("DS_worst10", myDataTable as DataTable);
 
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(rds);
-            reportViewer1.RefreshReport();
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(rds);
+                reportViewer1.RefreshReport();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar los datos", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

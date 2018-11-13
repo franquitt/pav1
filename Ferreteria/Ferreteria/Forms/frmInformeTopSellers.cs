@@ -39,14 +39,22 @@ namespace Ferreteria.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var myDataTable = new DS_TopSellers.USUARIODataTable();
-            var myTableAdapter = new USUARIOTableAdapter();
-            myTableAdapter.Fill(myDataTable, txtDesde.Text, txtHasta.Text);
-            var rds = new ReportDataSource("DataSet1", myDataTable as DataTable);
+            DateTime fecha;
+            if (DateTime.TryParse(txtDesde.Text, out fecha) & DateTime.TryParse(txtHasta.Text, out fecha))
+            {
+                var myDataTable = new DS_TopSellers.USUARIODataTable();
+                var myTableAdapter = new USUARIOTableAdapter();
+                myTableAdapter.Fill(myDataTable, txtDesde.Text, txtHasta.Text);
+                var rds = new ReportDataSource("DataSet1", myDataTable as DataTable);
 
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(rds);
-            reportViewer1.RefreshReport();
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(rds);
+                reportViewer1.RefreshReport();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar los datos", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

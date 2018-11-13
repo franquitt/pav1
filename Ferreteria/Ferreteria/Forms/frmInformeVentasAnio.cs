@@ -32,16 +32,23 @@ namespace Ferreteria.Forms
 
         private void btnProcesar_Click(object sender, EventArgs e)
         {
-            int cant;
-            cant = Convert.ToInt32(txtAnio.Text);
-            var myDataTable = new DS_Ventas.VENTASDataTable();
-            var myTableAdapter = new VENTASTableAdapter();
-            myTableAdapter.Fill(myDataTable, cant);
-            var rds = new ReportDataSource("DataSet1", myDataTable as DataTable);
+            if (txtAnio.Text != "")
+            {
+                int cant;
+                cant = Convert.ToInt32(txtAnio.Text);
+                var myDataTable = new DS_Ventas.VENTASDataTable();
+                var myTableAdapter = new VENTASTableAdapter();
+                myTableAdapter.Fill(myDataTable, cant);
+                var rds = new ReportDataSource("DataSet1", myDataTable as DataTable);
 
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(rds);
-            this.reportViewer1.RefreshReport();
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(rds);
+                this.reportViewer1.RefreshReport();
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar un año", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

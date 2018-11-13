@@ -141,120 +141,131 @@ namespace Ferreteria.Forms
             Cliente cliente;
             Empleado vendedor;
             TipoFactura tipoFactura;
+            DateTime fecha;
 
-            if (cboVendedor.SelectedValue != null)
+            if (DateTime.TryParse(txtFecha.Text, out fecha))
             {
-                vendedor = new Empleado((int)cboVendedor.SelectedValue);
-            } else
-            {
-                MessageBox.Show("Debes elegir un vendedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboVendedor.Focus();
-                return;
-            }
-
-            if (cboTipoFactura.SelectedValue != null)
-            {
-                tipoFactura = new TipoFactura((int)cboTipoFactura.SelectedValue);
-            }
-            else
-            {
-                MessageBox.Show("Debes elegir un tipo de factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboTipoFactura.Focus();
-                return;
-            }
-
-            if (cboCliente.SelectedValue != null && cboCuit.SelectedValue != null)
-            {
-                if (cboCliente.SelectedValue != null)
+                if (cboVendedor.SelectedValue != null)
                 {
-                    cliente = new Cliente((int)cboCliente.SelectedValue);
-                } else
-                {
-                    cliente = new Cliente((int)cboCuit.SelectedValue);
+                    vendedor = new Empleado((int)cboVendedor.SelectedValue);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Debes elegir un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboTipoFactura.Focus();
-                return;
-            }
-
-            Producto[] productos = new Producto[gridProductos.RowCount];
-            int[] cantidades = new int[gridProductos.RowCount];
-
-            string selectConditions = "";
-            string updatesQ = "";
-            int[] stockAlcanzado = new int[gridProductos.RowCount];
-            string detallesValues = "";
-
-            for (int i = 0; i < gridProductos.RowCount; i++)
-            {
-                productos[i] = new Producto((int)gridProductos.Rows[i].Cells[0].Value);
-                cantidades[i] = int.Parse(gridProductos.Rows[i].Cells[2].Value.ToString());
-                Lote[] lotes = Lote.getAllLotesObjectsByProduct(productos[i].codigoProducto);
-
-                int[] stockNuevos = new int[lotes.Length];
-                int index = 0;
-                stockAlcanzado[i] = 0;
-                for (index=0; index < lotes.Length; index++)
+                else
                 {
-                    if (stockAlcanzado[i] + lotes[index].stockActual <= cantidades[i])//le tengo que sacar el stock completo!
+                    MessageBox.Show("Debes elegir un vendedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboVendedor.Focus();
+                    return;
+                }
+
+                if (cboTipoFactura.SelectedValue != null)
+                {
+                    tipoFactura = new TipoFactura((int)cboTipoFactura.SelectedValue);
+                }
+                else
+                {
+                    MessageBox.Show("Debes elegir un tipo de factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboTipoFactura.Focus();
+                    return;
+                }
+
+                if (cboCliente.SelectedValue != null && cboCuit.SelectedValue != null)
+                {
+                    if (cboCliente.SelectedValue != null)
                     {
-                        stockNuevos[index] = 0;
-                        stockAlcanzado[i] += lotes[index].stockActual;
-                    }else{
-                        stockNuevos[index] = lotes[index].stockActual - (cantidades[i]- stockAlcanzado[i]);//a lo que tenia le saco lo que me hace falta nomas
-                        stockAlcanzado[i] = cantidades[i];
+                        cliente = new Cliente((int)cboCliente.SelectedValue);
                     }
-                    if (selectConditions.Equals(""))
-                        selectConditions += "numeroLote = " + lotes[index].nroLote;
                     else
-                        selectConditions += " OR numeroLote = " + lotes[index].nroLote;
-                    updatesQ += "\n UPDATE LOTES SET stockActual = " + stockNuevos[index] + " WHERE numeroLote = " + lotes[index].nroLote+";";
-                    if (stockAlcanzado[i] != 0)
                     {
-                        if (!detallesValues.Equals(""))
-                            detallesValues += ", ";
-                        detallesValues += "("+ lotes[index].nroLote + ", @@IDENTITY, "+ stockAlcanzado[i] + ", '"+ productos[i].precio+ "')";
+                        cliente = new Cliente((int)cboCuit.SelectedValue);
                     }
-                    if (stockAlcanzado[i] == cantidades[i])//si ya obtuve el stock que queria cortar
-                        break;
                 }
-                
-            }
-            string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; " +
-                "\n BEGIN TRANSACTION;" +
-                "\n begin try " +
-                "\n SELECT stockActual FROM LOTES WHERE " + selectConditions+";"+ updatesQ;
-            
+                else
+                {
+                    MessageBox.Show("Debes elegir un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboTipoFactura.Focus();
+                    return;
+                }
 
-            if (productos.Length == 0)
-            {
-                MessageBox.Show("Debes cargar productos a la lista para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                Producto[] productos = new Producto[gridProductos.RowCount];
+                int[] cantidades = new int[gridProductos.RowCount];
+
+                string selectConditions = "";
+                string updatesQ = "";
+                int[] stockAlcanzado = new int[gridProductos.RowCount];
+                string detallesValues = "";
+
+                for (int i = 0; i < gridProductos.RowCount; i++)
+                {
+                    productos[i] = new Producto((int)gridProductos.Rows[i].Cells[0].Value);
+                    cantidades[i] = int.Parse(gridProductos.Rows[i].Cells[2].Value.ToString());
+                    Lote[] lotes = Lote.getAllLotesObjectsByProduct(productos[i].codigoProducto);
+
+                    int[] stockNuevos = new int[lotes.Length];
+                    int index = 0;
+                    stockAlcanzado[i] = 0;
+                    for (index = 0; index < lotes.Length; index++)
+                    {
+                        if (stockAlcanzado[i] + lotes[index].stockActual <= cantidades[i])//le tengo que sacar el stock completo!
+                        {
+                            stockNuevos[index] = 0;
+                            stockAlcanzado[i] += lotes[index].stockActual;
+                        }
+                        else
+                        {
+                            stockNuevos[index] = lotes[index].stockActual - (cantidades[i] - stockAlcanzado[i]);//a lo que tenia le saco lo que me hace falta nomas
+                            stockAlcanzado[i] = cantidades[i];
+                        }
+                        if (selectConditions.Equals(""))
+                            selectConditions += "numeroLote = " + lotes[index].nroLote;
+                        else
+                            selectConditions += " OR numeroLote = " + lotes[index].nroLote;
+                        updatesQ += "\n UPDATE LOTES SET stockActual = " + stockNuevos[index] + " WHERE numeroLote = " + lotes[index].nroLote + ";";
+                        if (stockAlcanzado[i] != 0)
+                        {
+                            if (!detallesValues.Equals(""))
+                                detallesValues += ", ";
+                            detallesValues += "(" + lotes[index].nroLote + ", @@IDENTITY, " + stockAlcanzado[i] + ", '" + productos[i].precio + "')";
+                        }
+                        if (stockAlcanzado[i] == cantidades[i])//si ya obtuve el stock que queria cortar
+                            break;
+                    }
+
+                }
+                string laTransact = "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE; " +
+                    "\n BEGIN TRANSACTION;" +
+                    "\n begin try " +
+                    "\n SELECT stockActual FROM LOTES WHERE " + selectConditions + ";" + updatesQ;
+
+
+                if (productos.Length == 0)
+                {
+                    MessageBox.Show("Debes cargar productos a la lista para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string ahora = DateTime.Today.ToString("yyyy-MM-dd");
+                laTransact += "\n INSERT INTO VENTAS(tipoFactura, vendedor, cliente, fecha, activo) VALUES(" + tipoFactura.codigoTipo + ", " + vendedor.legajo + ", " + cliente.codigoCliente + ", '" + ahora + "', 1);";
+                laTransact += "\nINSERT INTO DETALLE_VENTA(numeroLote, numeroVenta, cantidad, precioVenta) VALUES " + detallesValues;
+                laTransact += "\nCOMMIT TRANSACTION;\n end try";
+                laTransact += "\n begin catch" +
+                    "\n rollback transaction" +
+                    "\n raiserror('Error generando venta', 16, 1)" +
+                    "\n end catch";
+                Console.WriteLine(laTransact);
+                try
+                {
+                    BDHelper.ExcecuteSQL(laTransact);
+                    MessageBox.Show("Venta confirmada", "Genial!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Hubo un problema generando la venta", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
-            string ahora = DateTime.Today.ToString("yyyy-MM-dd");
-            laTransact += "\n INSERT INTO VENTAS(tipoFactura, vendedor, cliente, fecha, activo) VALUES("+tipoFactura.codigoTipo+", "+vendedor.legajo+", "+cliente.codigoCliente+", '"+ ahora + "', 1);";
-            laTransact += "\nINSERT INTO DETALLE_VENTA(numeroLote, numeroVenta, cantidad, precioVenta) VALUES " + detallesValues;
-            laTransact += "\nCOMMIT TRANSACTION;\n end try";
-            laTransact += "\n begin catch" +
-                "\n rollback transaction" +
-                "\n raiserror('Error generando venta', 16, 1)" +                  
-                "\n end catch";
-            Console.WriteLine(laTransact);
-            try
+            else
             {
-                BDHelper.ExcecuteSQL(laTransact);
-                MessageBox.Show("Venta confirmada", "Genial!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe ingresar la fecha", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch
-            {
-                MessageBox.Show("Hubo un problema generando la venta", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
         }
-
         private decimal CalcularTotal()
         {
             decimal total = 0;
@@ -264,5 +275,6 @@ namespace Ferreteria.Forms
             }
             return total;
         }
+
     }
 }
