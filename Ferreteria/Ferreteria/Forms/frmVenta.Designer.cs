@@ -43,6 +43,7 @@
             this.lblVendedor = new System.Windows.Forms.Label();
             this.cboTipoFactura = new System.Windows.Forms.ComboBox();
             this.gboxCliente = new System.Windows.Forms.GroupBox();
+            this.txtBusquedaCuit = new System.Windows.Forms.TextBox();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
             this.cboCuit = new System.Windows.Forms.ComboBox();
             this.lblCuitCliente = new System.Windows.Forms.Label();
@@ -69,7 +70,7 @@
             this.gBoxImporte = new System.Windows.Forms.GroupBox();
             this.lblTotalNeto = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.txtBusquedaCuit = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductos)).BeginInit();
             this.gboxFactura.SuspendLayout();
             this.gboxCliente.SuspendLayout();
@@ -211,6 +212,14 @@
             this.gboxCliente.TabIndex = 6;
             this.gboxCliente.TabStop = false;
             this.gboxCliente.Text = "Cliente";
+            // 
+            // txtBusquedaCuit
+            // 
+            this.txtBusquedaCuit.Location = new System.Drawing.Point(353, 23);
+            this.txtBusquedaCuit.Name = "txtBusquedaCuit";
+            this.txtBusquedaCuit.Size = new System.Drawing.Size(98, 20);
+            this.txtBusquedaCuit.TabIndex = 15;
+            this.txtBusquedaCuit.TextChanged += new System.EventHandler(this.txtBusquedaCuit_TextChanged);
             // 
             // txtBusquedaCliente
             // 
@@ -368,7 +377,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(12, 556);
+            this.btnCancelar.Location = new System.Drawing.Point(278, 556);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(173, 48);
             this.btnCancelar.TabIndex = 12;
@@ -444,19 +453,21 @@
             this.lblTotal.TabIndex = 16;
             this.lblTotal.Text = "Total";
             // 
-            // txtBusquedaCuit
+            // label1
             // 
-            this.txtBusquedaCuit.Location = new System.Drawing.Point(353, 23);
-            this.txtBusquedaCuit.Name = "txtBusquedaCuit";
-            this.txtBusquedaCuit.Size = new System.Drawing.Size(98, 20);
-            this.txtBusquedaCuit.TabIndex = 15;
-            this.txtBusquedaCuit.TextChanged += new System.EventHandler(this.txtBusquedaCuit_TextChanged);
+            this.label1.Location = new System.Drawing.Point(9, 569);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(263, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 611);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gBoxImporte);
             this.Controls.Add(this.gboxNuevoCliente);
             this.Controls.Add(this.groupBox4);
@@ -533,5 +544,6 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.TextBox txtBusquedaCuit;
+        private System.Windows.Forms.Label label1;
     }
 }

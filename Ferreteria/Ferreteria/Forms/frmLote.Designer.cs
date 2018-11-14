@@ -38,6 +38,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.txtFecha = new System.Windows.Forms.MaskedTextBox();
             this.btnSaveLote = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.gboxProducto.SuspendLayout();
             this.gboxProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
@@ -135,11 +136,21 @@
             this.btnSaveLote.UseVisualStyleBackColor = true;
             this.btnSaveLote.Click += new System.EventHandler(this.btnSaveLote_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 172);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmLote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 216);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveLote);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.lblFecha);
@@ -170,5 +181,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.MaskedTextBox txtFecha;
         private System.Windows.Forms.Button btnSaveLote;
+        private System.Windows.Forms.Label label1;
     }
 }

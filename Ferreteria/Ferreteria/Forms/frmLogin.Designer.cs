@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUser
@@ -91,11 +92,21 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Bienvenido a Ferreterias gestión";
             // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(99, 181);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(258, 23);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "(Todos los campos deben estar llenos)";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 213);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -118,6 +129,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

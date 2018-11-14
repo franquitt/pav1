@@ -38,6 +38,7 @@
             this.txtTelefonoProveedor = new System.Windows.Forms.TextBox();
             this.btnDeleteProveedor = new System.Windows.Forms.Button();
             this.btnSaveProveedor = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombreProveedor
@@ -124,11 +125,21 @@
             this.btnSaveProveedor.UseVisualStyleBackColor = true;
             this.btnSaveProveedor.Click += new System.EventHandler(this.btnSaveProveedor_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 165);
+            this.ClientSize = new System.Drawing.Size(271, 187);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveProveedor);
             this.Controls.Add(this.btnDeleteProveedor);
             this.Controls.Add(this.txtTelefonoProveedor);
@@ -159,5 +170,6 @@
         private System.Windows.Forms.TextBox txtTelefonoProveedor;
         private System.Windows.Forms.Button btnDeleteProveedor;
         private System.Windows.Forms.Button btnSaveProveedor;
+        private System.Windows.Forms.Label label1;
     }
 }

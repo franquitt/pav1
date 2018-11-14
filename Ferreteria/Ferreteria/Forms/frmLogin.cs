@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Ferreteria.Models;
 
 namespace Ferreteria
 {
@@ -37,7 +38,8 @@ namespace Ferreteria
             if (Helper.validarUsuario(txtUser.Text, txtPass.Text))
             {
                 logued = true;
-                this.Hide();                
+                this.Hide();
+                Helper.loguedUser = new Empleado(int.Parse(txtUser.Text));
             }
             else
             {

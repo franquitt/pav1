@@ -32,11 +32,12 @@
             this.lblIngreso = new System.Windows.Forms.Label();
             this.btnProcesar = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtAnio
             // 
-            this.txtAnio.Location = new System.Drawing.Point(384, 39);
+            this.txtAnio.Location = new System.Drawing.Point(206, 6);
             this.txtAnio.Name = "txtAnio";
             this.txtAnio.Size = new System.Drawing.Size(100, 20);
             this.txtAnio.TabIndex = 0;
@@ -44,7 +45,7 @@
             // lblIngreso
             // 
             this.lblIngreso.AutoSize = true;
-            this.lblIngreso.Location = new System.Drawing.Point(187, 42);
+            this.lblIngreso.Location = new System.Drawing.Point(9, 9);
             this.lblIngreso.Name = "lblIngreso";
             this.lblIngreso.Size = new System.Drawing.Size(191, 13);
             this.lblIngreso.TabIndex = 1;
@@ -52,7 +53,7 @@
             // 
             // btnProcesar
             // 
-            this.btnProcesar.Location = new System.Drawing.Point(490, 37);
+            this.btnProcesar.Location = new System.Drawing.Point(312, 4);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(75, 23);
             this.btnProcesar.TabIndex = 2;
@@ -63,18 +64,28 @@
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ferreteria.Reportes.Informe_Ventas.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 83);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 33);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 335);
+            this.reportViewer1.Size = new System.Drawing.Size(776, 385);
             this.reportViewer1.TabIndex = 3;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(530, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmInformeVentasAnio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btnProcesar);
             this.Controls.Add(this.lblIngreso);
@@ -93,5 +104,6 @@
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.Button btnProcesar;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.Label label1;
     }
 }

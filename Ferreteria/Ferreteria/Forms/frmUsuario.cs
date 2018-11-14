@@ -115,7 +115,11 @@ namespace Ferreteria
         //Previa confirmacion del usuario, procede a dar de baja el usuario elegido
         private void btnDelUser_Click(object sender, EventArgs e)
         {
-
+            if (Helper.loguedUser.legajo == legajo)
+            {
+                MessageBox.Show("No puedes borrar el usuario con el que estás logueado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Empleado empleado = new Empleado(legajo);
             var confirmResult = MessageBox.Show("Esta seguro que desea dar de baja al usuario " + empleado.apellido + " " + empleado.nombre + " ?",
                                         "Dar de baja!",

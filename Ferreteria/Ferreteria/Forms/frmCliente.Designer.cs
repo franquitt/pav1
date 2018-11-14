@@ -37,6 +37,7 @@
             this.txtTelefonoCliente = new System.Windows.Forms.TextBox();
             this.txtCuitCliente = new System.Windows.Forms.MaskedTextBox();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombreCliente
@@ -114,11 +115,21 @@
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 23);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 160);
+            this.ClientSize = new System.Drawing.Size(282, 183);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregarCliente);
             this.Controls.Add(this.txtCuitCliente);
             this.Controls.Add(this.txtTelefonoCliente);
@@ -147,5 +158,6 @@
         private System.Windows.Forms.TextBox txtTelefonoCliente;
         private System.Windows.Forms.MaskedTextBox txtCuitCliente;
         private System.Windows.Forms.Button btnAgregarCliente;
+        private System.Windows.Forms.Label label1;
     }
 }

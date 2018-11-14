@@ -2,11 +2,14 @@
 using System.Text;
 using System.Data;
 using System.Windows.Forms;
+using Ferreteria.Models;
 
 namespace Ferreteria
 {
     class Helper
     {
+        public static Empleado loguedUser;
+
         //Realiza un hash del texto enviado mediante el algoritmo SHA256
         public static string sha256(string randomString)
         {
@@ -70,13 +73,9 @@ namespace Ferreteria
         public static bool validarUsuario(string legajo, string pass)
         {
             pass = Helper.sha256(pass);
-            Console.WriteLine("SELECT * FROM USUARIO WHERE legajo =  \'"
-                            + legajo + "\' AND password = \'"
-                            + pass + "\'");
             DataTable tabla = BDHelper.ConsultaSQL("SELECT * FROM USUARIO WHERE legajo =  \'"
                             + legajo + "\' AND password = \'"
-                            + pass + "\'");
-
+                            + pass + "\' AND activo=1");
 
             if (tabla.Rows.Count > 0)
                 return true;

@@ -34,6 +34,7 @@
             this.txtDescripcionClasificacion = new System.Windows.Forms.TextBox();
             this.lblDescripcionClasificacion = new System.Windows.Forms.Label();
             this.btnDeleteClasificacion = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNombreClasificacion
@@ -89,11 +90,21 @@
             this.btnDeleteClasificacion.UseVisualStyleBackColor = true;
             this.btnDeleteClasificacion.Click += new System.EventHandler(this.btnDeleteClasificacion_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 257);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmClasificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 263);
+            this.ClientSize = new System.Drawing.Size(284, 289);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDeleteClasificacion);
             this.Controls.Add(this.lblDescripcionClasificacion);
             this.Controls.Add(this.txtDescripcionClasificacion);
@@ -117,5 +128,6 @@
         private System.Windows.Forms.TextBox txtDescripcionClasificacion;
         private System.Windows.Forms.Label lblDescripcionClasificacion;
         private System.Windows.Forms.Button btnDeleteClasificacion;
+        private System.Windows.Forms.Label label1;
     }
 }

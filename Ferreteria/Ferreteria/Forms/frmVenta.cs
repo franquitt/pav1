@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using Ferreteria.Models;
@@ -25,7 +26,7 @@ namespace Ferreteria.Forms
         private void frmVenta_Load(object sender, EventArgs e)
         {
             Helper.llenarCbo(cboTipoFactura, TipoFactura.GetAllTipoFacturas(), "nombre", "codigoTipo");
-            Helper.llenarCbo(cboVendedor, Empleado.GetAllEmployes(), "Nombre", "legajo");
+            Helper.llenarCbo(cboVendedor, Empleado.GetAllActiveEmployees(), "Nombre", "legajo");
 
             DateTime now = DateTime.Today;
             txtFecha.Text = now.ToString("dd/MM/yyyy");
@@ -36,7 +37,15 @@ namespace Ferreteria.Forms
 
             if (idVentaAVer != 0)
             {
-                Helper.llenarCbo(cboVendedor, Empleado.GetAllEmployes(), "Nombre", "Legajo");
+                gboxProducto.Enabled = false;
+                gboxNuevoCliente.Enabled = false;
+                gBoxImporte.Enabled = false;
+                gboxFactura.Enabled = false;
+                gboxCliente.Enabled = false;
+                btnConfirmarVenta.Enabled = false;
+                btnQuitarProducto.Enabled = false;
+
+                Helper.llenarCbo(cboVendedor, Empleado.GetAllEmployees(), "Nombre", "legajo");
                 Helper.llenarCbo(cboCliente, Cliente.GetClientesByName(" ", true), "fullname", "codigoCliente");
                 Helper.llenarCbo(cboCuit, Cliente.GetClientesByName("-", false), "cuit", "codigoCliente");
 
@@ -48,6 +57,14 @@ namespace Ferreteria.Forms
                 cboCliente.SelectedValue = values.Rows[0]["cliente"].ToString();
                 cboCuit.SelectedValue = values.Rows[0]["cliente"].ToString();
                 txtFecha.Text = values.Rows[0]["fecha"].ToString();
+
+                consulta = "SELECT LOTES.codigoProducto, DETALLE_VENTA.cantidad, DETALLE_VENTA.precioVenta " +
+                    "FROM DETALLE_VENTA " +
+                    "JOIN LOTES ON(LOTES.numeroLote = DETALLE_VENTA.numeroLote) " +
+                    "WHERE DETALLE_VENTA.numeroVenta = " + idVentaAVer;
+                values = BDHelper.ConsultaSQL(consulta);
+
+                addProductos(values);
             }
 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -298,6 +315,22 @@ namespace Ferreteria.Forms
                 total += Convert.ToDecimal((gridProductos.Rows[i].Cells[4].Value).ToString().Replace("$",""));
             }
             return total;
+        }
+
+        private void addProductos(DataTable values)
+        {
+            foreach (DataRow row in values.Rows)
+            {
+
+                Producto p = new Producto(int.Parse(row["codigoProducto"].ToString()));
+                int cantidad = int.Parse(row["cantidad"].ToString());
+                decimal total = decimal.Parse(row["precioVenta"].ToString()) * cantidad;
+
+                gridProductos.Rows.Add(p.codigoProducto, p.nombre, cantidad, "$" + p.precio, total);
+                lblTotalNeto.Text = "$" + CalcularTotal().ToString();
+            }
+
+            lblTotalNeto.Visible = true;
         }
 
     }

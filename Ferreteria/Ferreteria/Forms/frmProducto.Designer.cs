@@ -38,6 +38,7 @@
             this.btnDeleteProducto = new System.Windows.Forms.Button();
             this.lblClasificacionProducto = new System.Windows.Forms.Label();
             this.cboClasificacion = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNombreProducto
@@ -127,11 +128,21 @@
             this.cboClasificacion.Size = new System.Drawing.Size(325, 21);
             this.cboClasificacion.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(9, 286);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 332);
+            this.ClientSize = new System.Drawing.Size(416, 325);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cboClasificacion);
             this.Controls.Add(this.lblClasificacionProducto);
             this.Controls.Add(this.btnDeleteProducto);
@@ -162,5 +173,6 @@
         private System.Windows.Forms.Button btnDeleteProducto;
         private System.Windows.Forms.Label lblClasificacionProducto;
         private System.Windows.Forms.ComboBox cboClasificacion;
+        private System.Windows.Forms.Label label1;
     }
 }

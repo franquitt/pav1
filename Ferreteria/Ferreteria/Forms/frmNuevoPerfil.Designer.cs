@@ -34,6 +34,7 @@
             this.txtIdProfile = new System.Windows.Forms.TextBox();
             this.txtNameProfile = new System.Windows.Forms.TextBox();
             this.btnDelProfile = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSaveProfile
@@ -89,11 +90,21 @@
             this.btnDelProfile.UseVisualStyleBackColor = true;
             this.btnDelProfile.Click += new System.EventHandler(this.btnDelProfile_Click);
             // 
-            // frmNuevoPerfil
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(12, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 23);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "(Todos los campos deben estar llenos)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // frmPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(241, 124);
+            this.ClientSize = new System.Drawing.Size(241, 145);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDelProfile);
             this.Controls.Add(this.txtNameProfile);
             this.Controls.Add(this.txtIdProfile);
@@ -101,7 +112,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveProfile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmNuevoPerfil";
+            this.Name = "frmPerfil";
             this.Text = "Editar Perfil";
             this.Load += new System.EventHandler(this.frmNuevoPerfil_Load);
             this.ResumeLayout(false);
@@ -117,5 +128,6 @@
         private System.Windows.Forms.TextBox txtIdProfile;
         private System.Windows.Forms.TextBox txtNameProfile;
         private System.Windows.Forms.Button btnDelProfile;
+        private System.Windows.Forms.Label label3;
     }
 }

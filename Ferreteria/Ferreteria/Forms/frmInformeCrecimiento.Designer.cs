@@ -32,6 +32,7 @@
             this.txtAnio = new System.Windows.Forms.TextBox();
             this.lblAnio = new System.Windows.Forms.Label();
             this.btnProcesar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -69,11 +70,21 @@
             this.btnProcesar.UseVisualStyleBackColor = true;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(589, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmInformeCrecimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProcesar);
             this.Controls.Add(this.lblAnio);
             this.Controls.Add(this.txtAnio);
@@ -92,5 +103,6 @@
         private System.Windows.Forms.TextBox txtAnio;
         private System.Windows.Forms.Label lblAnio;
         private System.Windows.Forms.Button btnProcesar;
+        private System.Windows.Forms.Label label1;
     }
 }

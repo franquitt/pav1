@@ -44,6 +44,7 @@
             this.cboTipoUser = new System.Windows.Forms.ComboBox();
             this.lblTipoUser = new System.Windows.Forms.Label();
             this.btnDelUser = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtLegajo
@@ -185,11 +186,21 @@
             this.btnDelUser.UseVisualStyleBackColor = true;
             this.btnDelUser.Click += new System.EventHandler(this.btnDelUser_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(12, 251);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(266, 23);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "(Todos los campos deben estar llenos)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 259);
+            this.ClientSize = new System.Drawing.Size(290, 283);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelUser);
             this.Controls.Add(this.lblTipoUser);
             this.Controls.Add(this.cboTipoUser);
@@ -233,5 +244,6 @@
         private System.Windows.Forms.ComboBox cboTipoUser;
         private System.Windows.Forms.Label lblTipoUser;
         private System.Windows.Forms.Button btnDelUser;
+        private System.Windows.Forms.Label label1;
     }
 }
