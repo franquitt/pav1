@@ -106,5 +106,10 @@ namespace Ferreteria
         {
             new frmInformeCrecimiento().Show();
         }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new frmConsultarVenta().Show();
+        }
     }
 }

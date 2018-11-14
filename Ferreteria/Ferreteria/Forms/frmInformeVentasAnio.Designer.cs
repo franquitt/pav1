@@ -70,7 +70,7 @@
             this.reportViewer1.TabIndex = 3;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // frmVentasAnio
+            // frmInformeVentasAnio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,8 +79,8 @@
             this.Controls.Add(this.btnProcesar);
             this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.txtAnio);
-            this.Name = "frmVentasAnio";
-            this.Text = "Ventas Por Año";
+            this.Name = "frmInformeVentasAnio";
+            this.Text = "Informe ventas por año";
             this.Load += new System.EventHandler(this.frmVentasAnio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

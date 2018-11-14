@@ -102,7 +102,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformeCat";
-            this.Text = "Ventas Por Categoria";
+            this.Text = "Informe de ventas por categoria";
             this.Load += new System.EventHandler(this.frmInformeTopSellers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

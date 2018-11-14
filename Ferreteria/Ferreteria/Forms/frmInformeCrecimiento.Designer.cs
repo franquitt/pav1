@@ -79,7 +79,7 @@
             this.Controls.Add(this.txtAnio);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformeCrecimiento";
-            this.Text = "frmInformeCrecimiento";
+            this.Text = "Informe de crecimiento por año";
             this.Load += new System.EventHandler(this.frmInformeCrecimiento_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -241,8 +241,8 @@ namespace Ferreteria.Forms
                     MessageBox.Show("Debes cargar productos a la lista para poder continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                string ahora = DateTime.Today.ToString("yyyy-MM-dd");
-                laTransact += "\n INSERT INTO VENTAS(tipoFactura, vendedor, cliente, fecha, activo) VALUES(" + tipoFactura.codigoTipo + ", " + vendedor.legajo + ", " + cliente.codigoCliente + ", '" + ahora + "', 1);";
+                string fechaString = fecha.ToString("yyyy-MM-dd");
+                laTransact += "\n INSERT INTO VENTAS(tipoFactura, vendedor, cliente, fecha, activo) VALUES(" + tipoFactura.codigoTipo + ", " + vendedor.legajo + ", " + cliente.codigoCliente + ", '" + fechaString + "', 1);";
                 laTransact += "\nINSERT INTO DETALLE_VENTA(numeroLote, numeroVenta, cantidad, precioVenta) VALUES " + detallesValues;
                 laTransact += "\nCOMMIT TRANSACTION;\n end try";
                 laTransact += "\n begin catch" +

@@ -102,7 +102,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformeTopSellers";
-            this.Text = "Mejores Vendedores";
+            this.Text = "Informe de los mejores vendedores";
             this.Load += new System.EventHandler(this.frmInformeTopSellers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

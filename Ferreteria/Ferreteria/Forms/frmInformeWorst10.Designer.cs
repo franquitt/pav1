@@ -101,7 +101,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformeWorst10";
-            this.Text = "Productos Menos vendidos";
+            this.Text = "Informe de los productos menos vendidos";
             this.Load += new System.EventHandler(this.frmInformeWorst10_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

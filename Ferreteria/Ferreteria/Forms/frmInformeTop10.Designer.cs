@@ -101,7 +101,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformeTop10";
-            this.Text = "Reporte";
+            this.Text = "Informe de los 10 productos más vendidos";
             this.Load += new System.EventHandler(this.frmInformeTop10_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

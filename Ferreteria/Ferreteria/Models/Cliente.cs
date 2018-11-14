@@ -45,7 +45,7 @@ namespace Ferreteria.Models
             string sql = "SELECT codigoCliente, CONCAT(apellido, CONCAT(' ', nombre)) AS 'fullname', cuit FROM CLIENTES WHERE";
             if (name)
             {
-                sql += " nombre LIKE '%" + str + "%' OR apellido LIKE '%" + str + "%'";
+                sql += " CONCAT(apellido, CONCAT(' ', nombre)) LIKE '%" + str + "%' OR CONCAT(nombre, CONCAT(' ', apellido)) LIKE '%" + str + "%'";
             } else
             {
                 sql += " cuit LIKE '" + str + "%'";
