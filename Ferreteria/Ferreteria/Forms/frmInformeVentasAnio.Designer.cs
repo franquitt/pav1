@@ -69,7 +69,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(776, 385);
             this.reportViewer1.TabIndex = 3;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // label1
             // 
@@ -92,7 +91,6 @@
             this.Controls.Add(this.txtAnio);
             this.Name = "frmInformeVentasAnio";
             this.Text = "Informe ventas por año";
-            this.Load += new System.EventHandler(this.frmVentasAnio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

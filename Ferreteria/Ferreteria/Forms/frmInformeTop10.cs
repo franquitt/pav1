@@ -14,6 +14,7 @@ namespace Ferreteria.Forms
             InitializeComponent();
         }
 
+        //Al cargar la ventana, relaciona el dataset con el reporte con el ultimo mes como parámetro
         private void frmInformeTop10_Load(object sender, EventArgs e)
         {
             var myDataTable = new DS_top10.PRODUCTOSDataTable();
@@ -30,6 +31,7 @@ namespace Ferreteria.Forms
             reportViewer1.RefreshReport();
         }
 
+        //Al apretar el boton, relaciona el dataset con el reporte con el período de tiempo elegido como parámetro
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime fecha;

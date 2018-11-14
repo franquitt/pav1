@@ -13,6 +13,7 @@ namespace Ferreteria.Forms
             InitializeComponent();
         }
 
+        //Al cargar la ventana carga como fecha por defecto la fecha de hoy
         private void frmConsultarVenta_Load(object sender, EventArgs e)
         {
             DateTime now = DateTime.Today;
@@ -21,7 +22,8 @@ namespace Ferreteria.Forms
 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
-
+        
+        //Busca de forma dinámica los clientes por el nombre a medida que uno escribe
         private void txtBusquedaCliente_TextChanged(object sender, EventArgs e)
         {
             DataTable t = Cliente.GetClientesByName(txtBusquedaCliente.Text, true);
@@ -29,6 +31,7 @@ namespace Ferreteria.Forms
             Helper.llenarCbo(cmbCuit, t, "cuit", "codigoCliente");
         }
 
+        //Busca de forma dinámica los clientes por el cuit a medida que uno escribe
         private void txtCUIT_TextChanged(object sender, EventArgs e)
         {
             DataTable t = Cliente.GetClientesByName(txtCUIT.Text, false);
@@ -36,6 +39,7 @@ namespace Ferreteria.Forms
             Helper.llenarCbo(cmbCliente, t, "fullname", "codigoCliente");
         }
 
+        //Se asegura que al elegir un cliente desde el cmb, este quede elegido también en el cmb de cuit
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -45,6 +49,7 @@ namespace Ferreteria.Forms
             catch { }
         }
 
+        //Se asegura que al elegir un cuit desde el cmb, este quede elegido también en el cmb de cliente
         private void cmbCuit_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -54,6 +59,7 @@ namespace Ferreteria.Forms
             catch { }
         }
 
+        //Al presionar consultar, busca la ventas elegidas en base a los parámetros cargados
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             string consulta = "SELECT VENTAS.numeroVenta, VENTAS.fecha, CLIENTES.apellido, CLIENTES.nombre, sum(DETALLE_VENTA.cantidad * DETALLE_VENTA.precioVenta) AS 'monto' " +
@@ -83,6 +89,7 @@ namespace Ferreteria.Forms
             dgvVentas.DataSource = resultado;
         }
 
+        //Al hacer doble click abre la ventada de facturacion con los datos de la venta elegida
         private void dgvVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int idVenta = Helper.getSelectedId(dgvVentas);

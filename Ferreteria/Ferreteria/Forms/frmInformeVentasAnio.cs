@@ -20,16 +20,7 @@ namespace Ferreteria.Forms
             InitializeComponent();
         }
 
-        private void frmVentasAnio_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
+        //Al apretar el boton, relaciona el dataset con el reporte con el período de tiempo elegido como parámetro
         private void btnProcesar_Click(object sender, EventArgs e)
         {
             if (txtAnio.Text != "")
