@@ -264,7 +264,7 @@ namespace Ferreteria.Forms
                         {
                             if (!detallesValues.Equals(""))
                                 detallesValues += ", ";
-                            detallesValues += "(" + lotes[index].nroLote + ", @@IDENTITY, " + stockAlcanzado[i] + ", '" + productos[i].precio + "')";
+                            detallesValues += "(" + lotes[index].nroLote + ", @@IDENTITY, " + stockAlcanzado[i] + ", '" + productos[i].precio.ToString().Replace(",",".") + "')";
                         }
                         if (stockAlcanzado[i] == cantidades[i])//si ya obtuve el stock que queria cortar
                             break;
@@ -290,7 +290,7 @@ namespace Ferreteria.Forms
                     "\n rollback transaction" +
                     "\n raiserror('Error generando venta', 16, 1)" +
                     "\n end catch";
-                Console.WriteLine(laTransact);
+                MessageBox.Show(laTransact);
                 try
                 {
                     BDHelper.ExcecuteSQL(laTransact);
