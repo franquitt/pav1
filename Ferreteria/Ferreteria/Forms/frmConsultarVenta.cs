@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using Ferreteria.Models;
+using Ferreteria.Forms;
 
 namespace Ferreteria.Forms
 {
@@ -17,6 +18,8 @@ namespace Ferreteria.Forms
             DateTime now = DateTime.Today;
             txtFechaDesde.Text = now.ToString("yyyy/MM/dd");
             txtFechaHasta.Text = now.ToString("yyyy/MM/dd");
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void txtBusquedaCliente_TextChanged(object sender, EventArgs e)
@@ -78,6 +81,12 @@ namespace Ferreteria.Forms
             consulta += " GROUP BY VENTAS.numeroVenta, VENTAS.fecha, CLIENTES.apellido, CLIENTES.nombre";
             DataTable resultado = BDHelper.ConsultaSQL(consulta);
             dgvVentas.DataSource = resultado;
+        }
+
+        private void dgvVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idVenta = Helper.getSelectedId(dgvVentas);
+            new frmVenta(idVenta).Show();
         }
     }
 }

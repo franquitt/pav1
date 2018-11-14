@@ -78,9 +78,13 @@ namespace Ferreteria.Models
         public static DataTable GetAllProductos()
         {
             return BDHelper.ConsultaSQL("" +
-                "SELECT PRODUCTOS.codigoProducto AS '#', PRODUCTOS.nombre AS 'Nombre', PRODUCTOS.descripcion as 'Descripcion', PRODUCTOS.precio as 'Precio', CLASIFICACION.nombre AS 'Clasificacion' " +
-                "FROM PRODUCTOS JOIN CLASIFICACION ON(PRODUCTOS.clasificacion=CLASIFICACION.codigoClasificacion) " +
-                "WHERE PRODUCTOS.activo = 1 ORDER BY nombre");
+                "SELECT PRODUCTOS.codigoProducto AS '#', PRODUCTOS.nombre AS 'Nombre', PRODUCTOS.descripcion as 'Descripcion', PRODUCTOS.precio as 'Precio', CLASIFICACION.nombre AS 'Clasificacion', SUM(LOTES.stockActual) AS 'Stock'" +
+                "FROM PRODUCTOS " +
+                "JOIN CLASIFICACION ON(PRODUCTOS.clasificacion = CLASIFICACION.codigoClasificacion)" +
+                "JOIN LOTES ON(LOTES.codigoProducto = PRODUCTOS.codigoProducto)" +
+                "WHERE PRODUCTOS.activo = 1" +
+                "GROUP BY PRODUCTOS.codigoProducto, PRODUCTOS.nombre, PRODUCTOS.descripcion, PRODUCTOS.precio, CLASIFICACION.nombre " +
+                "ORDER BY PRODUCTOS.nombre");
         }
 
         public static DataTable GetAllProductosByName(string name)

@@ -48,7 +48,7 @@ namespace Ferreteria.Models
                 sql += " CONCAT(apellido, CONCAT(' ', nombre)) LIKE '%" + str + "%' OR CONCAT(nombre, CONCAT(' ', apellido)) LIKE '%" + str + "%'";
             } else
             {
-                sql += " cuit LIKE '" + str + "%'";
+                sql += " cuit LIKE '%" + str + "%'";
             }
             return BDHelper.ConsultaSQL(sql);
         }

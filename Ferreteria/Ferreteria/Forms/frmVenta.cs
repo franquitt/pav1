@@ -9,9 +9,17 @@ namespace Ferreteria.Forms
     {
         Producto productoElegido = null;
 
+        int idVentaAVer = 0;
+
         public frmVenta()
         {
             InitializeComponent();
+        }
+
+        public frmVenta(int id)
+        {
+            InitializeComponent();
+            idVentaAVer = id;
         }
 
         private void frmVenta_Load(object sender, EventArgs e)
@@ -25,6 +33,22 @@ namespace Ferreteria.Forms
             txtCantidadProducto.TextChanged += new EventHandler(txtCantidadProducto_TextChanged);
             btnAgregarProducto.Enabled = false;
             lblTotalNeto.Visible = false;
+
+            if (idVentaAVer != 0)
+            {
+                Helper.llenarCbo(cboVendedor, Empleado.GetAllEmployes(), "Nombre", "Legajo");
+                Helper.llenarCbo(cboCliente, Cliente.GetClientesByName(" ", true), "fullname", "codigoCliente");
+                Helper.llenarCbo(cboCuit, Cliente.GetClientesByName("-", false), "cuit", "codigoCliente");
+
+                string consulta = "SELECT * FROM VENTAS WHERE numeroVenta = " + idVentaAVer;
+                DataTable values = BDHelper.ConsultaSQL(consulta);
+
+                cboTipoFactura.SelectedValue = values.Rows[0]["tipoFactura"].ToString();
+                cboVendedor.SelectedValue = values.Rows[0]["vendedor"].ToString();
+                cboCliente.SelectedValue = values.Rows[0]["cliente"].ToString();
+                cboCuit.SelectedValue = values.Rows[0]["cliente"].ToString();
+                txtFecha.Text = values.Rows[0]["fecha"].ToString();
+            }
 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }

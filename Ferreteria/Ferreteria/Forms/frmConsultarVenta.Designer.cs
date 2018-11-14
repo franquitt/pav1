@@ -31,6 +31,9 @@
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCuit = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCUIT = new System.Windows.Forms.TextBox();
             this.txtBusquedaCliente = new System.Windows.Forms.TextBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.txtFechaHasta = new System.Windows.Forms.MaskedTextBox();
@@ -38,9 +41,6 @@
             this.txtFechaDesde = new System.Windows.Forms.MaskedTextBox();
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.txtCUIT = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbCuit = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,33 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parámetros";
+            // 
+            // cmbCuit
+            // 
+            this.cmbCuit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCuit.FormattingEnabled = true;
+            this.cmbCuit.Location = new System.Drawing.Point(248, 53);
+            this.cmbCuit.Name = "cmbCuit";
+            this.cmbCuit.Size = new System.Drawing.Size(131, 21);
+            this.cmbCuit.TabIndex = 12;
+            this.cmbCuit.SelectedIndexChanged += new System.EventHandler(this.cmbCuit_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(208, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "CUIT";
+            // 
+            // txtCUIT
+            // 
+            this.txtCUIT.Location = new System.Drawing.Point(248, 27);
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(131, 20);
+            this.txtCUIT.TabIndex = 10;
+            this.txtCUIT.TextChanged += new System.EventHandler(this.txtCUIT_TextChanged);
             // 
             // txtBusquedaCliente
             // 
@@ -141,39 +168,14 @@
             // dgvVentas
             // 
             this.dgvVentas.AllowUserToAddRows = false;
+            this.dgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Location = new System.Drawing.Point(4, 140);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.Size = new System.Drawing.Size(578, 255);
             this.dgvVentas.TabIndex = 4;
-            // 
-            // txtCUIT
-            // 
-            this.txtCUIT.Location = new System.Drawing.Point(248, 27);
-            this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(131, 20);
-            this.txtCUIT.TabIndex = 10;
-            this.txtCUIT.TextChanged += new System.EventHandler(this.txtCUIT_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(208, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "CUIT";
-            // 
-            // cmbCuit
-            // 
-            this.cmbCuit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCuit.FormattingEnabled = true;
-            this.cmbCuit.Location = new System.Drawing.Point(248, 53);
-            this.cmbCuit.Name = "cmbCuit";
-            this.cmbCuit.Size = new System.Drawing.Size(131, 21);
-            this.cmbCuit.TabIndex = 12;
-            this.cmbCuit.SelectedIndexChanged += new System.EventHandler(this.cmbCuit_SelectedIndexChanged);
+            this.dgvVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellDoubleClick);
             // 
             // frmConsultarVenta
             // 
