@@ -85,5 +85,5 @@ daría solución a este trabajo:
 ![diagrama db](https://raw.githubusercontent.com/franquitt/pav1/master/diagrama.png)
 
 ## Formularios
-![Formulario de arquitectura](https://drive.google.com/open?id=17vr5slgNQY5m-09SOU9MeSErExZXFkSGze-SILEhrTk)
-![Formulario de proyecto](https://drive.google.com/open?id=1MP3hrSfP50Gu-Px2wBUGY6bPz6GfqNOQ)
+[Formulario de arquitectura](https://drive.google.com/open?id=17vr5slgNQY5m-09SOU9MeSErExZXFkSGze-SILEhrTk)]
+[Formulario de proyecto](https://drive.google.com/open?id=1MP3hrSfP50Gu-Px2wBUGY6bPz6GfqNOQ)]
